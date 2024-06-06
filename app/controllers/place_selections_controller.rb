@@ -1,0 +1,2 @@
+class PlaceSelectionsController < ApplicationController
+end
