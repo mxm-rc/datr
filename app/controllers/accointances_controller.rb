@@ -1,0 +1,2 @@
+class AccointancesController < ApplicationController
+end

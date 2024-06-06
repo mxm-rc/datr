@@ -1,0 +1,2 @@
+class MeetsController < ApplicationController
+end
