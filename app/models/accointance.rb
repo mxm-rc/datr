@@ -7,6 +7,10 @@ class Accointance < ApplicationRecord
   validates :status, inclusion: { in: %w[pending accepted refused] }
   validate :different_follower_recipient_id
 
+  def friend_of(current_user)
+    current_user == follower ? recipient : follower
+  end 
+  
   private
 
   def default_accointance_status

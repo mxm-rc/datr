@@ -1,13 +1,3 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-
 require 'json'
 restaurant_json_file = File.open('app/assets/restaurant_database/restaurants-casvp.json').read
 
@@ -64,7 +54,6 @@ user4 = User.create!(
 
 puts "Created #{User.count} Users"
 
-# Creating accointances between users
 Accointance.create!(follower: user1, recipient: user2, status: 'pending')
 Accointance.create!(follower: user2, recipient: user3, status: 'accepted')
 Accointance.create!(follower: user3, recipient: user4, status: 'refused')
