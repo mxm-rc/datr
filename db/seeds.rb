@@ -13,7 +13,6 @@ restaurant_json_file = File.open('app/assets/restaurant_database/restaurants-cas
 
 User.destroy_all
 Location.destroy_all
-
 # Creating users
 user1 = User.create!(
   birthdate: Date.new(1994, 10, 18),
@@ -75,7 +74,6 @@ Accointance.create!(follower: user3, recipient: user1, status: 'accepted')
 Accointance.create!(follower: user4, recipient: user2, status: 'refused')
 
 puts "Created #{Accointance.count} Accointances"
-
 restaurants = JSON.parse(restaurant_json_file)
 
 restaurants.each_with_index do |restaurant_data, index|
