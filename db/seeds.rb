@@ -53,6 +53,14 @@ User.create!([
 ])
 
 puts "Created #{User.count} Users"
+
+Accointance.create!(
+  {
+    follower_id: 3,
+    recipient_id: 2,
+    status: "confirmed"
+  }
+)
   # Meet.create(
   # {
   #   id_acquaintances: 1,
