@@ -3,6 +3,7 @@ restaurant_json_file = File.open('app/assets/restaurant_database/restaurants-cas
 
 Accointance.destroy_all
 User.destroy_all
+Accointance.destroy_all
 Location.destroy_all
 
 # Creating users
@@ -11,7 +12,7 @@ user1 = User.create!(
   pseudo: "mxm-rc",
   first_name: "Maxime",
   last_name: "Robert Colin",
-  email: "maximerobertcolin@gmail.com",
+  email: "maximerobertcaaaozlin@gmail.com",
   password: "123456",
   password_confirmation: "123456",
   address: "47 rue des rosiers, 93400, Saint-Ouen",
@@ -57,18 +58,14 @@ user4 = User.create!(
 puts "Created #{User.count} Users"
 
 Accointance.create!(follower: user1, recipient: user2, status: 'pending')
-Accointance.create!(follower: user2, recipient: user3, status: 'accepted')
-Accointance.create!(follower: user3, recipient: user4, status: 'refused')
-Accointance.create!(follower: user4, recipient: user1, status: 'pending')
-
-# Additional accointances to cover all relationships
 Accointance.create!(follower: user1, recipient: user3, status: 'accepted')
 Accointance.create!(follower: user1, recipient: user4, status: 'refused')
+Accointance.create!(follower: user2, recipient: user3, status: 'accepted')
 Accointance.create!(follower: user2, recipient: user4, status: 'pending')
-Accointance.create!(follower: user3, recipient: user1, status: 'accepted')
-Accointance.create!(follower: user4, recipient: user2, status: 'refused')
+Accointance.create!(follower: user3, recipient: user4, status: 'refused')
 
 puts "Created #{Accointance.count} Accointances"
+
 restaurants = JSON.parse(restaurant_json_file)
 
 restaurants.each_with_index do |restaurant_data, index|
