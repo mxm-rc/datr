@@ -2,14 +2,13 @@ class FriendsController < ApplicationController
   before_action :set_friend, only: [:show]
 
   def index
-    @accointances = policy_scope(Accointance)
+    @accointances = Accointance.where(follower: current_user).or(Accointance.where(recipient: current_user))
     @friends = @accointances.map do |accointance|
       accointance.friend_of(current_user)
-    end
+    end.uniq
   end
 
   def show
-    authorize @friend, policy_class: FriendPolicy
   end
 
   private
