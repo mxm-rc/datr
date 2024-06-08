@@ -3,17 +3,18 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
   validates :address, presence: true
-  validates :birth_date, presence: true
-  validates :validate_age
+  validates :birthdate, presence: true
+  validate :validate_age
 
   private
 
   def validate_age
-    return if birth_date.present? && birth_date > 18.years.ago.to_d
+    return if birthdate.present? && birthdate < 18.years.ago.to_date
 
-    errors.add(:birth_date, 'You should be over 18 years old.')
+    errors.add(:birthdate, "You should be over 18 years old.")
   end
 end
