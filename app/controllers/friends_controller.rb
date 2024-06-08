@@ -2,14 +2,17 @@ class FriendsController < ApplicationController
   before_action :set_friend, only: [:show]
 
   def index
-    @accointances = Accointance.where(follower: current_user).or(Accointance.where(recipient: current_user))
-    @friends = @accointances.map do |accointance|
-      accointance.friend_of(current_user)
-    end.uniq
+    @friends = current_user.friends
+
+    if params[:query].present?
+      @friends = @friends.where("pseudo ILIKE ?", "%#{params[:query]}%")
+    end
   end
 
   def show
   end
+
+  
 
   private
 
