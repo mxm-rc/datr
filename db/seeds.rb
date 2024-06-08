@@ -8,7 +8,11 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+require 'json'
+restaurant_json_file = File.open('app/assets/restaurant_database/restaurants-casvp.json').read
 
+User.destroy_all
+Location.destroy_all
 # Creating users
 user1 = User.create!(
   birthdate: Date.new(1994, 10, 18),
@@ -70,3 +74,32 @@ Accointance.create!(follower: user3, recipient: user1, status: 'accepted')
 Accointance.create!(follower: user4, recipient: user2, status: 'refused')
 
 puts "Created #{Accointance.count} Accointances"
+restaurants = JSON.parse(restaurant_json_file)
+
+restaurants.each_with_index do |restaurant_data, index|
+  break if index >= 50  # Break the loop once 50 restaurants have been created
+
+  tt_data = restaurant_data['tt']
+
+  if tt_data.present? && tt_data.key?('lon') && tt_data.key?('lat')
+    location = Location.new(
+      zip_code: restaurant_data['code'],
+      name: restaurant_data['nom_restaurant'],
+      address: restaurant_data['adresse'],
+      city: restaurant_data['ville'],
+      lon: tt_data['lon'],
+      lat: tt_data['lat'],
+      location_type: restaurant_data['type']
+    )
+
+    if location.save
+      puts "Restaurant '#{location.name}' created successfully."
+    else
+      puts "Failed to create restaurant '#{location.name}'. Errors: #{location.errors.full_messages}"
+    end
+  else
+    puts "Skipping restaurant '#{restaurant_data['nom_restaurant']}' due to missing or incomplete location data."
+  end
+end
+
+puts "Created #{Location.count} Locations"
