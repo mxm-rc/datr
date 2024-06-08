@@ -1,0 +1,14 @@
+<h1>Proposed Places for Meeting</h1>
+
+<% if @places.any? %>
+  <ul>
+    <% @places.each do |place| %>
+      <li><%= place.name %> </li>
+      <li><%= place.address %></li>
+      <li><%= place.type %></li>
+      <li><%= place.price_range %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No places found based on your preferences.</p>
+<% end %>
