@@ -11,6 +11,8 @@ class FriendsController < ApplicationController
   def show
   end
 
+  
+
   private
 
   def set_friend
