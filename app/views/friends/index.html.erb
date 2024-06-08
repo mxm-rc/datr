@@ -4,16 +4,9 @@
   <div class="card-accointance">
     <%= image_tag friend.picture %>
     <div class="card-product-infos">
-      <h2>Product name</h2>
-      <p>Product description with <strong>relevant info</strong> only.</p>
+    <%= friend.pseudo %>
+    <p>J'aime me battre.</p>
+    <p><%= link_to 'Create a Date', new_friend_meet_path(friend.id) %></p>
     </div>
   </div>
 <% end %>
-
-<div class="card-accointance">
-  <%= image_tag @friends.first.picture %>
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-  </div>
-</div>
