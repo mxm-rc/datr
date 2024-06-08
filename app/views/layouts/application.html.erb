@@ -10,9 +10,37 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
+  <body>
+    <%= render "shared/flashes" %>
+    <% if alert %>
+    <div class="flash flash-danger alert alert-dismissible fade show" role="alert">
+      <span><%= alert %></span>
+        <a data-bs-dismiss="alert" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </a>
+    </div>
+    <% end %>
 
-    <%= yield %>
+    <% if notice %>
+      <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+        <span> <%= notice %> </span>
+        <a data-bs-dismiss="alert" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </a>
+      </div>
+    <% end %>
+
+    <div class="page-container">
+      <% unless action_name == "home" %>
+        <div class="navbar-lewagon"><%= render "layouts/navbar" %></div>
+      <% end %>
+
+      <div class="content-container"><%= yield %></div>
+
+      <% unless action_name == "home" %>
+        <div class="footer-container"><%= render "layouts/footer" %></div>
+      <% end %>
+    </div>
+
   </body>
 </html>
