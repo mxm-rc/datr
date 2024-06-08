@@ -7,11 +7,17 @@ class User < ApplicationRecord
   has_many :followers, class_name: 'Accointance', foreign_key: 'follower_id', dependent: :destroy
   has_many :recipients, class_name: 'Accointance', foreign_key: 'recipient_id', dependent: :destroy
 
+  has_many :accointances, ->(user) { unscope(where: :user_id).where('follower_id = :id OR recipient_id = :id', id: user.id) }
+
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
   validates :address, presence: true
   validates :birthdate, presence: true
   validate :validate_age
+
+  def friends
+    User.where(id: accointances.pluck(:follower_id, :recipient_id).flatten).distinct.where.not(id: id)
+  end
 
   private
 
