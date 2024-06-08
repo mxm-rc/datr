@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :followers, class_name: 'Accointance', foreign_key: 'follower_id', dependent: :destroy
+  has_many :recipients, class_name: 'Accointance', foreign_key: 'recipient_id', dependent: :destroy
+
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
   validates :address, presence: true
