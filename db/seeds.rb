@@ -11,7 +11,7 @@ user1 = User.create!(
   pseudo: "mxm-rc",
   first_name: "Maxime",
   last_name: "Robert Colin",
-  email: "maximerobertcolin@gmail.com",
+  email: "maximerobertcaaaozlin@gmail.com",
   password: "123456",
   password_confirmation: "123456",
   address: "47 rue des rosiers, 93400, Saint-Ouen",
