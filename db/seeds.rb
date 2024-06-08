@@ -22,7 +22,8 @@ user1 = User.create!(
   email: "maximerobertcolin@gmail.com",
   password: "123456",
   password_confirmation: "123456",
-  address: "47 rue des rosiers, 93400, Saint-Ouen"
+  address: "47 rue des rosiers, 93400, Saint-Ouen",
+  picture: "app/assets/images/maxime.jpg"
 )
 
 user2 = User.create!(
@@ -33,7 +34,8 @@ user2 = User.create!(
   email: "huretantoine@gmail.com",
   password: "123456",
   password_confirmation: "123456",
-  address: "10 boulevard de la villette, 75019, Paris"
+  address: "10 boulevard de la villette, 75019, Paris",
+  picture: "app/assets/images/antoine.jpg"
 )
 
 user3 = User.create!(
@@ -44,7 +46,8 @@ user3 = User.create!(
   email: "maxence.frohlicher@icloud.com",
   password: "123456",
   password_confirmation: "123456",
-  address: "10 boulevard de la villette, 75019, Paris"
+  address: "10 boulevard de la villette, 75019, Paris",
+  picture: "app/assets/images/maxence.jpg"
 )
 
 user4 = User.create!(
@@ -55,7 +58,8 @@ user4 = User.create!(
   email: "christophe.marco@net-c.fr",
   password: "123456",
   password_confirmation: "123456",
-  address: "10 boulevard de la villette, 75019, Paris"
+  address: "10 boulevard de la villette, 75019, Paris",
+  picture: "app/assets/images/maxence.jpg"
 )
 
 puts "Created #{User.count} Users"
