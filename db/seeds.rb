@@ -9,75 +9,64 @@
 #   end
 
 
-User.create!([
-  {
-    birthdate: Date.new(1994, 10, 18),
-    pseudo: "mxm-rc",
-    first_name: "Maxime",
-    last_name: "Robert Colin",
-    email: "maximerobertcolin@gmail.com",
-    password: "123456",
-    password_confirmation: "123456",
-    address: "47 rue des rosiers, 93400, Saint-Ouen"
-  },
-  {
-    birthdate: Date.new(1985, 7, 14),
-    pseudo: "antoinehuret",
-    first_name: "Antoine",
-    last_name: "Huret",
-    email: "huretantoine@gmail.com",
-    password: "123456",
-    password_confirmation: "123456",
-    address: "10 boulevard de la villette, 75019, Paris"
-  },
-  {
-    birthdate: Date.new(1993, 4, 14),
-    pseudo: "MaxFroh10",
-    first_name: "Maxence",
-    last_name: "Frohlicher",
-    email: "maxence.frohlicher@icloud.com",
-    password: "123456",
-    password_confirmation: "123456",
-    address: "10 boulevard de la villette, 75019, Paris"
-  },
-  {
-    birthdate: Date.new(1960, 7, 14),
-    pseudo: "ChristopheMarco",
-    first_name: "Christophe",
-    last_name: "Marco",
-    email: "christophe.marco@net-c.fr",
-    password: "123456",
-    password_confirmation: "123456",
-    address: "10 boulevard de la villette, 75019, Paris"
-  }
-])
+# Creating users
+user1 = User.create!(
+  birthdate: Date.new(1994, 10, 18),
+  pseudo: "mxm-rc",
+  first_name: "Maxime",
+  last_name: "Robert Colin",
+  email: "maximerobertcolin@gmail.com",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "47 rue des rosiers, 93400, Saint-Ouen"
+)
+
+user2 = User.create!(
+  birthdate: Date.new(1985, 7, 14),
+  pseudo: "antoinehuret",
+  first_name: "Antoine",
+  last_name: "Huret",
+  email: "huretantoine@gmail.com",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "10 boulevard de la villette, 75019, Paris"
+)
+
+user3 = User.create!(
+  birthdate: Date.new(1993, 4, 14),
+  pseudo: "MaxFroh10",
+  first_name: "Maxence",
+  last_name: "Frohlicher",
+  email: "maxence.frohlicher@icloud.com",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "10 boulevard de la villette, 75019, Paris"
+)
+
+user4 = User.create!(
+  birthdate: Date.new(1960, 7, 14),
+  pseudo: "ChristopheMarco",
+  first_name: "Christophe",
+  last_name: "Marco",
+  email: "christophe.marco@net-c.fr",
+  password: "123456",
+  password_confirmation: "123456",
+  address: "10 boulevard de la villette, 75019, Paris"
+)
 
 puts "Created #{User.count} Users"
-  # Meet.create(
-  # {
-  #   id_acquaintances: 1,
-  #   follower_id: 101,
-  #   receiver_id: 202,
-  #   centered_address_long: -122.4194,
-  #   centered_address_lat: 37.7749,
-  #   status: "confirmed",
-  #   date: Date.new(2024, 6, 10)
-  # },
-  # {
-  #   id_acquaintances: 2,
-  #   follower_id: 103,
-  #   receiver_id: 204,
-  #   centered_address_long: -74.0060,
-  #   centered_address_lat: 40.7128,
-  #   status: "pending",
-  #   date: Date.new(2024, 7, 1)
-  # },
-  # {
-  #   id_acquaintances: 3,
-  #   follower_id: 105,
-  #   receiver_id: 206,
-  #   centered_address_long: 139.6917,
-  #   centered_address_lat: 35.6895,
-  #   status: "cancelled",
-  #   date: Date.new(2024, 8, 15)
-  # })
+
+# Creating accointances between users
+Accointance.create!(follower: user1, recipient: user2, status: 'pending')
+Accointance.create!(follower: user2, recipient: user3, status: 'accepted')
+Accointance.create!(follower: user3, recipient: user4, status: 'refused')
+Accointance.create!(follower: user4, recipient: user1, status: 'pending')
+
+# Additional accointances to cover all relationships
+Accointance.create!(follower: user1, recipient: user3, status: 'accepted')
+Accointance.create!(follower: user1, recipient: user4, status: 'refused')
+Accointance.create!(follower: user2, recipient: user4, status: 'pending')
+Accointance.create!(follower: user3, recipient: user1, status: 'accepted')
+Accointance.create!(follower: user4, recipient: user2, status: 'refused')
+
+puts "Created #{Accointance.count} Accointances"
