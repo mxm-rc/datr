@@ -1,5 +1,19 @@
 <h1>HELLO FROM ACCOINTANCES</h1>
 
 <% @friends.each do |friend| %>
-  <%= link_to friend.pseudo, friend_path(friend) %>
+  <div class="card-accointance">
+    <%= image_tag friend.picture %>
+    <div class="card-product-infos">
+      <h2>Product name</h2>
+      <p>Product description with <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
 <% end %>
+
+<div class="card-accointance">
+  <%= image_tag @friends.first.picture %>
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
+</div>
