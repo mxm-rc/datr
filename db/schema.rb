@@ -26,6 +26,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_06_175350) do
 
   create_table "locations", force: :cascade do |t|
     t.string "type"
+    t.string "name"
     t.string "address"
     t.string "price_range"
     t.datetime "created_at", null: false
