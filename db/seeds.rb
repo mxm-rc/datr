@@ -4,6 +4,7 @@ restaurant_json_file = File.open('app/assets/restaurant_database/restaurants-cas
 Accointance.destroy_all
 User.destroy_all
 Accointance.destroy_all
+Meet.destroy_all
 Location.destroy_all
 
 # Creating users
@@ -67,10 +68,20 @@ Accointance.create!(follower: user3, recipient: user4, status: 'refused')
 
 puts "Created #{Accointance.count} Accointances"
 
+# Création de rencontres (meets) associées à ces accointances
+Meet.create!(
+  accointance: Accointance.first,
+  centered_address_long: -12_345_678,
+  centered_address_lat: 12_345_678,
+  status: 'planned',
+  date: Date.today + 7.days
+)
+puts "Created #{Meet.count} Meeting"
+
 restaurants = JSON.parse(restaurant_json_file)
 
 restaurants.each_with_index do |restaurant_data, index|
-  break if index >= 50  # Break the loop once 50 restaurants have been created
+  break if index >= 50 # Break the loop once 50 restaurants have been created
 
   tt_data = restaurant_data['tt']
 
@@ -82,7 +93,8 @@ restaurants.each_with_index do |restaurant_data, index|
       city: restaurant_data['ville'],
       lon: tt_data['lon'],
       lat: tt_data['lat'],
-      location_type: restaurant_data['type']
+      location_type: 'Restaurant',
+      price_range: '2'
     )
 
     if location.save
