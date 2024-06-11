@@ -1,2 +1,0 @@
-class PlaceSelectionsController < ApplicationController
-end

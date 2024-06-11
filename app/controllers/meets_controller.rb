@@ -8,7 +8,7 @@ class MeetsController < ApplicationController
   def create
     @meet = @friend.meets.new(meet_params)
     if @meet.save
-      redirect_to @meet, notice: 'Meet was successfully created.'
+      redirect_to friend_meet_selected_places_path(@friend, @meet), notice: 'Meet was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
