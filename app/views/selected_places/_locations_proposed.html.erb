@@ -1,0 +1,10 @@
+<div class="list-locations-selected-places-datr">
+  <ul>
+    <% @places.each do |place| %>
+      <li><%= place.name %> </li>
+      <li><%= place.address %></li>
+      <li><%= place.location_type %></li>
+      <li><%= place.range_to_price %></li>
+    <% end %>
+  </ul>
+</div>

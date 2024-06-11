@@ -1,0 +1,19 @@
+<div class="page-container">
+  <div class="friend-selected-places-datr"><%= render "layouts/friend_sticker", friend: @friend %></div>
+
+  <div class="locations-selected-places-datr">
+    <% if @places.any? %>
+      <div class="map-selected-places-datr">
+        <%= render "map_with_locations", Location: @places %>
+      </div>
+      <div class="list-locations-selected-places-datr">
+        <%= render "locations_proposed", Location: @places %>
+      </div>
+    <% else %>
+      <div class="no-list-locations-selected-places-datr">
+        <h2>Aucun lieu de rencontre possible</h2>
+      </div>
+    <% end %>
+  </div>
+
+</div>
