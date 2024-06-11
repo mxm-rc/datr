@@ -14,6 +14,7 @@ user1 = User.create!(
   first_name: "Maxime",
   last_name: "Robert Colin",
   email: "maximerobertcaaaozlin@gmail.com",
+  email: "maximerobertcaaaozlin@gmail.com",
   password: "123456",
   password_confirmation: "123456",
   address: "47 rue des rosiers, 93400, Saint-Ouen",
@@ -93,7 +94,9 @@ restaurants.each_with_index do |restaurant_data, index|
       lon: tt_data['lon'],
       lat: tt_data['lat'],
       location_type: 'Restaurant',
-      price_range: '2'
+      price_range: '2',
+      picture: '/quartier-libre.jpg', # Dans /Public
+      punchline: 'Pour des soirées un peu plus hot !'
     )
 
     if location.save

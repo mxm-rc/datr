@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_08_092632) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_11_175744) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_08_092632) do
     t.float "lon"
     t.float "lat"
     t.string "location_type"
+    t.string "picture"
+    t.string "punchline"
   end
 
   create_table "meets", force: :cascade do |t|
