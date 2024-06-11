@@ -1,10 +1,22 @@
 <div class="list-locations-selected-places-datr">
-  <ul>
+  <div class="row">
     <% @places.each do |place| %>
-      <li><%= place.name %> </li>
-      <li><%= place.address %></li>
-      <li><%= place.location_type %></li>
-      <li><%= place.range_to_price %></li>
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <%= image_tag place.picture, class: "card-img", alt: place.name %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= place.name %></h5>
+                <p class="card-text"><%= place.punchline %></p>
+                <p class="card-text"><small class="text-muted"><%= place.address %></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </ul>
+  </div>
 </div>

@@ -93,7 +93,9 @@ restaurants.each_with_index do |restaurant_data, index|
       lon: tt_data['lon'],
       lat: tt_data['lat'],
       location_type: 'Restaurant',
-      price_range: '2'
+      price_range: '2',
+      picture: '/quartier-libre.jpg', # Dans /Public
+      punchline: 'Pour des soirées un peu plus hot !'
     )
 
     if location.save

@@ -1,6 +1,7 @@
 class Location < ApplicationRecord
   # Associations
   has_many :selected_places, dependent: :destroy
+  # Validations
 
   def range_to_price
     case price_range
