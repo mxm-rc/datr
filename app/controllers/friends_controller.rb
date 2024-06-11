@@ -5,14 +5,14 @@ class FriendsController < ApplicationController
     @friends = current_user.friends
 
     if params[:query].present?
-      @friends = @friends.where("pseudo ILIKE ?", "%#{params[:query]}%")
+      @friends = @friends.where("first_name ILIKE ?", "%#{params[:query]}%")
     end
   end
 
   def show
   end
 
-  
+
 
   private
 
