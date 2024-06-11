@@ -12,7 +12,10 @@
 </div>
 
 <% @friends.each do |friend| %>
-
   <%= render "layouts/card_accointance", friend: friend %>
-
 <% end %>
+
+<%# Lien de test pour atteindre selected_place_controller %>
+<div style="margin: 10px 0;">
+  <%= link_to "Trouve liste de restaurant [test]", friend_meet_selected_places_path(1, 1) %>
+</div>
