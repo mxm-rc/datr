@@ -14,6 +14,7 @@ user1 = User.create!(
   first_name: "Maxime",
   last_name: "Robert Colin",
   email: "maximerobertcaaaozlin@gmail.com",
+  email: "maximerobertcaaaozlin@gmail.com",
   password: "123456",
   password_confirmation: "123456",
   address: "47 rue des rosiers, 93400, Saint-Ouen",

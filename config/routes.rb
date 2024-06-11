@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :friends, only: %i[index show] do
-    resources :meets, only: %i[new create] do
-      resources :selected_places, only: [:index]
-    end
+
+  resources :friends, only: %i[index show new]
+  resources :users do
+    resources :accointances, only: %i[new create]
   end
   resources :accointances, only: %i[index]
 
