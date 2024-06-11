@@ -1,0 +1,18 @@
+<div id="map" style="width: 500px; height: 200px;">
+  <script>
+    mapboxgl.accessToken = '<%= ENV["MAPBOX_API_KEY"] %>';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [<%= @places.first.lon %>, <%= @places.first.lat %>], // Centre de la carte sur le premier lieu
+      zoom: 10 // Niveau de zoom initial
+    });
+
+    // Ajoutez des marqueurs pour chaque lieu
+    <% @places.each do |place| %>
+      new mapboxgl.Marker()
+        .setLngLat([<%= place.lon %>, <%= place.lat %>])
+        .addTo(map);
+    <% end %>
+  </script>
+</div>
