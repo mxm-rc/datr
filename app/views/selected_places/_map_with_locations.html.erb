@@ -1,2 +1,5 @@
-<div id="map" style="width: 500px; height: 200px;">
+<div id="map" style="width: 50%; height: 300px;"
+  data-controller="map"
+  data-map-markers-value="<%= markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>

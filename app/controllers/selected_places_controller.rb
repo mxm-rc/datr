@@ -9,6 +9,13 @@ class SelectedPlacesController < ApplicationController
     criteria = ['Restaurant']
 
     @places = generate_places(criteria, limit)
+    @markers = @places.map do |place|
+      {
+        lat: place.lat,
+        lng: place.lon,
+        info_window_html: render_to_string(partial: "info_window", locals: { place: place })
+      }
+    end
   end
 
   private
