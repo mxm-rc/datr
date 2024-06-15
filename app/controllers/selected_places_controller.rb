@@ -4,7 +4,7 @@ class SelectedPlacesController < ApplicationController
 
   # Method trop longue ?
   def index
-    @places = Location.recommended_locations(current_user, @friend, limit)
+    @places = Location.recommended_locations(current_user, @friend, @limit)
     @markers = @places.present? ? generate_markers(@places) : []
   end
 
@@ -12,8 +12,7 @@ class SelectedPlacesController < ApplicationController
 
   # Find the meet based on the meet_id parameter
   def set_meet
-    # Ensure ID is integer to avoid SQL injection (basic validation)
-    @meet = Meet.find(params[:meet_id]).to_i
+    @meet = Meet.find(params[:meet_id])
   rescue ActiveRecord::RecordNotFound
     # Handle exceptions, e.g., redirect to a 404 page or show an error message
     redirect_to(root_url, alert: "Meet introuvable !")
@@ -21,8 +20,7 @@ class SelectedPlacesController < ApplicationController
 
   # Find the friend based on the friend_id parameter
   def set_friend
-    # Ensure ID is integer to avoid SQL injection (basic validation)
-    @friend = User.find(params[:friend_id]).to_i
+    @friend = User.find(params[:friend_id])
   rescue ActiveRecord::RecordNotFound
     # Handle exceptions, e.g., redirect to a 404 page or show an error message
     redirect_to(root_url, alert: "Ami introuvable !")
