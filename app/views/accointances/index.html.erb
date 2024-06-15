@@ -1,12 +1,14 @@
 <p>HELLO FROM Accointance list</p>
 
 <% @users.each do |user| %>
-  <div class="card-accointance">
-    <%= image_tag user.picture %>
-    <div class="card-product-infos">
-      <h2>Product name</h2>
-      <p>Product description with <strong>relevant info</strong> only.</p>
-      <%= button_to 'New', accointances_path(user), method: :post %>
+  <% unless user == current_user %>
+    <div class="card-accointance">
+      <%= image_tag user.picture %>
+      <div class="card-product-infos">
+        <h2>Product name</h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+        <%= button_to 'New', user_accointances_path(user), method: :post %>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
