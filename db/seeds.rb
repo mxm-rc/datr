@@ -29,7 +29,8 @@ user2 = User.create!(
   password: "huretantoine@gmail.com",
   password_confirmation: "huretantoine@gmail.com",
   address: "10 boulevard de la villette, 75019, Paris",
-  picture: "antoine.jpg"
+  picture: "antoine.jpg",
+  admin: "true"
 )
 
 user3 = User.create!(
