@@ -15,7 +15,8 @@ user1 = User.create!(
   password: "maximerobertcolin@gmail.com",
   password_confirmation: "maximerobertcolin@gmail.com",
   address: "47 rue des rosiers, 93400, Saint-Ouen",
-  picture: "maxime.jpg",
+  picture: "users/maxime.jpg",
+  admin: "true"
 )
 
 user2 = User.create!(
@@ -27,7 +28,7 @@ user2 = User.create!(
   password: "huretantoine@gmail.com",
   password_confirmation: "huretantoine@gmail.com",
   address: "10 boulevard de la villette, 75019, Paris",
-  picture: "antoine.jpg",
+  picture: "users/antoine.jpg",
   admin: "true"
 )
 
@@ -40,7 +41,7 @@ user3 = User.create!(
   password: "maxence.frohlicher@icloud.com",
   password_confirmation: "maxence.frohlicher@icloud.com",
   address: "10 boulevard de la villette, 75019, Paris",
-  picture: "maxence.jpg",
+  picture: "users/maxence.jpg",
   admin: "true"
 )
 
@@ -53,7 +54,7 @@ user4 = User.create!(
   password: "christophe.marco@net-c.fr",
   password_confirmation: "christophe.marco@net-c.fr",
   address: "10 boulevard de la villette, 75019, Paris",
-  picture: "christophe.jpg",
+  picture: "users/christophe.jpg",
   admin: "true"
 )
 
@@ -122,7 +123,7 @@ end
 
 parsed_allotments = allotments["features"].map do |allotment|
   {
-    type: "Jardin",
+    type: "Garden",
     name: allotment["properties"]["name"],
     coordinates: {
       long: allotment["geometry"]["coordinates"][0],
@@ -133,7 +134,7 @@ end
 
 parsed_cinemas = cinemas["features"].map do |cinema|
   {
-    type: "Cinéma",
+    type: "Movies",
     name: cinema["properties"]["name"],
     website: cinema["properties"]["website"],
     phone: cinema["properties"]["phone"],
