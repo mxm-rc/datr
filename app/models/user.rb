@@ -17,12 +17,12 @@ class User < ApplicationRecord
 
 
   def friends(status: nil)
-    User.where(id: accointances(status: status).pluck(:follower_id, :recipient_id).flatten).distinct.where.not(id: id)
+    User.where(id: accointances_for(status: status).pluck(:follower_id, :recipient_id).flatten).distinct.where.not(id: id)
   end
 
   private
 
-  def accointances(status: nil)
+  def accointances_for(status: nil)
     return accointances if status.nil?
 
     accointances.where(status: status)
