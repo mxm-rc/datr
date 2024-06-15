@@ -1,11 +1,11 @@
 <% @friends.each do |friend| %>
   <%= link_to friend_path(friend), class:"text-decoration-none" do %>
-    <%= image_tag friend.picture, class:"avatar m-1" %>
+    <%= image_tag friend.picture, class:"avatar m-1 border border-white border-2" %>
   <% end %>
 <% end %>
 
 <% @friends.each do |friend| %>
-  <%= render "layouts/card_friend", friend: friend %>
+  <%= render "card_friend", friend: friend %>
 <% end %>
 
 <%# Lien de test pour atteindre selected_place_controller %>
