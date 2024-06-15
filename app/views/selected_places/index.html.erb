@@ -4,10 +4,10 @@
   <div class="locations-selected-places-datr">
     <% if @places.any? %>
       <div class="map-selected-places-datr">
-        <%= render "map_with_locations", Location: @places %>
+        <%= render "map_with_locations", markers: @markers %>
       </div>
       <div class="list-locations-selected-places-datr">
-        <%= render "locations_proposed", Location: @places %>
+        <%= render "locations_proposed", places: @places %>
       </div>
     <% else %>
       <div class="no-list-locations-selected-places-datr">
