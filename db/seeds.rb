@@ -1,10 +1,8 @@
 require 'json'
-restaurant_json_file = File.open('app/assets/restaurant_database/restaurants-casvp.json').read
 
+Meet.destroy_all
 Accointance.destroy_all
 User.destroy_all
-Accointance.destroy_all
-Meet.destroy_all
 Location.destroy_all
 
 # Creating users
@@ -17,7 +15,7 @@ user1 = User.create!(
   password: "maximerobertcolin@gmail.com",
   password_confirmation: "maximerobertcolin@gmail.com",
   address: "47 rue des rosiers, 93400, Saint-Ouen",
-  picture: "maxime.jpg"
+  picture: "maxime.jpg",
 )
 
 user2 = User.create!(
@@ -29,7 +27,7 @@ user2 = User.create!(
   password: "huretantoine@gmail.com",
   password_confirmation: "huretantoine@gmail.com",
   address: "10 boulevard de la villette, 75019, Paris",
-  picture: "antoine.jpg"
+  picture: "antoine.jpg",
 )
 
 user3 = User.create!(
@@ -41,7 +39,7 @@ user3 = User.create!(
   password: "maxence.frohlicher@icloud.com",
   password_confirmation: "maxence.frohlicher@icloud.com",
   address: "10 boulevard de la villette, 75019, Paris",
-  picture: "maxence.jpg"
+  picture: "maxence.jpg",
 )
 
 user4 = User.create!(
@@ -53,7 +51,7 @@ user4 = User.create!(
   password: "christophe.marco@net-c.fr",
   password_confirmation: "christophe.marco@net-c.fr",
   address: "10 boulevard de la villette, 75019, Paris",
-  picture: "christophe.jpg"
+  picture: "christophe.jpg",
 )
 
 puts "Created #{User.count} Users"
@@ -77,35 +75,81 @@ Meet.create!(
 )
 puts "Created #{Meet.count} Meeting"
 
-restaurants = JSON.parse(restaurant_json_file)
 
-restaurants.each_with_index do |restaurant_data, index|
-  break if index >= 50 # Break the loop once 50 restaurants have been created
+allotment_filepath = "./db/seed_geojson/allotments.geojson"
+serialized_allotments = File.read(allotment_filepath)
+allotments = JSON.parse(serialized_allotments)
 
-  tt_data = restaurant_data['tt']
+cinemas_filepath = "./db/seed_geojson//cinemas.geojson"
+serialized_cinemas = File.read(cinemas_filepath)
+cinemas = JSON.parse(serialized_cinemas)
 
-  if tt_data.present? && tt_data.key?('lon') && tt_data.key?('lat')
-    location = Location.new(
-      zip_code: restaurant_data['code'],
-      name: restaurant_data['nom_restaurant'],
-      address: restaurant_data['adresse'],
-      city: restaurant_data['ville'],
-      lon: tt_data['lon'],
-      lat: tt_data['lat'],
-      location_type: 'Restaurant',
-      price_range: '2',
-      picture: '/quartier-libre.jpg', # Dans /Public
-      punchline: 'Pour des soirées un peu plus hot !'
-    )
+historics_filepath = "./db/seed_geojson/historics.geojson"
+serialized_historics = File.read(historics_filepath)
+historics = JSON.parse(serialized_historics)
 
-    if location.save
-      puts "Restaurant '#{location.name}' created successfully."
-    else
-      puts "Failed to create restaurant '#{location.name}'. Errors: #{location.errors.full_messages}"
-    end
-  else
-    puts "Skipping restaurant '#{restaurant_data['nom_restaurant']}' due to missing or incomplete location data."
-  end
+restaurants_filepath = "./db/seed_geojson/restaurants.geojson"
+serialized_restaurants = File.read(restaurants_filepath)
+restaurants = JSON.parse(serialized_restaurants)
+
+parsed_restaurants = restaurants["features"].map do |restaurant|
+  {
+    type: restaurant["properties"]["type"],
+    name: restaurant["properties"]["name"],
+    phone: restaurant["properties"]["phone"],
+    website: restaurant["properties"]["website"],
+    coordinates:
+      {
+        long: restaurant["geometry"]["coordinates"][0],
+        lat: restaurant["geometry"]["coordinates"][1]
+      }
+  }
+end
+
+parsed_historics = historics["features"].map do |historic|
+  {
+    type: historic["properties"]["type"],
+    name: historic["properties"]["name"],
+    coordinates: {
+      long: historic["geometry"]["coordinates"][0],
+      lat: historic["geometry"]["coordinates"][1]
+    }
+  }
+end
+
+parsed_allotments = allotments["features"].map do |allotment|
+  {
+    type: "Jardin",
+    name: allotment["properties"]["name"],
+    coordinates: {
+      long: allotment["geometry"]["coordinates"][0],
+      lat: allotment["geometry"]["coordinates"][1]
+    }
+  }
+end
+
+parsed_cinemas = cinemas["features"].map do |cinema|
+  {
+    type: "Cinéma",
+    name: cinema["properties"]["name"],
+    website: cinema["properties"]["website"],
+    phone: cinema["properties"]["phone"],
+    coordinates: {
+      long: cinema["geometry"]["coordinates"][0],
+      lat: cinema["geometry"]["coordinates"][1]
+    }
+  }
+end
+
+parsed_locations = [parsed_allotments, parsed_cinemas, parsed_historics, parsed_restaurants].flatten
+parsed_locations.each do |location|
+  Location.create!(
+    location_type: location[:type],
+    name: location[:name],
+    city: "Paris",
+    lon: location[:coordinates][:long],
+    lat: location[:coordinates][:lat]
+  )
 end
 
 puts "Created #{Location.count} Locations"

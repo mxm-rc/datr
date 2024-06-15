@@ -1,0 +1,890 @@
+{
+  "type": "FeatureCollection",
+  "name": "sql_statement",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "relation/7853449",
+        "name": "Jardin partagé Centre de la Terre",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.374955118164019, 48.870586122836912]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/100780559",
+        "name": "L'Aligresse",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.380411262816325, 48.849821301401569]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/1013596086",
+        "name": "Jardin partagé",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.368606792514862, 48.878365215491989]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/1019860945",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.383006970012619, 48.869638276553857]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/1019860946",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.383176575517778, 48.869682936528122]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/1120861408",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.390209759218874, 48.867378206018913]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/1152534731",
+        "name": "Jardin Jourdan",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.328605250813362, 48.823442259422748]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/1210284621",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.35327934896958, 48.875686528377088]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/165439643",
+        "name": "Main Verte",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.382255956008932, 48.836260130658466]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/171793263",
+        "name": "Le Jardin Nomade",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.379334658981337, 48.852499380419268]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/180549431",
+        "name": "Jardin partagé de la rue Coulmiers",
+        "operator": "Association Vert Tige",
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.322684381400561, 48.825171902095988]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/196865253",
+        "name": "Jardin partagé de la Butte Bergeyre",
+        "operator": "Association des habitants de la butte bergeyre",
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.375695644052666, 48.877168088217907]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/224177044",
+        "name": "Écobox",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.35859314572494, 48.893057588623861]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/230811232",
+        "name": "Le Jardin Fessart",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.384039564899481, 48.876650989832669]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/285760194",
+        "name": "Le 56 Saint-Blaise",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.407008567733995, 48.857819322400893]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/288515168",
+        "name": "Jardin des Petits Passages",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.382636382577372, 48.885008618411383]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/29275472",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.356585645315977, 48.834152912801706]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/293705715",
+        "name": "Jardin Leroy sème",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.392704627586824, 48.870839864447106]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/305187040",
+        "name": "Jardin partagé",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.38047109019608, 48.887940282088138]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/307554365",
+        "name": "Square des Cardeurs",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.407657443960634, 48.85834271954517]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/308090093",
+        "name": "Le P'tit Jardin d'Eugénie",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.395909802672015, 48.878853192266398]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/308651896",
+        "name": "Jardin partagé de la Cité Aubry",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.395680027983039, 48.857190440501903]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/316463609",
+        "name": "Jardin de l’Aqueduc",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.337018253854553, 48.826588204225025]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/328668739",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.377683763110445, 48.873528936747718]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/338467623",
+        "name": "La Cabane Davout",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.410873333333334, 48.849987966494986]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/35329449",
+        "name": "Jardin malin du 13e",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.376436938993742, 48.821548327381571]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/370625521",
+        "name": "Jardin aux habitants",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.296163907368844, 48.863948383001144]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/400009675",
+        "name": "Le Jardin Luquet",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.386269794783316, 48.871238379380699]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/430072166",
+        "name": "Le soulier des fougères",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.413429183096051, 48.871995995843768]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/432543767",
+        "name": "Potager de la Gare de Lyon",
+        "operator": "SNCF",
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.377164293078025, 48.84438868384801]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/442067733",
+        "name": "Jardin partagé Stalingrad",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.365569284222265, 48.884583313380759]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/485538791",
+        "name": "Jardin Marcotte",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.389704499999076, 48.856259849871876]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/501229012",
+        "name": "Charmante petite campagne urbaine",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.384528662674083, 48.890218857670391]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/505902862",
+        "name": "Jardin des couleurs",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.310631667927759, 48.827887466269836]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/507755722",
+        "name": "Jardin du Monde",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.335246494114675, 48.818879013848004]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/570637204",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.355399249993869, 48.861685549749538]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/579896687",
+        "name": "Le Jardin des Coopains",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.313104600081424, 48.892778569642708]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/674546305",
+        "name": "À la bonne herbe",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.376973613508618, 48.873411699282634]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/675168796",
+        "name": "Jardin Partagé JP2N",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.327848375454131, 48.885905766481052]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/692315795",
+        "name": "Jardin du 12",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.391751675274034, 48.841778341830846]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/696011048",
+        "name": "La jardin du coin",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.373458824546917, 48.873861787028609]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/696608928",
+        "name": "Jardin Louis Blanc",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.369318716685969, 48.879055073257504]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/70148650",
+        "name": "Jardin suspendu",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.405681529708117, 48.860496659340406]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/711717150",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.444122433519691, 48.822636080614039]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/742888351",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.406349465159572, 48.837886017876855]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/752641351",
+        "name": "Parvis de l'ancienne usine Citroën",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.288542382931208, 48.848624352670313]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/752643303",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.289958397537242, 48.848675668883104]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/81704897",
+        "name": "Les Jardins Passagers",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.388367531249025, 48.890978749600933]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/86381190",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.262190627427038, 48.87936795597394]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/86602632",
+        "name": "Les Jardins du Ruisseau",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.342658336534901, 48.897472183857886]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/866722287",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.303420420342215, 48.825208176791925]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/898908028",
+        "name": "La friche",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.376598423724653, 48.867818584104846]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/97183045",
+        "name": "Jardin Ethno-Botanique",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.356516812554276, 48.841485411802267]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/97957072",
+        "name": null,
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.320929083493136, 48.830960723792984]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": "way/993219159",
+        "name": "Jardin partagé du jardin Villemin",
+        "operator": null,
+        "nb_parcelles": null,
+        "utilisateur": null,
+        "com_insee": "75056",
+        "com_nom": "Paris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.362326661778373, 48.874613495376799]
+      }
+    }
+  ]
+}
