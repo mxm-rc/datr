@@ -154,7 +154,9 @@ parsed_locations.each do |location|
     name: location[:name],
     city: "Paris",
     lon: location[:coordinates][:long],
-    lat: location[:coordinates][:lat]
+    lat: location[:coordinates][:lat],
+    picture: '/quartier-libre.jpg', # Dans /Public,
+    punchline: 'Pour des soirées un peu plus hot !'
   )
 end
 
