@@ -28,6 +28,7 @@ user2 = User.create!(
   password_confirmation: "huretantoine@gmail.com",
   address: "10 boulevard de la villette, 75019, Paris",
   picture: "antoine.jpg",
+  admin: "true"
 )
 
 user3 = User.create!(
@@ -40,6 +41,7 @@ user3 = User.create!(
   password_confirmation: "maxence.frohlicher@icloud.com",
   address: "10 boulevard de la villette, 75019, Paris",
   picture: "maxence.jpg",
+  admin: "true"
 )
 
 user4 = User.create!(
@@ -52,6 +54,7 @@ user4 = User.create!(
   password_confirmation: "christophe.marco@net-c.fr",
   address: "10 boulevard de la villette, 75019, Paris",
   picture: "christophe.jpg",
+  admin: "true"
 )
 
 puts "Created #{User.count} Users"

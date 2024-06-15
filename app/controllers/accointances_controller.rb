@@ -6,23 +6,14 @@ class AccointancesController < ApplicationController
     @accointances = User.all
   end
 
-   def create
+  def create
     @accointance = Accointance.new
     @accointance.recipient = User.find(params[:user_id])
     @accointance.follower = current_user
-    @accointance.save # Will raise ActiveModel::ForbiddenAttributesError
-    # redirect_to accointances_path
+    if @accointance.save
+      redirect_to accointances_path, notice: 'Accointance was successfully created.'
+    else
+      redirect_to accointances_path, alert: 'There was an error creating the accointance.'
+    end
   end
-
-  # def destroy
-  #   @accointance = @accointance.find(params[:id])
-  #   @accointance.destroy
-  #   redirect_to accointances_path, status: :see_other
-  # end
-
-  private
-
-  # def set_user
-  # end
-
 end
