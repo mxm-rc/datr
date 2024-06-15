@@ -1,0 +1,7 @@
+<div class="container-sm">
+  <% @location_types.each do |type, image_path| %>
+    <div class="location-type-display" style="background-image: url('<%= image_path image_path %>')" >
+      <%= type.capitalize %>
+    </div>
+  <% end %>
+</div>

@@ -1,6 +1,7 @@
 <h1> Create a new Meet </h1>
-<%= simple_form_for new_friend_meet_path(@friend) do |f| %>
-  <%= f.input :date %>
-  <%= f.input :location_type, collection: [:restaurant, :cinema, :danse, :bar] %>
-  <%= f.button :submit %>
-<% end %>
+<%# <%= simple_form_for new_friend_meet_path(@friend) do |f| %>
+  <%# <%= f.input :date %>
+  <%# <%= f.input :location_type, collection: [:restaurant, :cinema, :danse, :bar] %>
+  <%# <%= f.button :submit %>
+<%# <% end %>
+  <%= render "card_location" %>

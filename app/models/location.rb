@@ -4,6 +4,21 @@ class Location < ApplicationRecord
   has_many :location_categories
   has_many :venue_categories, through: :location_categories
 
+ def self.allowed_types
+  {
+    "bar" => ActionController::Base.helpers.asset_path("location_types/bar.avif"),
+    "cafe" => ActionController::Base.helpers.asset_path("location_types/cafe.jpg"),
+    "castle" => ActionController::Base.helpers.asset_path("location_types/castle.jpg"),
+    "fast food" => ActionController::Base.helpers.asset_path("location_types/fast_food.jpg"),
+    "food court" => ActionController::Base.helpers.asset_path("location_types/food_court.jpg"),
+    "garden" => ActionController::Base.helpers.asset_path("location_types/garden.jpg"),
+    "ice cream" => ActionController::Base.helpers.asset_path("location_types/ice_cream.jpg"),
+    "monument" => ActionController::Base.helpers.asset_path("location_types/monument.jpg"),
+    "movies" => ActionController::Base.helpers.image_path("location_types/movies.avif"),
+    "restaurant" => ActionController::Base.helpers.asset_path("location_types/restaurant.jpg")
+}
+end
+
   def range_to_price
     price_map = {
       '0' => '0-9€',
