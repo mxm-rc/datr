@@ -18,9 +18,6 @@ class Location < ApplicationRecord
     # Step 1: Find common Categories for me and my friend
     common_categories_ids = find_common_categories(my_id, friend_id)
 
-    # Ensure there are common categories before to proceed step 2
-    return [] if common_categories_ids.empty?
-
     # Step 2: Find Unique Locations matching common Categories
     location_ids = find_location_ids(common_categories_ids)
 
@@ -37,8 +34,11 @@ class Location < ApplicationRecord
                             .having('COUNT(DISTINCT user_id) = 2')
                             .pluck(:venue_category_id)
 
+    return common_categories_ids unless common_categories_ids.empty?
+
     # If no common Categories found for both users then use Categories from friend
-    VenuePreference.where(user_id: friend_id).pluck(:venue_category_id) if common_categories_ids.empty?
+    friend_categories_ids = VenuePreference.where(user_id: friend_id).pluck(:venue_category_id)
+    friend_categories_ids.presence || []
   end
 
   def self.find_location_ids(common_categories_ids)
