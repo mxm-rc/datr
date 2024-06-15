@@ -1,12 +1,11 @@
 class Accointance < ApplicationRecord
   belongs_to :follower, class_name: 'User'
   belongs_to :recipient, class_name: 'User'
+  has_many :meets, dependent: :destroy
 
   validates :follower_id, presence: true
   validates :recipient_id, presence: true
   validates :status, inclusion: { in: %w[pending accepted refused] }
-  validate :different_follower_recipient_id
-  validate :unique_acquaintance
 
   def friend_of(current_user)
     current_user == follower ? recipient : follower

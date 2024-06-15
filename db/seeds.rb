@@ -4,6 +4,9 @@ Meet.destroy_all
 Accointance.destroy_all
 User.destroy_all
 Location.destroy_all
+VenueCategory.destroy_all
+VenuePreference.destroy_all
+LocationCategory.destroy_all
 
 # Creating users
 user1 = User.create!(
@@ -152,8 +155,47 @@ parsed_locations.each do |location|
     name: location[:name],
     city: "Paris",
     lon: location[:coordinates][:long],
-    lat: location[:coordinates][:lat]
+    lat: location[:coordinates][:lat],
+    picture: '/quartier-libre.jpg', # Dans /Public,
+    punchline: 'Pour des soirées un peu plus hot !'
   )
 end
 
 puts "Created #{Location.count} Locations"
+
+# Venue Categories
+venue_categories = [
+  { main_category: "Restaurant", sub_category: "Italien" },
+  { main_category: "Restaurant", sub_category: "Chinois" },
+  { main_category: "Restaurant", sub_category: "Français" },
+  { main_category: "Restaurant", sub_category: "Indien" },
+  { main_category: "Bar", sub_category: "Biere" },
+  { main_category: "Bar", sub_category: "Jus" },
+  { main_category: "Bar", sub_category: "Vin" }
+]
+
+venue_categories.each do |category|
+  VenueCategory.find_or_create_by(category)
+end
+
+puts "Created #{VenueCategory.count} VenueCategory"
+
+# Venue Preferences
+venue_preferences = [
+  { user_id: user1.id, venue_category_id: VenueCategory.first.id, preference_level: 1 },
+  { user_id: user4.id, venue_category_id: VenueCategory.first.id, preference_level: 1 }
+]
+
+venue_preferences.each do |preference|
+  VenuePreference.create!(preference)
+end
+
+puts "Created #{VenuePreference.count} VenuePreference"
+
+# Link Locations to Venue Categories
+LocationCategory.create!(location: Location.first, venue_category: VenueCategory.first)
+LocationCategory.create!(location: Location.last, venue_category: VenueCategory.first)
+
+puts "Created #{LocationCategory.count} LocationCategory"
+
+puts "Database seeded successfully!"

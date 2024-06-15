@@ -2,14 +2,13 @@ class AccointancesController < ApplicationController
   # before_action :set_users, only: [:index]
 
   def index
-    @users = User.all
-    @accointances = User.all
+    @users = User.where.not(id: current_user.id)
   end
 
   def create
-    @accointance = Accointance.new
-    @accointance.recipient = User.find(params[:user_id])
-    @accointance.follower = current_user
+    recipient = User.find(params[:user_id])
+    @accointance = Accointance.new(follower: current_user, recipient: recipient, status: "pending")
+
     if @accointance.save
       redirect_to accointances_path, notice: 'Accointance was successfully created.'
     else
