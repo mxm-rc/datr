@@ -1,19 +1,20 @@
 <p>HELLO FROM Accointance list</p>
 
 <% @users.each do |user| %>
-  <% unless user == current_user %>
-    <div class="card-accointance"><%= render "layouts/card_accointance" %>
-      <%= image_tag user.picture %>
-      <h2><%= user.first_name %></h2>
-      <p><%= user.last_name %></p>
-        <% if user.in?(current_user.friends) %>
-          <%= "Friend" if current_user.accointances.find_by(recipient_id: user.id).status == "accepted" %>
-        <% else %>
-          <%= button_to 'ADD A NEW FRIENDS', user_accointances_path(user), method: :post %>
-        <% end %>
-
-
-      </div>
+  <div class="card-accointance"><%= render "layouts/card_accointance" %>
+    <%= image_tag user.picture %>
+    <h2><%= user.id %></h2>
+    <p><%= user.last_name %></p>
+    <div>
+      <% if current_user.friends(status: 'accepted').include?(user) %>
+        Friend
+      <% elsif current_user.friends(status: 'pending').include?(user) %>
+        Pending
+      <% elsif  current_user.friends(status: 'refused').include?(user) %>
+        Refused
+      <% else %>
+        <%= button_to 'ADD A NEW FRIENDS', user_accointances_path(user) %>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 <% end %>
