@@ -13,10 +13,9 @@ user1 = User.create!(
   pseudo: "mxm-rc",
   first_name: "Maxime",
   last_name: "Robert Colin",
-  email: "maximerobertcaaaozlin@gmail.com",
-  email: "maximerobertcaaaozlin@gmail.com",
-  password: "123456",
-  password_confirmation: "123456",
+  email: "maximerobertcolin@gmail.com",
+  password: "maximerobertcolin@gmail.com",
+  password_confirmation: "maximerobertcolin@gmail.com",
   address: "47 rue des rosiers, 93400, Saint-Ouen",
   picture: "maxime.jpg"
 )
@@ -27,8 +26,8 @@ user2 = User.create!(
   first_name: "Antoine",
   last_name: "Huret",
   email: "huretantoine@gmail.com",
-  password: "123456",
-  password_confirmation: "123456",
+  password: "huretantoine@gmail.com",
+  password_confirmation: "huretantoine@gmail.com",
   address: "10 boulevard de la villette, 75019, Paris",
   picture: "antoine.jpg",
   admin: "true"
@@ -40,8 +39,8 @@ user3 = User.create!(
   first_name: "Maxence",
   last_name: "Frohlicher",
   email: "maxence.frohlicher@icloud.com",
-  password: "123456",
-  password_confirmation: "123456",
+  password: "maxence.frohlicher@icloud.com",
+  password_confirmation: "maxence.frohlicher@icloud.com",
   address: "10 boulevard de la villette, 75019, Paris",
   picture: "maxence.jpg"
 )
@@ -52,8 +51,8 @@ user4 = User.create!(
   first_name: "Christophe",
   last_name: "Marco",
   email: "christophe.marco@net-c.fr",
-  password: "123456",
-  password_confirmation: "123456",
+  password: "christophe.marco@net-c.fr",
+  password_confirmation: "christophe.marco@net-c.fr",
   address: "10 boulevard de la villette, 75019, Paris",
   picture: "christophe.jpg"
 )
