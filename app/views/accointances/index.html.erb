@@ -2,12 +2,17 @@
 
 <% @users.each do |user| %>
   <% unless user == current_user %>
-    <div class="card-accointance">
+    <div class="card-accointance"><%= render "layouts/card_accointance" %>
       <%= image_tag user.picture %>
-      <div class="card-product-infos">
-        <h2>Product name</h2>
-        <p>Product description with <strong>relevant info</strong> only.</p>
-        <%= button_to 'New', user_accointances_path(user), method: :post %>
+      <h2><%= user.first_name %></h2>
+      <p><%= user.last_name %></p>
+        <% if user.in?(current_user.friends) %>
+          <%= "Friend" if current_user.accointances.find_by(recipient_id: user.id).status == "accepted" %>
+        <% else %>
+          <%= button_to 'ADD A NEW FRIENDS', user_accointances_path(user), method: :post %>
+        <% end %>
+
+
       </div>
     </div>
   <% end %>

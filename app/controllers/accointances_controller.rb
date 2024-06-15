@@ -10,6 +10,8 @@ class AccointancesController < ApplicationController
     @accointance = Accointance.new
     @accointance.recipient = User.find(params[:user_id])
     @accointance.follower = current_user
+    @accointance.status = "pending"
+
     if @accointance.save
       redirect_to accointances_path, notice: 'Accointance was successfully created.'
     else
