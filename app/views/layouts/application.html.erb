@@ -13,16 +13,18 @@
   <body>
     <%= render "shared/flashes" %>
 
-    <div class="page-container">
-      <% unless action_name == "home" %>
-        <div class="navbar-lewagon"><%= render "layouts/navbar" %></div>
-      <% end %>
+    <div class="body">
+      <div class="navbar">
+        <%= render "layouts/navbar" %>
+      </div>
 
-      <div class="content-container"><%= yield %></div>
+      <div>
+        <%= yield %>
+      </div>
 
-      <% unless action_name == "home" %>
-        <div class="footer-container"><%= render "layouts/footer" %></div>
-      <% end %>
+      <div class="footer">
+        <%= render "layouts/footer" %>
+      </div>
     </div>
 
   </body>
