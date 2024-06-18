@@ -2,7 +2,7 @@ class FriendsController < ApplicationController
   before_action :set_friend, only: [:show]
 
   def index
-    @friends = current_user.friends
+    @friends = current_user.friends(status: 'accepted')
 
     if params[:query].present?
       @friends = @friends.where("first_name ILIKE ?", "%#{params[:query]}%")
@@ -11,8 +11,6 @@ class FriendsController < ApplicationController
 
   def show
   end
-
-
 
   private
 

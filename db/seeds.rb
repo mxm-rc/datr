@@ -14,9 +14,9 @@ users = User.create!(
     password: "maximerobertcolin@gmail.com",
     password_confirmation: "maximerobertcolin@gmail.com",
     address: "47 rue des rosiers, 93400, Saint-Ouen",
-    picture: "maxime.jpg",
+    picture: "users/maxime.jpg",
     admin: "true"
-  }, {
+    }, {
     birthdate: Date.new(1985, 7, 14),
     pseudo: "antoinehuret",
     first_name: "Antoine",

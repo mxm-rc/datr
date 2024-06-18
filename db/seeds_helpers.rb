@@ -44,7 +44,7 @@ def parse_location_data
 
   parsed_allotments = allotments["features"].map do |allotment|
     {
-      type: "Jardin",
+      type: "Garden",
       name: allotment["properties"]["name"],
       coordinates: {
         long: allotment["geometry"]["coordinates"][0],
@@ -55,7 +55,7 @@ def parse_location_data
 
   parsed_cinemas = cinemas["features"].map do |cinema|
     {
-      type: "Cinéma",
+      type: "Movies",
       name: cinema["properties"]["name"],
       website: cinema["properties"]["website"],
       phone: cinema["properties"]["phone"],

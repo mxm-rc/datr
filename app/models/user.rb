@@ -15,11 +15,18 @@ class User < ApplicationRecord
   validates :birthdate, presence: true
   validate :validate_age
 
-  def friends
-    User.where(id: accointances.pluck(:follower_id, :recipient_id).flatten).distinct.where.not(id: id)
+
+  def friends(status: nil)
+    User.where(id: accointances_for(status: status).pluck(:follower_id, :recipient_id).flatten).distinct.where.not(id: id)
   end
 
   private
+
+  def accointances_for(status: nil)
+    return accointances if status.nil?
+
+    accointances.where(status: status)
+  end
 
   def validate_age
     return if birthdate.present? && birthdate < 18.years.ago.to_date

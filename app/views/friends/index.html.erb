@@ -1,18 +1,10 @@
-<div class="row justify-content-center">
-  <div class="col-sm-8 my-3">
-    <%= form_with url: friends_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<% @friends.each do |friend| %>
+  <%= link_to friend_path(friend), class:"text-decoration-none" do %>
+    <%= image_tag friend.picture, class:"avatar m-1 border border-white border-2" %>
+<% end %>
 
 <% @friends.each do |friend| %>
-  <%= render "layouts/card_friend", friend: friend %>
+  <%= render "card_friend", friend: friend %>
 <% end %>
 
 <%# Lien de test pour atteindre selected_place_controller %>
