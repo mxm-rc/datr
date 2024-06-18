@@ -8,7 +8,6 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log('Hello Word')
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
@@ -20,15 +19,28 @@ export default class extends Controller {
     this.#fitMapToMarkers()
    }
 
+  // #addMarkersToMap() {
+  //   this.markersValue.forEach((marker) => {
+  //     const popup = new mapboxgl.Popup().setHTML(marker.info_window_html) // Add this
+  //     new mapboxgl.Marker()
+  //       .setLngLat([ marker.lng, marker.lat ])
+  //       .setPopup(popup) // Add this
+  //       .addTo(this.map)
+  //   });
+  // }
+
+  // MidPoint red colored, others blue colored
   #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html) // Add this
-      new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup) // Add this
-        .addTo(this.map)
+    this.markersValue.forEach((marker, index) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
+      const color = index === 0 ? 'red' : 'blue';
+      new mapboxgl.Marker({ color: color })
+        .setLngLat([marker.lng, marker.lat])
+        .setPopup(popup)
+        .addTo(this.map);
     });
   }
+
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))

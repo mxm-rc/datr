@@ -1,10 +1,17 @@
 class SelectedPlacesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_meet, :set_friend, :set_limit, only: [:index]
+  before_action :set_meet, :set_friend, :set_limit, :set_midpoint, only: [:index]
 
-  # Method trop longue ?
   def index
-    @places = Location.recommended_locations(current_user, @friend, @limit)
+    # Fetch the recommended Locations according to the common Categories between the current user and the friend
+    @places = Location.recommended_locations(current_user, @friend, @mid_point, @limit)
+
+    # Insert mid_point_location at first in places
+    @places.unshift(@mid_point)
+    # Debug places in rails server console
+    # Rails.logger.debug "Places: #{@places.inspect}"
+
+    # Prepare markers for the Map_Box api
     @markers = @places.present? ? generate_markers(@places) : []
   end
 
@@ -30,6 +37,18 @@ class SelectedPlacesController < ApplicationController
   def set_limit
     # Ensure limit is integer and between 1 and 6
     @limit = params[:limit].to_i.clamp(1, 6)
+  end
+
+  def set_midpoint
+    @mid_point = Location.new(
+      name: "Midpoint",
+      # lat: @meet.centered_address_lat,  Not calculated yet
+      # lon: @meet.centered_address_long  Not calculated yet
+      #
+      # Eiffel Tower latitude, longitude
+      lat: 48.8583,
+      lon: 2.2944
+    )
   end
 
   # Prepare markers for the Map_Box api
