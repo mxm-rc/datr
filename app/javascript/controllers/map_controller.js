@@ -19,16 +19,6 @@ export default class extends Controller {
     this.#fitMapToMarkers()
    }
 
-  // #addMarkersToMap() {
-  //   this.markersValue.forEach((marker) => {
-  //     const popup = new mapboxgl.Popup().setHTML(marker.info_window_html) // Add this
-  //     new mapboxgl.Marker()
-  //       .setLngLat([ marker.lng, marker.lat ])
-  //       .setPopup(popup) // Add this
-  //       .addTo(this.map)
-  //   });
-  // }
-
   // MidPoint red colored, others blue colored
   #addMarkersToMap() {
     this.markersValue.forEach((marker, index) => {
