@@ -4,15 +4,15 @@
         <%= image_tag "home.png", class: "icon"%>
       <% end %>
     </li>
-    <li><%= link_to "" do %>
+    <li><%= link_to accointances_path do %>
         <%= image_tag "coeur.png", class: "icon"%>
       <% end %>
     </li>
-    <li><%= link_to "" do %>
+    <li><%= link_to user_meets_path(:current_user) do %>
         <%= image_tag "messages.png", class: "icon"%>
       <% end %>
     </li>
-    <li><%= link_to "" do %>
+    <li><%= link_to edit_user_path(:current_user) do %>
         <%= image_tag "profile.png", class: "icon"%>
       <% end %>
     </li>
