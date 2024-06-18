@@ -1,7 +1,6 @@
 <% @friends.each do |friend| %>
   <%= link_to friend_path(friend), class:"text-decoration-none" do %>
     <%= image_tag friend.picture, class:"avatar m-1 border border-white border-2" %>
-  <% end %>
 <% end %>
 
 <% @friends.each do |friend| %>

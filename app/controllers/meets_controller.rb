@@ -3,6 +3,7 @@ class MeetsController < ApplicationController
 
   def new
     @meet = Meet.new
+    @location_types = Location.allowed_types{0}
   end
 
   def create
@@ -17,7 +18,7 @@ class MeetsController < ApplicationController
   private
 
   def set_friend
-    @friend = Accointance.find(params[:friend_id])
+    @friend = User.find(params[:friend_id])
   end
 
   def meet_params
