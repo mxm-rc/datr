@@ -1,6 +1,7 @@
 <div class="list-locations-selected-places-datr">
   <div class="row">
-    <% places.each do |place| %>
+    <%# Remove MidPoint in place list %>
+    <% places.drop(1).each do |place| %>
       <div class="col-md-4">
         <div class="card mb-4">
           <div class="row no-gutters">
