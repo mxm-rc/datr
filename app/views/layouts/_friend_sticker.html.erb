@@ -1,6 +1,6 @@
 <div class="sticker-content">
   <div class="sticker-content-image text-center">
-    <%= image_tag "users/#{@friend.picture}", class: "sticker-content-image-photo rounded-circle img-thumbnail", style: "width: 100px; height: 100px;" %>
+    <%= image_tag "#{@friend.picture}", class: "sticker-content-image-photo rounded-circle img-thumbnail", style: "width: 100px; height: 100px;" %>
   </div>
   <div class="sticker-content-name text-center mt-2">
     <%= @friend.pseudo %>
