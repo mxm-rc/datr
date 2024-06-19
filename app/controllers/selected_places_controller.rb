@@ -1,6 +1,7 @@
 class SelectedPlacesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_meet, :set_friend, :set_limit, :set_midpoint, only: [:index]
+  before_action :set_meet, :set_friend, only: %i[index new create]
+  before_action :set_limit, :set_midpoint, only: %i[index]
 
   def index
     # Fetch the recommended Locations according to the common Categories between the current user and the friend
@@ -13,6 +14,22 @@ class SelectedPlacesController < ApplicationController
 
     # Prepare markers for the Map_Box api
     @markers = @places.present? ? generate_markers(@places) : []
+  end
+
+  def create
+    place_ids = params[:selected_places] || []
+    # Places user has chosen
+    @places = Location.find(place_ids)
+
+    @places.each do |place|
+      SelectedPlace.create(set_place(@meet, place))
+    end
+
+    # Debug selected places in rails server console
+    @selected_places = SelectedPlace.where(meet: @meet)
+    puts @selected_places.inspect
+
+    redirect_to date_summary_path, notice: 'Création des lieux sélectionnés avec succès !'
   end
 
   private
@@ -49,6 +66,17 @@ class SelectedPlacesController < ApplicationController
       lat: 48.8583,
       lon: 2.2944
     )
+  end
+
+  def set_place(meet, place)
+    selected_place = SelectedPlace.new
+
+    selected_place.meet = meet
+    selected_place.location = place
+    selected_place.selected_by_follower = true
+    selected_place.selected_by_recipient = false
+
+    return selected_place
   end
 
   # Prepare markers for the Map_Box api

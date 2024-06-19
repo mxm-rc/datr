@@ -1,29 +1,33 @@
-<div class="list-locations-selected-places-datr" data-controller="place-selection">
-  <div class="text-center" id="choicePrompt" style="">
-    <div class="d-flex justify-content-center align-items-center">
-      <h2 id="choiceText" data-place-selection-target="choiceText">Faites au moins un choix :</h2>
-      <button id="submit-choices" class="btn btn-primary" data-place-selection-target="submitButton" style="display: none;">Envoi</button>
+<%= form_tag friend_meet_selected_places_path(friend, meet), method: :post do %>
+  <div class="list-locations-selected-places-datr" data-controller="place-selection">
+    <div class="text-center" id="choicePrompt">
+      <div class="d-flex justify-content-center align-items-center">
+        <h2 id="choiceText" data-place-selection-target="choiceText">Faites au moins un choix :</h2>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <%# Remove MidPoint in place list %>
-    <% places.drop(1).each do |place| %>
-      <div class="col-md-4">
-        <div class="card mb-4" data-action="click->place-selection#toggle" data-place-selection-target="card">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <%= image_tag place.picture, class: "card-img rounded-circle", alt: place.name %>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body rounded">
-                <h5 class="card-title"><%= place.name %></h5>
-                <p class="card-text"><%= place.punchline %></p>
-                <p class="card-text"><small class="text-muted"><%= "#{place.address}, #{place.city}" %></small></p>
+
+    <div class="row">
+      <% places.each do |place| %>
+        <div class="col-md-4">
+          <div class="card mb-4" data-action="click->place-selection#toggle" data-place-selection-target="card">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <%= image_tag place.picture, class: "card-img rounded-circle", alt: place.name %>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body rounded">
+                  <h5 class="card-title"><%= place.name %></h5>
+                  <p class="card-text"><%= place.punchline %></p>
+                  <p class="card-text"><small class="text-muted"><%= "#{place.address}, #{place.city}" %></small></p>
+                  <%= check_box_tag "selected_places[]", place.id, false, id: "selected_place_#{place.id}" %>
+                  <label for="selected_place_<%= place.id %>">Select</label>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+    <%= submit_tag 'Envoi', class: 'btn btn-primary', id: 'submit-choices' %>
   </div>
-</div>
+<% end %>
