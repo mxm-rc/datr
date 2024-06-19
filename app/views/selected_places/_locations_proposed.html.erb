@@ -1,9 +1,15 @@
-<div class="list-locations-selected-places-datr">
+<div class="list-locations-selected-places-datr" data-controller="place-selection">
+  <div class="text-center" id="choicePrompt" style="">
+    <div class="d-flex justify-content-center align-items-center">
+      <h2 id="choiceText" data-place-selection-target="choiceText">Faites au moins un choix :</h2>
+      <button id="submit-choices" class="btn btn-primary" data-place-selection-target="submitButton" style="display: none;">Envoi</button>
+    </div>
+  </div>
   <div class="row">
     <%# Remove MidPoint in place list %>
     <% places.drop(1).each do |place| %>
       <div class="col-md-4">
-        <div class="card mb-4">
+        <div class="card mb-4" data-action="click->place-selection#toggle" data-place-selection-target="card">
           <div class="row no-gutters">
             <div class="col-md-4">
               <%= image_tag place.picture, class: "card-img rounded-circle", alt: place.name %>
