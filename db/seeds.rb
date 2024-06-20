@@ -1,7 +1,7 @@
 require_relative 'seeds_helpers'
 
 # Destroy all records in a single transaction
-[Meet, Accointance, User, Location, VenueCategory, VenuePreference, LocationCategory].each(&:destroy_all)
+[Meet, Accointance, Location, VenuePreference, VenueCategory, LocationCategory, User].each(&:destroy_all)
 
 # Create users in bulk
 users = User.create!(
@@ -14,7 +14,7 @@ users = User.create!(
     password: "maximerobertcolin@gmail.com",
     password_confirmation: "maximerobertcolin@gmail.com",
     address: "47 rue des rosiers, 93400, Saint-Ouen",
-    picture: "users/maxime.jpg",
+    picture: "maxime.jpg",
     admin: "true"
     }, {
     birthdate: Date.new(1985, 7, 14),
