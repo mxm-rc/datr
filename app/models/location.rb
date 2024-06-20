@@ -1,8 +1,8 @@
 class Location < ApplicationRecord
   # Associations
   has_many :selected_places, dependent: :destroy
-  has_many :location_categories
-  has_many :venue_categories, through: :location_categories
+  has_many :location_categories, dependent: :destroy
+  has_many :venue_categories, through: :location_categories, dependent: :destroy
 
   def self.allowed_types
     {

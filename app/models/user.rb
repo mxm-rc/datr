@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :followers, class_name: 'Accointance', foreign_key: 'follower_id', dependent: :destroy
   has_many :recipients, class_name: 'Accointance', foreign_key: 'recipient_id', dependent: :destroy
 
-  has_many :accointances, ->(user) { unscope(where: :user_id).where('follower_id = :id OR recipient_id = :id', id: user.id) }
+  has_many :accointances, ->(user) { unscope(where: :user_id).where('follower_id = :id OR recipient_id = :id', id: user.id) }, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true
