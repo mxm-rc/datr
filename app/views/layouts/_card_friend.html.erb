@@ -1,0 +1,8 @@
+<%= link_to new_friend_meet_path(friend), class: "text-decoration-none link-dark" do %>
+<div class="card-accointance">
+    <%= image_tag "#{friend.picture}" %>
+    <div class="card-product-infos">
+      <h2><%= "#{friend.first_name} #{friend.last_name}"%></h2>
+    </div>
+  </div>
+<% end %>

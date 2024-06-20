@@ -15,6 +15,10 @@ class MeetsController < ApplicationController
     end
   end
 
+  def index
+  #   @meets = Meet.find(params[:user_id]) #TO DO
+  end
+
   private
 
   def set_friend
