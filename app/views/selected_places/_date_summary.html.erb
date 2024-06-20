@@ -1,0 +1,22 @@
+  <div class="row">
+      <div class="col-12">
+        <div class="card" style="width: 90%; margin: 5% auto; border-radius: 10px; background-color: #f0f0f0;">
+          <div class="row align-items-center">
+
+            <!-- Image column -->
+            <div class="col-3 col-md-2" >
+              <%= image_tag "", class: "card-img rounded-circle img-fluid", alt: "" %>
+            </div>
+
+            <!-- Text details column -->
+            <div class="col-9 col-md-9">
+              <div class="card-body">
+                <h5> Proposition de rendez-vous envoyée !</h5>
+                <p class="card-text">à <%= friend.first_name %> le <%= selected_places.first.meet.date %></p>
+                <p class="card-text"> Avec <%= selected_places.count %> <%= selected_places.count == 1 ? 'lieu possible de rencontre' : 'lieux possibles de rencontre' %></p>              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </div>

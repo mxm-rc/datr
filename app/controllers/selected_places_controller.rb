@@ -1,6 +1,6 @@
 class SelectedPlacesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_meet, :set_friend, only: %i[index new create]
+  before_action :set_meet, :set_friend, only: %i[index show new create]
   before_action :set_limit, :set_midpoint, only: %i[index]
 
   def index
@@ -16,6 +16,11 @@ class SelectedPlacesController < ApplicationController
     @markers = @places.present? ? generate_markers(@places) : []
   end
 
+  def show
+    puts "show"
+    @selected_places = SelectedPlace.where(meet_id: @meet.id)
+  end
+
   def create
     place_ids = params[:selected_places] || []
     # Places user has clicked on
@@ -24,12 +29,8 @@ class SelectedPlacesController < ApplicationController
     @places.each do |place|
       SelectedPlace.create(set_place(@meet, place))
     end
-
-    # Debug selected places in rails server console
-    @selected_places = SelectedPlace.where(meet: @meet)
-    puts @selected_places.inspect
-
-    redirect_to date_summary_path, notice: 'Création des lieux sélectionnés avec succès !'
+    @selected_place = SelectedPlace.where(meet_id: @meet.id).first
+    redirect_to friend_meet_selected_place_path(friend_id: @friend, meet_id: @meet, id: @selected_place), notice: 'Création des lieux sélectionnés avec succès !'
   end
 
   private
@@ -69,14 +70,12 @@ class SelectedPlacesController < ApplicationController
   end
 
   def set_place(meet, place)
-    selected_place = SelectedPlace.new
-
-    selected_place.meet = meet
-    selected_place.location = place
-    selected_place.selected_by_follower = true
-    selected_place.selected_by_recipient = false
-
-    return selected_place
+    {
+      meet: meet,
+      location: place,
+      selected_by_follower: true,
+      selected_by_recipient: false
+    }
   end
 
   # Prepare markers for the Map_Box api
