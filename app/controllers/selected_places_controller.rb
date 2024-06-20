@@ -4,13 +4,13 @@ class SelectedPlacesController < ApplicationController
   before_action :set_limit, :set_midpoint, only: %i[index]
 
   def index
-    # Fetch the recommended Locations according to the common Categories between the current user and the friend
+    # Search recommended Locations according to the common Categories between the current user and the friend
     @places = Location.recommended_locations(current_user, @friend, @mid_point, @limit)
 
     # Insert mid_point_location at first in places
     @places.unshift(@mid_point)
     # Debug places in rails server console
-    # Rails.logger.debug "Places: #{@places.inspect}"
+    # puts "Places: #{@places.inspect}"
 
     # Prepare markers for the Map_Box api
     @markers = @places.present? ? generate_markers(@places) : []
@@ -18,7 +18,7 @@ class SelectedPlacesController < ApplicationController
 
   def create
     place_ids = params[:selected_places] || []
-    # Places user has chosen
+    # Places user has clicked on
     @places = Location.find(place_ids)
 
     @places.each do |place|
