@@ -6,7 +6,8 @@
         <%= render "map_with_locations", markers: @markers %>
       </div>
       <div class="list-locations-selected-places-datr">
-        <%= render "locations_proposed", places: @places %>
+        <%# Drop MidPoint in 1st place list %>
+        <%= render "locations_proposed", places: @places.drop(1), friend: @friend, meet: @meet %>
       </div>
     <% else %>
       <div class="no-list-locations-selected-places-datr">

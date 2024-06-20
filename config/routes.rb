@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :friends, only: %i[index show] do
     resources :meets, only: %i[new create] do
-      resources :selected_places, only: [:index]
+      resources :selected_places, only: %i[index create show]
     end
   end
 

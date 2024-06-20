@@ -1,0 +1,16 @@
+.selected {
+  border: 2px solid #007bff; /* Blue border for selected cards */
+}
+
+.img-responsive {
+  width: 25%; /* Adjusts the width to 10% of its parent */
+  height: auto; /* Keeps the aspect ratio intact */
+}
+
+#submit-choices {
+  border-radius: 10%; // Makes the button corners fully rounded
+  // padding: 0.5rem 1.5rem; // Adjusts padding to help achieve a circular shape
+  margin-top: 1rem; // Space above the button
+  margin-bottom: 1rem; // Space below the button
+  margin-left: 1rem; // Space to the left of the button
+}
