@@ -16,7 +16,7 @@ users = User.create!(
     address: "47 rue des rosiers, 93400, Saint-Ouen",
     picture: "maxime.jpg",
     admin: "true"
-    }, {
+  }, {
     birthdate: Date.new(1985, 7, 14),
     pseudo: "antoinehuret",
     first_name: "Antoine",
@@ -51,7 +51,7 @@ users = User.create!(
     admin: "true"
   }]
 )
-puts "Created #{users.count} Users"
+puts "Created : #{users.count} Users"
 
 # Create accointances in bulk
 accointances = Accointance.create!(
@@ -69,7 +69,7 @@ accointances = Accointance.create!(
      follower: users[2], recipient: users[3], status: 'refused'
    }]
 )
-puts "Created #{accointances.count} Accointances"
+puts "Created : #{accointances.count} Accointances"
 
 # Create meets in bulk
 meets = Meet.create!(
@@ -81,54 +81,65 @@ meets = Meet.create!(
     date: Date.today + 7.days
   }]
 )
-puts "Created #{meets.count} Meetings"
+puts "Created : #{meets.count} Meetings"
 
-# Parse locations from geojson files
-parsed_locations = parse_location_data
+# Parse locations coming from geojson files
+# parsed_locations = parse_location_data
 
-# Extract unique types from parsed_locations
-# Unique_location_types: [
-# Jardin(55), Cinéma(89), fountain(291), memorial(1050), tomb(587), optical_telegraph(1), place_of_worship(394),
-# monastery(4), wayside_cross(6), yes(109), wayside_shrine(4), crime_scene(4), highwater_mark(10), house(2), tree(2),
-# archaeological_site(3), monument(61), ruins(21), battlefield(2), milestone(2), castle(13), citywalls(1), building(83),
-# river_mark(3), cafe(2148), cannon(18), shieling(1), aircraft(1), manor(38), mansion(1), city_gate(2), tower(2),
-# chapel(1), palace(1), statue(2), church(2), ship(1), wall(1), bar(1804), restaurant(8369), pub(302), fast_food(2609),
-# ice_cream(93), food_court(9) ]
+# Parse locations coming from our personal parsed json file
+parsed_locations = read_our_json_file
+puts 'Parsed locations are uploaded from our personal JSON file !'
+
 parsed_locations.map { |location| location[:type] }.uniq.each do |type|
   VenueCategory.find_or_create_by(main_category: type, sub_category: "")
 end
-puts "Created #{VenueCategory.count} VenueCategories"
+puts "Created : #{VenueCategory.count} VenueCategories"
+
+puts 'Locations Bulk inserting in DB...'
+# Prepare data for bulk insertion to speed-up the seeding
+location_data = parsed_locations.map do |location|
+  {
+    location_type: location[:type],
+    name: location[:name],
+    address: "1 rue xxxx",
+    zip_code: "75xxx",
+    city: "Paris",
+    price_range: "€€",
+    lon: location[:coordinates][:long],
+    lat: location[:coordinates][:lat],
+    picture: location[:picture],
+    punchline: 'Pour des soirées un peu plus hot !',
+    created_at: Time.current,
+    updated_at: Time.current
+  }
+end
+# Bulk insert locations and retrieve them with IDs
+Location.insert_all(location_data)
+puts "Created : #{Location.count} Locations"
 
 # Preload VenueCategories into a hash with main_category as the key
 venue_categories_by_type = VenueCategory.all.index_by(&:main_category)
 
-parsed_locations.each do |location|
-  # Create Location
-  new_location = Location.create!(
-    location_type: location[:type],
-    name: location[:name],
-    city: "Paris",
-    lon: location[:coordinates][:long],
-    lat: location[:coordinates][:lat],
-    picture: '/quartier-libre.jpg', # Assuming this is the correct path
-    punchline: 'Pour des soirées un peu plus hot !'
-  )
+all_locations = parsed_locations.size
+puts "Venue Categories processing for #{all_locations} locations..."
+parsed_locations.each_with_index do |location, index|
+  print "\r#{index + 1}/#{all_locations}"
+  place = Location.find_by(location_type: location[:type])
 
   # Attempt to find a matching VenueCategory
-  venue_category = venue_categories_by_type[location[:type]]
-
-  if venue_category
+  v_category = venue_categories_by_type[location[:type]]
+  if v_category
     # Create a LocationCategory
-    LocationCategory.find_or_create_by(location: new_location, venue_category: venue_category)
+    LocationCategory.find_or_create_by(location: place, venue_category: v_category)
   else
-    puts "No matching VenueCategory found for location type: #{location[:type]}"
+    puts "No matching VenueCategory found for location type: #{place[:type]}"
   end
 end
-puts "Created #{Location.count} Locations"
-puts "Created #{LocationCategory.count} LocationCategories"
+puts
+puts "Created : #{LocationCategory.count} LocationCategories"
 
 # Find the VenueCategory for "restaurant" as sample for tests
-restaurant_category = VenueCategory.find_by(main_category: "restaurant")
+restaurant_category = VenueCategory.find_by(main_category: "Restaurant")
 
 # Create venue_preference in bulk
 venue_preferences = [
@@ -138,6 +149,6 @@ venue_preferences = [
 venue_preferences.each do |preference|
   VenuePreference.create!(preference)
 end
-puts "Created #{VenuePreference.count} VenuePreferences"
+puts "Created : #{VenuePreference.count} VenuePreferences"
 
 puts "Database seeded successfully!"
