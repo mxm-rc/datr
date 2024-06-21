@@ -6,16 +6,16 @@ class Location < ApplicationRecord
 
   def self.allowed_types
     {
-      "bar" => ActionController::Base.helpers.asset_path("location_types/bar.avif"),
-      "cafe" => ActionController::Base.helpers.asset_path("location_types/cafe.jpg"),
-      "castle" => ActionController::Base.helpers.asset_path("location_types/castle.jpg"),
-      "fast food" => ActionController::Base.helpers.asset_path("location_types/fast_food.jpg"),
-      "food court" => ActionController::Base.helpers.asset_path("location_types/food_court.jpg"),
-      "garden" => ActionController::Base.helpers.asset_path("location_types/garden.jpg"),
-      "ice cream" => ActionController::Base.helpers.asset_path("location_types/ice_cream.jpg"),
-      "monument" => ActionController::Base.helpers.asset_path("location_types/monument.jpg"),
-      "movies" => ActionController::Base.helpers.image_path("location_types/movies.avif"),
-      "restaurant" => ActionController::Base.helpers.asset_path("location_types/restaurant.jpg")
+      "Bar" => ActionController::Base.helpers.asset_path("location_types/bar.avif"),
+      "Cafe" => ActionController::Base.helpers.asset_path("location_types/cafe.jpg"),
+      "Chateau" => ActionController::Base.helpers.asset_path("location_types/castle.jpg"),
+      "Cinema" => ActionController::Base.helpers.image_path("location_types/movies.avif"),
+      "Glacier" => ActionController::Base.helpers.asset_path("location_types/ice_cream.jpg"),
+      "Jardin" => ActionController::Base.helpers.asset_path("location_types/garden.jpg"),
+      "Monument" => ActionController::Base.helpers.asset_path("location_types/monument.jpg"),
+      "Restauration rapide" => ActionController::Base.helpers.asset_path("location_types/fast_food.jpg"),
+      "Restaurant" => ActionController::Base.helpers.asset_path("location_types/restaurant.jpg"),
+      "Surprise" => ActionController::Base.helpers.asset_path("location_types/surprise_me.jpg")
     }
   end
 
