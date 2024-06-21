@@ -117,25 +117,22 @@ end
 Location.insert_all(location_data)
 puts "Created : #{Location.count} Locations"
 
-# Preload VenueCategories into a hash with main_category as the key
-venue_categories_by_type = VenueCategory.all.index_by(&:main_category)
+puts 'Locations Categories Bulk inserting in DB...'
+# Preload all VenueCategories and index them by main_category for quick lookup
+venue_categories_by_main_category = VenueCategory.all.index_by(&:main_category)
+# Initialize an array to hold the data for bulk insertion
+location_categories_data = []
+Location.find_each do |place|
+  v_category = venue_categories_by_main_category[place.location_type]
 
-all_locations = parsed_locations.size
-puts "Venue Categories processing for #{all_locations} locations..."
-parsed_locations.each_with_index do |location, index|
-  print "\r#{index + 1}/#{all_locations}"
-  place = Location.find_by(location_type: location[:type])
-
-  # Attempt to find a matching VenueCategory
-  v_category = venue_categories_by_type[location[:type]]
   if v_category
-    # Create a LocationCategory
-    LocationCategory.find_or_create_by(location: place, venue_category: v_category)
+    location_categories_data << { location_id: place.id, venue_category_id: v_category.id, created_at: Time.current, updated_at: Time.current }
   else
-    puts "No matching VenueCategory found for location type: #{place[:type]}"
+    puts "No matching VenueCategory found for location type: #{place.location_type}"
   end
 end
-puts
+# Bulk insert LocationCategory records if there are any to create
+LocationCategory.insert_all(location_categories_data) unless location_categories_data.empty?
 puts "Created : #{LocationCategory.count} LocationCategories"
 
 # Find the VenueCategory for "restaurant" as sample for tests
