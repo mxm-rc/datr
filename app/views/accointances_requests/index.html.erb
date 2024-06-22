@@ -1,9 +1,12 @@
+<p>HELLO FROM Accointance_resquest INDEX</p>
+
 <% @accointances.each do |accointance| %>
-  <%= accointance.follower.email %>
+  <div class="card-accointance">
+    <%= accointance.follower.email %>
 
-  <% if accointance.status == "pending" %>
-    <%= button_to 'Accepter', approve_accointances_request_path(id: accointance.id) %>
-    <%= button_to 'Rejeter', deny_accointances_request_path(id: accointance.id) %>
-  <% end %>
-
+    <% if accointance.status == "pending" %>
+      <%= button_to 'Accepter', approve_accointances_request_path(id: accointance.id) %>
+      <%= button_to 'Rejeter', deny_accointances_request_path(id: accointance.id) %>
+    <% end %>
+  </div>
 <% end %>

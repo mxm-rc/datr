@@ -1,0 +1,14 @@
+<div class="card-accointance d-flex">
+      <div class="profil-pic">
+        <%= image_tag "users/#{user.picture}", class: "image_round" %>
+      </div>
+      <div class="row">
+        <div class="name">
+          <%= user.first_name %>
+        </div>
+        <div class="description">
+          <%= user.last_name %>
+        </div>
+      </div>
+        <%= button_to 'like', user_accointances_path(user), class: "like-button" %>
+    </div>
