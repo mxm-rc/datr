@@ -49,6 +49,127 @@ users = User.create!(
     address: "10 boulevard de la villette, 75019, Paris",
     picture: "christophe.jpg",
     admin: "true"
+  },{
+    birthdate: Date.new(1994, 10, 18),
+    pseudo: "Nico",
+    first_name: "Nicolas",
+    last_name: "Martin",
+    email: "nicolasmartin@gmail.com",
+    password: "nicolasmartin@gmail.com",
+    password_confirmation: "nicolasmartin@gmail.com",
+    address: "47 rue des rosiers, 93400, Saint-Ouen",
+    picture: "maxime.jpg",
+    admin: "true"
+  },{
+    birthdate: Date.new(1994, 10, 18),
+    pseudo: "SexyLady",
+    first_name: "Anne",
+    last_name: "Hidalgo",
+    email: "annehidalgo@gmail.com",
+    password: "annehidalgo@gmail.com",
+    password_confirmation: "annehidalgo@gmail.com",
+    address: "47 rue des rosiers, 93400, Saint-Ouen",
+    picture: "maxime.jpg",
+    admin: "true"
+  },{
+    birthdate: Date.new(1994, 10, 18),
+    pseudo: "Jean",
+    first_name: "Jean",
+    last_name: "Bon",
+    email: "jeanbon@gmail.com",
+    password: "jeanbon@gmail.com",
+    password_confirmation: "jeanbon@gmail.com",
+    address: "47 rue des rosiers, 93400, Saint-Ouen",
+    picture: "maxime.jpg",
+    admin: "true"
+  }, {
+    birthdate: Date.new(1994, 10, 18),
+    pseudo: "Natatchouin",
+    first_name: "Natacha",
+    last_name: "Tchouin",
+    email: "natatchouin@gmail.com",
+    password: "natatchouin@gmail.com",
+    password_confirmation: "natatchouin@gmail.com",
+    address: "47 rue des rosiers, 93400, Saint-Ouen",
+    picture: "maxime.jpg",
+    admin: "true"
+  }, {
+    birthdate: Date.new(1994, 10, 18),
+    pseudo: "Elisette",
+    first_name: "Elisa",
+    last_name: "Cou",
+    email: "elisacou@gmail.com",
+    password: "elisacou@gmail.com",
+    password_confirmation: "elisacou@gmail.com",
+    address: "47 rue des rosiers, 93400, Saint-Ouen",
+    picture: "maxime.jpg",
+    admin: "true"
+  }, {
+    birthdate: Date.new(1994, 10, 18),
+    pseudo: "Michou",
+    first_name: "Michelle",
+    last_name: "Mabelle",
+    email: "michellemabelle@gmail.com",
+    password: "michellemabelle@gmail.com",
+    password_confirmation: "michellemabelle@gmail.com",
+    address: "47 rue des rosiers, 93400, Saint-Ouen",
+    picture: "maxime.jpg",
+    admin: "true"
+  } , {
+    birthdate: Date.new(1994, 10, 18),
+    pseudo: "Bella",
+    first_name: "Isabelle",
+    last_name: "Adjani",
+    email: "isabelleadjani@gmail.com",
+    password: "isabelleadjani@gmail.com",
+    password_confirmation: "isabelleadjani@gmail.com",
+    address: "47 rue des rosiers, 93400, Saint-Ouen",
+    picture: "maxime.jpg",
+    admin: "true"
+  }, {
+    birthdate: Date.new(1994, 10, 18),
+    pseudo: "PokerFace",
+    first_name: "Lady",
+    last_name: "Gaga",
+    email: "ladygaga@gmail.com",
+    password: "ladygaga@gmail.com",
+    password_confirmation: "ladygaga@gmail.com",
+    address: "47 rue des rosiers, 93400, Saint-Ouen",
+    picture: "maxime.jpg",
+    admin: "true"
+  }, {
+    birthdate: Date.new(1994, 10, 18),
+    pseudo: "Star",
+    first_name: "Celine",
+    last_name: "Dion",
+    email: "celinedion@gmail.com",
+    password: "celinedion@gmail.com",
+    password_confirmation: "celinedion@gmail.com",
+    address: "47 rue des rosiers, 93400, Saint-Ouen",
+    picture: "maxime.jpg",
+    admin: "true"
+  }, {
+    birthdate: Date.new(1994, 10, 18),
+    pseudo: "NakedSlut",
+    first_name: "Katy",
+    last_name: "Perry",
+    email: "katyperry@gmail.com",
+    password: "katyperry@gmail.com",
+    password_confirmation: "katyperry@gmail.com",
+    address: "47 rue des rosiers, 93400, Saint-Ouen",
+    picture: "maxime.jpg",
+    admin: "true"
+  }, {
+    birthdate: Date.new(1994, 10, 18),
+    pseudo: "BigD",
+    first_name: "Grant",
+    last_name: "Ducati",
+    email: "grantducati@gmail.com",
+    password: "grantducati@gmail.com",
+    password_confirmation: "grantducati@gmail.com",
+    address: "47 rue des rosiers, 93400, Saint-Ouen",
+    picture: "maxime.jpg",
+    admin: "true"
   }]
 )
 puts "Created : #{users.count} Users"
@@ -67,6 +188,14 @@ accointances = Accointance.create!(
      follower: users[1], recipient: users[3], status: 'pending'
    }, {
      follower: users[2], recipient: users[3], status: 'refused'
+   }, {
+     follower: users[5], recipient: users[2], status: 'accepted'
+   }, {
+     follower: users[6], recipient: users[2], status: 'accepted'
+   }, {
+     follower: users[7], recipient: users[2], status: 'accepted'
+   }, {
+     follower: users[8], recipient: users[2], status: 'accepted'
    }]
 )
 puts "Created : #{accointances.count} Accointances"
