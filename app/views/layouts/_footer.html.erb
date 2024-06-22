@@ -19,8 +19,11 @@
         <% end %>
       </li>
     <% else %>
-      <li><%= link_to 'Sign In', new_user_session_path %></li>
+      <li>
+        <%= link_to new_user_session_path do %>
+          <%= image_tag "profile.png", class: "icon"%>
+        <% end %>
+      </li>
     <% end %>
-    </li>
   </ul>
 </footer>
