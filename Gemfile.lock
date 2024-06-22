@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/heartcombo/simple_form.git
-  revision: d3a594920a14a692836392b5a7c0cd4708e25cb3
+  revision: 824d17914794c137782e697ef4c9bbad8527f081
   specs:
     simple_form (5.3.1)
       actionpack (>= 5.2)
@@ -87,8 +87,8 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
-    addressable (2.8.6)
-      public_suffix (>= 2.0.2, < 6.0)
+    addressable (2.8.7)
+      public_suffix (>= 2.0.2, < 7.0)
     autoprefixer-rails (10.4.16.0)
       execjs (~> 2)
     base64 (0.2.0)
@@ -174,6 +174,7 @@ GEM
       activerecord
       kaminari-core (= 1.2.2)
     kaminari-core (1.2.2)
+    logger (1.6.0)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -216,7 +217,7 @@ GEM
     popper_js (2.11.8)
     psych (5.1.2)
       stringio
-    public_suffix (5.1.1)
+    public_suffix (6.0.0)
     puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.8.0)
@@ -286,8 +287,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.21.1)
+    selenium-webdriver (4.22.0)
       base64 (~> 0.2)
+      logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
