@@ -7,7 +7,8 @@
             action: "click->friends#card",
             name: friend.first_name,
             age: (Time.zone.now.year - friend.birthdate.year),
-            picture: image_path("users/#{friend.picture}")
+            picture: image_path("users/#{friend.picture}"),
+            id: friend.id
            } %>
     <% end %>
   </div>
@@ -19,7 +20,7 @@
     </div>
     <div class="mb-5 d-flex flex-colum justify-content-evenly">
       <button class="friends-button">Date</button>
-      <%= link_to friend_path(@friends.first), class:"text-decoration-none" do %>
+      <%= link_to friend_path(@friends.first), class:"text-decoration-none", data: { friends_Target: "more" } do %>
         <button class="friends-button">More</button>
       <% end %>
     </div>
