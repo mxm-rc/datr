@@ -23,7 +23,7 @@ class Location < ApplicationRecord
   def self.recommended_locations(my_id, friend_id, mid_point, limit)
     # 1 Determine common preferences between the current me and the friend
     common_categories = find_common_categories(my_id, friend_id)
-
+    
     # 2 Filter the locations based on the common preferences
     locations = find_location(common_categories)
 

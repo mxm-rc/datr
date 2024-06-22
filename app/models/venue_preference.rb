@@ -8,4 +8,12 @@ class VenuePreference < ApplicationRecord
   # Assuming relationships are defined like this:
   belongs_to :user
   belongs_to :venue_category
+
+  before_validation :set_default_preference_level, if: -> { preference_level.blank? }
+
+  private
+
+  def set_default_preference_level
+    self.preference_level = 1
+  end
 end
