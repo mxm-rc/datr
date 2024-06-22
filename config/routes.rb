@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :friends, only: %i[index show]
-  resources :users do
+  resources :users, only: %i[show edit] do
     resources :accointances, only: %i[create]
     resources :meets, only: %i[index]
   end
