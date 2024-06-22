@@ -1,8 +1,10 @@
-<%= link_to new_friend_meet_path(friend), class: "text-decoration-none link-dark" do %>
-<div class="card-accointance">
-    <%= image_tag "users/#{friend.picture}" %>
-    <div class="card-product-infos">
-      <h2><%= "#{friend.first_name} #{friend.last_name}"%></h2>
-    </div>
+<div class="friends-card d-flex flex-column justify-content-end" style="background-image: url('<%= image_path("users/#{@friends.first.picture}") %>');">
+  <div class="d-flex align-items-center justify-content-center">
+    <div class="friends-name"><%= @friends.first.first_name %></div>
+    <div class="friends-age"> <%= Time.zone.now.year - @friends.first.birthdate.year %></div>
   </div>
-<% end %>
+  <div class="mb-5 d-flex flex-colum justify-content-evenly">
+    <button class="friends-button">Date</button>
+    <button class="friends-button">More</button>
+  </div>
+</div>
