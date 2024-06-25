@@ -14,13 +14,13 @@
 
   <body class="body position-relative">
     <%= render "shared/flashes" %>
-    <div id="sharedHeader" class="sticky-top">
+    <div id="sharedHeader" class="">
       <%= render "shared/shared_header" %>
     </div>
 
     <%= yield %>
 
-    <div id="sharedNavbar">
+    <div id="sharedNavbar" class="sticky-bottom">
       <% if controller_name == 'pages' && action_name == 'landing_page' %>
         <%= render "layouts/landing_navbar" %>
       <% else %>
@@ -28,9 +28,9 @@
       <% end %>
     </div>
 
-    <div id="sharedFooter" class="fixed-bottom">
+    <div id="sharedFooter" class="">
       <% if controller_name == 'pages' && action_name == 'landing_page' %>
-        <%= render "layout/landing_footer" %>
+        <%= render "layouts/landing_footer" %>
       <% end %>
     </div>
   </body>

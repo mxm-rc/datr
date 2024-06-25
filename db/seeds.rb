@@ -196,7 +196,9 @@ accointances = Accointance.create!(
      follower: users[7], recipient: users[2], status: 'accepted'
    }, {
      follower: users[8], recipient: users[2], status: 'accepted'
-   }]
+   }, {
+     follower: users[3], recipient: users[2], status: 'accepted'
+    }]
 )
 puts "Created : #{accointances.count} Accointances"
 
@@ -222,7 +224,7 @@ puts 'Parsed locations are uploaded from our personal JSON file !'
 parsed_locations.map { |location| location[:type] }.uniq.each do |type|
   VenueCategory.find_or_create_by(main_category: type, sub_category: "")
 end
-puts "Created : #{VenueCategory.count} VenueCategories"
+puts "Created : #{VenueCategory.count} Categories"
 
 puts 'Locations Bulk inserting in DB...'
 # Prepare data for bulk insertion to speed-up the seeding
@@ -262,19 +264,31 @@ Location.find_each do |place|
 end
 # Bulk insert LocationCategory records if there are any to create
 LocationCategory.insert_all(location_categories_data) unless location_categories_data.empty?
-puts "Created : #{LocationCategory.count} LocationCategories"
+puts "Created : #{LocationCategory.count} Location Categories"
 
-# Find the VenueCategory for "restaurant" as sample for tests
-restaurant_category = VenueCategory.find_by(main_category: "Restaurant")
+# Create venue preferences for each user
+pref_levels = [1, 2, 3]
+categories = VenueCategory.all
 
-# Create venue_preference in bulk
-venue_preferences = [
-  { user_id: users[0].id, venue_category_id: restaurant_category.id, preference_level: 1 },
-  { user_id: users[3].id, venue_category_id: restaurant_category.id, preference_level: 1 }
-]
-venue_preferences.each do |preference|
-  VenuePreference.create!(preference)
+users.each do |user|
+  # Determine a random number of preferences for each user (between 1 and 3)
+  num_preferences = rand(1..3)
+
+  num_preferences.times do
+    # Randomly select a venue category for each preference
+    category = categories.sample
+    # Assign a random preference level
+    level = pref_levels.sample
+
+    # Create the venue preference
+    VenuePreference.create!(
+      user_id: user.id,
+      venue_category_id: category.id,
+      preference_level: level
+    )
+  end
 end
-puts "Created : #{VenuePreference.count} VenuePreferences"
+puts "Created : #{VenuePreference.count} User Preferences"
 
+# That's it !
 puts "Database seeded successfully!"

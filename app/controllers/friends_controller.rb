@@ -3,6 +3,7 @@ class FriendsController < ApplicationController
 
   def index
     @friends = current_user.friends(status: 'accepted')
+    puts "***************** Friends: #{@friends.inspect} *****************"
 
     if params[:query].present?
       @friends = @friends.where("first_name ILIKE ?", "%#{params[:query]}%")
