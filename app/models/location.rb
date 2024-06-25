@@ -6,6 +6,7 @@ class Location < ApplicationRecord
 
   def self.allowed_types
     {
+      "Surprise" => ActionController::Base.helpers.asset_path("location_types/surprise_me.jpg"),
       "Bar" => ActionController::Base.helpers.asset_path("location_types/bar.avif"),
       "Cafe" => ActionController::Base.helpers.asset_path("location_types/cafe.jpg"),
       "Chateau" => ActionController::Base.helpers.asset_path("location_types/castle.jpg"),
@@ -14,8 +15,7 @@ class Location < ApplicationRecord
       "Jardin" => ActionController::Base.helpers.asset_path("location_types/garden.jpg"),
       "Monument" => ActionController::Base.helpers.asset_path("location_types/monument.jpg"),
       "Restauration rapide" => ActionController::Base.helpers.asset_path("location_types/fast_food.jpg"),
-      "Restaurant" => ActionController::Base.helpers.asset_path("location_types/restaurant.jpg"),
-      "Surprise" => ActionController::Base.helpers.asset_path("location_types/surprise_me.jpg")
+      "Restaurant" => ActionController::Base.helpers.asset_path("location_types/restaurant.jpg")
     }
   end
 
@@ -23,7 +23,7 @@ class Location < ApplicationRecord
   def self.recommended_locations(my_id, friend_id, mid_point, limit)
     # 1 Determine common preferences between the current me and the friend
     common_categories = find_common_categories(my_id, friend_id)
-    
+
     # 2 Filter the locations based on the common preferences
     locations = find_location(common_categories)
 
