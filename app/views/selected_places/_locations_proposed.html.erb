@@ -9,35 +9,36 @@
       </div>
     </div>
 
-  <div class="row">
-    <% places.each do |place| %>
-      <div class="col-12">
-        <div class="card" style="width: 90%; margin: 5% auto; border-radius: 10px; background-color: #f0f0f0;" data-place-selection-target="card" data-place-selection-card-id-value="selected_place_<%= place.id %>">
-          <div class="row align-items-center">
+    <div class="row">
+      <% places.each do |place| %>
+        <div class="col-12">
+          <div class="card" style="width: 90%; margin: 5% auto; border-radius: 10px; background-color: #f0f0f0;" data-place-selection-target="card" data-place-selection-card-id-value="selected_place_<%= place.id %>">
+            <div class="row align-items-center">
 
-            <!-- Image column -->
-            <div class="col-3 col-md-2" >
-              <%= image_tag place.picture, class: "card-img rounded-circle img-fluid", alt: place.name %>
-            </div>
-
-            <!-- Checkbox column -->
-            <div class="col-2 col-md-1 d-flex align-items-center justify-content-center">
-              <%= check_box_tag "selected_places[]", place.id, false, id: "selected_place_#{place.id}", data: { action: "change->place-selection#toggleCheckbox" } %>
-            </div>
-
-            <!-- Text details column -->
-            <div class="col-7 col-md-9">
-              <div class="card-body">
-                <h5 class="card-title"><%= place.name %></h5>
-                <p class="card-text"><%= place.punchline %></p>
-                <p class="card-text"><small class="text-muted"><%= "#{place.address}, #{place.city}" %></small></p>
+              <!-- Image column -->
+              <div class="col-3 col-md-2" >
+                <%= image_tag place.picture, class: "card-img rounded-circle img-fluid", alt: place.name %>
               </div>
-            </div>
 
+              <!-- Checkbox column -->
+              <div class="col-2 col-md-1 d-flex align-items-center justify-content-center">
+                <%= check_box_tag "selected_places[]", place.id, false, id: "selected_place_#{place.id}", data: { action: "change->place-selection#toggleCheckbox" } %>
+              </div>
+
+              <!-- Text details column -->
+              <div class="col-7 col-md-9">
+                <div class="card-body">
+                  <h5 class="card-title"><%= place.name %></h5>
+                  <p class="card-text"><%= place.punchline %></p>
+                  <p class="card-text"><small class="text-muted"><%= "#{place.address}, #{place.city}" %></small></p>
+                </div>
+              </div>
+
+            </div>
+            <label for="selected_place_<%= place.id %>" class="visually-hidden">Select</label>
           </div>
-          <label for="selected_place_<%= place.id %>" class="visually-hidden">Select</label>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 <% end %>

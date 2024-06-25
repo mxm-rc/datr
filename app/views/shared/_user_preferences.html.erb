@@ -1,12 +1,13 @@
-<div class="preferences-user-datr">
-  <div class="d-flex justify-content-center">
+<div class="preferences-user">
+  <div class="title d-flex justify-content-center">
     <h2>Mes Préférences</h2>
   </div>
+
   <%= simple_form_for user, method: :patch do |f| %>
     <% if preferences.any? %>
-      <div class="row">
+      <div class="preferences-user-show">
         <% Location.allowed_types.each_with_index do |type, index| %>
-          <div class="col-12">
+          <div class="preferences_user_container col-12">
             <div class="card" style="width: 90%; margin: 1% auto; border-radius: 10px; background-color: #f0f0f0;">
               <div class="row align-items-center">
 
@@ -19,7 +20,7 @@
 
                 <!-- Image column -->
                 <div class="col-3">
-                  <%= image_tag type.last, class: "card-img rounded-circle img-fluid", alt: type.first %>
+                  <%= image_tag type.last, class: "card-img rounded-circle img-fluid", alt: type.first, style: "width: 50px; height: 50px; object-fit: cover;" %>
                 </div>
 
                 <!-- Text details column -->

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  root to: "pages#home"
+  # root to: "pages#home"
+  root to: "pages#landing_page"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   get '/friends' => "friends#index", :as => :user_root
