@@ -1,9 +1,30 @@
-<div class="scroll">
-  <% @friends.each do |friend| %>
-    <%= link_to friend_path(friend), class:"text-decoration-none" do %>
-      <%= image_tag "users/#{friend.picture}", class:"avatar m-1 border border-white border-2" %>
+<div data-controller="friends">
+  <div class="scroll">
+    <% @friends.each do |friend| %>
+          <%= image_tag "users/#{friend.picture}",
+           class:"avatar m-1 border border-white border-2",
+           data: {
+            action: "click->friends#card",
+            name: friend.first_name,
+            age: (Time.zone.now.year - friend.birthdate.year),
+            picture: image_path("users/#{friend.picture}"),
+            id: friend.id
+           } %>
     <% end %>
-  <% end %>
+  </div>
+
+  <div class="friends-card d-flex flex-column justify-content-end" data-friends-target="card" style="background-image: url('<%= image_path("users/#{@friends.first.picture}") %>');">
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="friends-name" data-friends-target="name"><%= @friends.first.first_name %></div>
+      <div class="friends-age" data-friends-target="age"> <%= Time.zone.now.year - @friends.first.birthdate.year %></div>
+    </div>
+    <div class="mb-5 d-flex flex-colum justify-content-evenly">
+      <button class="friends-button">Date</button>
+      <%= link_to friend_path(@friends.first), class:"text-decoration-none", data: { friends_Target: "more" } do %>
+        <button class="friends-button">More</button>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 
