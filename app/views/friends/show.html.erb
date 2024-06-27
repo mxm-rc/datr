@@ -1,6 +1,6 @@
-<div class="friends-show d-flex align-items-end" style="background-image: url('<%= image_path("users/#{@friend.picture}") %>');">
+<div class="friends-show d-flex flex-column">
+  <div class ="friends-show-image" style="background-image: url('<%= image_path("users/#{@friend.picture}") %>');"></div>
   <div class="friends-show-infos">
   <h1 class="friends-show-bio">SHOW DE TON ACCOINTANCE AVEC <%= @friend.pseudo %></h1>
-  <p class="friends-show-bio"> <%= @friend.bio %> </p>
   </div>
 </div>
