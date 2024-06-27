@@ -1,18 +1,20 @@
 <!-- Logo, main menu, search form, etc...) -->
 <!-- Add Stimulus listener to calculate dynamically its height for layout of following containers -->
-<header data-controller="calculate-header-height"
-        data-calculate-header-height-target="genericHeader"
-        class="m-2 d-flex align-items-center justify-content-center">
+<div id="sharedHeader" class="">
+  <header data-controller="calculate-header-height"
+          data-calculate-header-height-target="genericHeader"
+          class="m-2 d-flex align-items-center justify-content-center">
 
-  <div class="col 7 col-md-7">
-    <%= image_tag "halfway_logo.png", alt: "Halfway Logo" %>
-  </div>
+    <div class="col 7 col-md-7">
+      <%= image_tag "halfway_logo.png", alt: "Halfway Logo" %>
+    </div>
 
-  <%# <div class="col 5 col-md-5 d-flex flex-column justify-content-center text-center" data-controller="datetime">
-    <p class="mb-0">Aujourd'hui</p>
+    <%# <div class="col 5 col-md-5 d-flex flex-column justify-content-center text-center" data-controller="datetime">
+      <p class="mb-0">Aujourd'hui</p>
 
-    <!-- Print date/time every mns-->
-    <p class="mb-0" data-datetime-target="output"></p>
-  </div> %>
+      <!-- Print date/time every mns-->
+      <p class="mb-0" data-datetime-target="output"></p>
+    </div> %>
 
-</header>
+  </header>
+</div>
