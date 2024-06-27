@@ -10,3 +10,12 @@
 
 // Your CSS partials
 @import "components/index";
+.container-checkboxes {
+  .form-check {
+    padding-left: 0;
+    width: 100%;
+    .form-check-label {
+      width: 100%;
+    }
+  }
+}
