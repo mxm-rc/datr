@@ -11,6 +11,14 @@ class VenuePreference < ApplicationRecord
 
   before_validation :set_default_preference_level, if: -> { preference_level.blank? }
 
+  def self.set_default_preference
+    # Set joker ('Surprise') as default preference
+
+    # Allowed_types format: {[category, path], [category, path]...}
+    # for [] first is key, last is value
+    [Location.allowed_types.first.first]
+  end
+
   private
 
   def set_default_preference_level

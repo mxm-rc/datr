@@ -1,10 +1,17 @@
-<p>HELLO FROM Accointance_resquest INDEX</p>
+
+<p>HELLO FROM Accointance_request INDEX</p>
 
 <% @accointances.each do |accointance| %>
   <div class="card-accointance">
-    <%= accointance.follower.email %>
+     <div class="name">
+          <%= "follower_id" %>
+          <%= accointance.follower_id %>
 
-    <% if accointance.status == "pending" %>
+          <%= "recipient_id" %>
+          <%= accointance.recipient_id %>
+        </div>
+    <%#= render partial: "accointances/card_accointance", locals: { accointance: accointance } %>
+    <% if accointance.status == 'pending' %>
       <%= button_to 'Accepter', approve_accointances_request_path(id: accointance.id) %>
       <%= button_to 'Rejeter', deny_accointances_request_path(id: accointance.id) %>
     <% end %>

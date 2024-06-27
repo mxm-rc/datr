@@ -1,0 +1,24 @@
+<div class="row">
+  <% meets.each do |meet| %>
+    <div class="col-12">
+      <div class="card" style="width: 90%; margin: 5% auto; border-radius: 10px; background-color: #f0f0f0;">
+        <div class="row align-items-center">
+
+          <!-- Image column -->
+          <div class="col-3 col-md-2" >
+            <%= image_tag "users/#{meet.accointance.friend_of(current_user).picture}", class: "card-img rounded-circle img-fluid", alt: meet.accointance.friend_of(current_user).first_name %>
+          </div>
+
+          <!-- Text details column -->
+          <div class="col-7 col-md-9">
+            <div class="card-body">
+              <h5 class="card-text"><%= meet.status %></h5>
+              <p class="card-text"><%= meet.date %></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
