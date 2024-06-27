@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_15_124004) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_27_173200) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_15_124004) do
     t.string "location_type"
     t.string "picture"
     t.string "punchline"
+  end
+
+  create_table "meet_venue_categories", force: :cascade do |t|
+    t.bigint "meet_id", null: false
+    t.bigint "venue_category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meet_id"], name: "index_meet_venue_categories_on_meet_id"
+    t.index ["venue_category_id"], name: "index_meet_venue_categories_on_venue_category_id"
   end
 
   create_table "meets", force: :cascade do |t|
@@ -117,6 +126,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_15_124004) do
   add_foreign_key "accointances", "users", column: "recipient_id"
   add_foreign_key "location_categories", "locations"
   add_foreign_key "location_categories", "venue_categories"
+  add_foreign_key "meet_venue_categories", "meets"
+  add_foreign_key "meet_venue_categories", "venue_categories"
   add_foreign_key "meets", "accointances"
   add_foreign_key "messages", "accointances"
   add_foreign_key "selected_places", "locations"
