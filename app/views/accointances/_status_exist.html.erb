@@ -3,6 +3,7 @@
         <%= image_tag "users/#{user.picture}", class: "image_round" %>
       </div>
       <div class="row">
+      
         <% if current_user.friends(status: 'accepted').include?(user) %>
           <div class="status">Friends</div>
         <% elsif current_user.friends(status: 'pending').include?(user) %>

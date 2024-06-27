@@ -6,6 +6,7 @@ class AccointancesRequestsController < ApplicationController
 
   def approve
     accointance = Accointance.find(params[:id])
+    p params[:id]
     accointance.update(status: 'accepted')
 
     redirect_to accointances_requests_path, notice: 'Success'
