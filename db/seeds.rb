@@ -218,16 +218,16 @@ accointances = Accointance.create!(
 puts "Created : #{accointances.count} Accointances"
 
 # Create meets in bulk
-meets = Meet.create!(
-  [{
-    accointance: accointances.first,
+accointances.each do |a|
+  Meet.create!(
+    accointance: a,
     centered_address_long: -12_345_678,
     centered_address_lat: 12_345_678,
     status: 'planned',
     date: Date.today + 7.days
-  }]
-)
-puts "Created : #{meets.count} Meetings"
+  )
+end
+puts "Created : #{Meet.count} Meetings"
 
 # Parse locations coming from geojson files
 # parsed_locations = parse_location_data
