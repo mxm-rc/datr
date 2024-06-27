@@ -20,7 +20,7 @@
 
     <%= yield %>
 
-    <div id="sharedNavbar">
+    <div id="sharedNavbar" class="sticky-bottom">
       <% if controller_name == 'pages' && action_name == 'landing_page' %>
         <%= render "layouts/landing_navbar" %>
       <% else %>
