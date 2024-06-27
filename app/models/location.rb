@@ -21,8 +21,10 @@ class Location < ApplicationRecord
 
   # Method to fetch recommended Locations based on common Categories between two users
   def self.recommended_locations(my_id, friend_id, mid_point, limit)
-    # 1 Determine common preferences between the current me and the friend
-    common_categories = find_common_categories(my_id, friend_id)
+    # 1 Determine common preferences between me and friend
+    common_categories = find_joker(my_id, friend_id).presence || find_common_categories(my_id, friend_id)
+    # Print common categories
+    puts "***** Common Categories: #{common_categories.map(&:main_category)} *****"
 
     # 2 Filter the locations based on the common preferences
     locations = find_location(common_categories)
@@ -33,7 +35,20 @@ class Location < ApplicationRecord
   end
 
   def self.find_common_categories(my_id, friend_id)
-    # Search common Categories for both users
+    puts "***** Find_common_categories *****"
+
+    # Print all my_id categories
+    puts "***** My_id Categories: #{VenuePreference.includes(:venue_category)
+                                                   .where(user_id: my_id)
+                                                   .map { |vp| vp.venue_category.main_category }
+                                                   .uniq} *****"
+    # Print all friend_id categories
+    puts "***** Friend_id Categories: #{VenuePreference.includes(:venue_category)
+                                                   .where(user_id: friend_id)
+                                                   .map { |vp| vp.venue_category.main_category }
+                                                   .uniq} *****"
+
+    # Search common Categories for both users if no joker preferences found for both
     common_categories = VenuePreference.select(:venue_category_id)
                                        .where(user_id: [my_id, friend_id])
                                        .group(:venue_category_id)
@@ -59,5 +74,37 @@ class Location < ApplicationRecord
     locations.sort_by do |location|
       ((location.lat - midpoint.lat)**2) + ((location.lon - midpoint.lon)**2)
     end
+  end
+
+  def self.user_has_joker?(id)
+    # Get 'Surprise' (=joker) category ID from VenueCategory
+    key = allowed_types.keys.first
+    joker_id = VenueCategory.find_by(main_category: key)&.id
+
+    # return 'True' if the user has a joker preference
+    VenuePreference.exists?(user_id: id, venue_category_id: joker_id)
+  end
+
+  def self.find_joker(my_id, friend_id)
+    # Search joker presence both users
+    my_joker = user_has_joker?(my_id)
+    # Print joker presence for my
+    puts "***** Me : #{my_joker} !*****"
+
+    friend_joker = user_has_joker?(friend_id)
+    # Print joker presence for friend
+    puts "***** Friend : #{friend_joker} ! *****"
+
+    # If both users have joker preference then return full categories array
+    return VenueCategory.all if my_joker && friend_joker
+
+    # If my_id has joker preference then return array with all friend_id categories
+    return VenuePreference.where(user_id: friend_id).map(&:venue_category) if my_joker
+
+    # If friend_id has joker preference then return array with all my_id categories
+    return VenuePreference.where(user_id: my_id).map(&:venue_category) if friend_joker
+
+    # If no joker preference found for both users then return empty array
+    return []
   end
 end

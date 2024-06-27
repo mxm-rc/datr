@@ -196,7 +196,9 @@ accointances = Accointance.create!(
      follower: users[7], recipient: users[2], status: 'accepted'
    }, {
      follower: users[8], recipient: users[2], status: 'accepted'
-   }]
+   }, {
+     follower: users[3], recipient: users[2], status: 'accepted'
+  }]
 )
 puts "Created : #{accointances.count} Accointances"
 
@@ -222,6 +224,9 @@ puts 'Parsed locations are uploaded from our personal JSON file !'
 parsed_locations.map { |location| location[:type] }.uniq.each do |type|
   VenueCategory.find_or_create_by(main_category: type, sub_category: "")
 end
+# Explicitly add 'Surprise' category
+VenueCategory.find_or_create_by(main_category: 'Surprise', sub_category: "")
+
 puts "Created : #{VenueCategory.count} VenueCategories"
 
 puts 'Locations Bulk inserting in DB...'
