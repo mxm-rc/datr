@@ -1,43 +1,55 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="place-selection"
 export default class extends Controller {
-  static targets = ["card", "submitButton", "choiceText"]
-  static values = { cardId: String }
+  static targets = ["secondRowContainer", // Use to show/hide all categories based on joker box checked
+                    "jokerCheckbox", // Use to get joker box status
+                    "preference", // Use to get all other category checkboxes status
+                    "preferencesSerialized"]; // Use to store serialized preferences based on checked boxes
 
   connect() {
-    console.log("Stimulus Place Selection Controller connected");
-    // To ensure correct initial state of the submit button and choice text
-    this.updateVisibility();
+    console.log('Connected preference_selection_controller');
+    this.toggleSecondRowVisibility();
+    this.updatePreferencesArray();
   }
 
-  toggle(event) {
-    event.preventDefault();
-    let card = event.currentTarget;
-    let checkboxId = card.dataset.placeSelectionCardIdValue;
-    let checkbox = document.getElementById(checkboxId);
-
-    card.classList.toggle("selected");
-    checkbox.checked = !checkbox.checked;
-    this.updateVisibility();
+  jokerClicked() {
+    console.log('Surprise clicked');
+    this.toggleSecondRowVisibility();
+    this.updatePreferencesArray();
   }
 
-  toggleCheckbox(event) {
-    let checkbox = event.target;
-    let cardId = checkbox.id;
-    let card = this.cardTargets.find(c => c.dataset.placeSelectionCardIdValue === cardId);
+  preferenceClicked() {
+    console.log('Preference clicked');
+    this.updatePreferencesArray();
+  }
 
-    if (card) {
-      card.classList.toggle("selected", checkbox.checked);
+  toggleSecondRowVisibility() {
+    this.secondRowContainerTarget.style.display = this.jokerCheckboxTarget.checked ? 'none' : 'block';
+  }
+
+  updatePreferencesArray() {
+    let selectedCategories = [];
+
+    if (this.jokerCheckboxTarget.checked) {
+      // Clear all other checkboxes if joker
+      this.preferenceTargets.forEach((checkbox) => {
+        if (checkbox !== this.jokerCheckboxTarget) {
+          checkbox.checked = false;
+        }
+      });
+
+      // Push 'Surprise' when joker box is checked and ignore other checkboxes
+      selectedCategories.push(this.jokerCheckboxTarget.dataset.category);
+     } else {
+      // When joker box unchecked, deal with all other checked boxes
+      selectedCategories = this.preferenceTargets.filter((checkbox) => checkbox.checked).map((checkbox) => checkbox.dataset.category);
+
+      // If no preference selected, check the first preference by default
+      if (selectedCategories.length === 0 && this.preferenceTargets.length > 0) {
+        this.preferenceTargets[0].checked = true;
+        selectedCategories.push(this.preferenceTargets[0].dataset.category);
+      }
+    console.log("Updating preferences array, SelectedCategories: ", selectedCategories);
     }
-    this.updateVisibility();
-  }
-
-  updateVisibility() {
-    const anySelected = this.cardTargets.some(card => card.classList.contains("selected"));
-    // Change text of the choiceText based on if any card is selected
-    this.choiceTextTarget.textContent = anySelected ? "Cliquez vos choix puis : " : "Cliquez un choix au moins";
-    // Toggle visibility of the submit button based on if any card is selected
-    this.submitButtonTarget.style.display = anySelected ? "block" : "none";
   }
 }

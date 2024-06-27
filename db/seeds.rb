@@ -239,7 +239,10 @@ puts 'Parsed locations are uploaded from our personal JSON file !'
 parsed_locations.map { |location| location[:type] }.uniq.each do |type|
   VenueCategory.find_or_create_by(main_category: type, sub_category: "")
 end
-puts "Created : #{VenueCategory.count} Categories"
+# Explicitly add 'Surprise' category
+VenueCategory.find_or_create_by(main_category: 'Surprise', sub_category: "")
+
+puts "Created : #{VenueCategory.count} VenueCategories"
 
 puts 'Locations Bulk inserting in DB...'
 # Prepare data for bulk insertion to speed-up the seeding
