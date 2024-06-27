@@ -1,5 +1,6 @@
 class MeetsController < ApplicationController
-  before_action :set_friend
+  before_action :set_friend, only: %i[new create]
+  before_action :set_user, :set_meets, only: %i[index]
 
   def new
     @meet = Meet.new
@@ -16,10 +17,22 @@ class MeetsController < ApplicationController
   end
 
   def index
-  #   @meets = Meet.find(params[:user_id]) #TO DO
+    my_puts("MeetsControlle#index: @meets = #{@meets.inspect} // @user = #{@user.inspect}")
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
+
+  def set_meets
+    # Find all accointance_ids where the user is either follower or recipient
+    accointance_ids = Accointance.where("follower_id = ? OR recipient_id = ?", params[:user_id], params[:user_id]).pluck(:id)
+
+    # Find all meets related to these accointances
+    @meets = Meet.where(accointance_id: accointance_ids)
+  end
 
   def set_friend
     @friend = User.find(params[:friend_id])

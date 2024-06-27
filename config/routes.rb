@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/friends' => "friends#index", :as => :user_root
 
   resources :friends, only: %i[index show] do
-    resources :meets, only: %i[new create] do
+    resources :meets, only: %i[index new create] do
       resources :selected_places, only: %i[index create show]
     end
   end
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :meets, only: %i[index]
   end
   resources :accointances, only: %i[index]
+  resources :meets, only: %i[index]
 
   resources :accointances_requests, only: %i[index] do
     member do
