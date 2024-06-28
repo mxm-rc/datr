@@ -1,18 +1,16 @@
 <div data-controller="preference-selection">
-  <div class="title text-center">
-    <h2>Mes Préférences</h2>
-  </div>
-
   <!-- Debug preferences-->
   <%#= "**** Preferences :" + preferences.inspect %>
 
   <!-- Use Form instead Simple Form due to wrong outputs in html -->
   <%= form_for user, url: user_path(user), method: :patch do |f| %>
     <!-- Hidden input for serialized array of preferences -->
-    <%= hidden_field_tag "user[serialized_preferences]", nil, data: { preference_selection_target: "preferencesSerialized" } %>
+    <%= hidden_field_tag "user[serialized_preferences]",
+                          nil, data: { preference_selection_target: "preferencesSerialized" } %>
 
     <!-- Show Category 'Surprise' -->
-    <div class="halfway-preference-card" style="width: 80%;">
+    <div class="halfway-card"
+          style="width: 80%;">
       <div class="row align-items-center text-center">
         <!-- check box column -->
         <div class="col-3">
@@ -45,7 +43,8 @@
       </div>
     </div>
 
-    <div id="secondRowContainer" class="halfway-preference-card"
+    <div id="secondRowContainer"
+         class="halfway-card"
          style="width: 70%;"
          data-preference-selection-target="secondRowContainer">
       <!-- Exclude 'Surprise' as managed in joker part -->
@@ -69,7 +68,10 @@
             <div class="col-3">
               <!-- Allowed_types format: {[category, path], [category, path]...}
               for [] first is key, last is value -->
-              <%= image_tag type.last, class: "card-img m-2 rounded-circle img-fluid", alt: type.first, style: "width: 50px; height: 50px; object-fit: cover;" %>
+              <%= image_tag type.last,
+                            class: "card-img m-2 rounded-circle img-fluid",
+                            alt: type.first,
+                            style: "width: 50px; height: 50px; object-fit: cover;" %>
             </div>
 
             <!-- Text details column -->
@@ -84,6 +86,7 @@
 
     <div class="d-flex justify-content-center">
       <%= f.submit "Sauvegarde", class: "btn btn-primary" %>
+    </div>
     </div>
   <% end %>
 </div>

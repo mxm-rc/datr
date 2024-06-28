@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: %i[show edit update index] do
+  resources :users, only: %i[show edit update] do
     resources :accointances, only: %i[index create show]
     resources :meets, only: %i[index]
   end

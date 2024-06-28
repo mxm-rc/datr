@@ -1,4 +1,7 @@
 <div class="row">
+  <!-- Debug preferences-->
+  <%= "**** Meets :" + meets.inspect %>
+
   <% meets.each do |meet| %>
     <div class="col-12">
       <div class="card" style="width: 90%; margin: 5% auto; border-radius: 10px; background-color: #f0f0f0;">
@@ -6,7 +9,9 @@
 
           <!-- Image column -->
           <div class="col-3 col-md-2" >
-            <%= image_tag "users/#{meet.accointance.friend_of(current_user).picture}", class: "card-img rounded-circle img-fluid", alt: meet.accointance.friend_of(current_user).first_name %>
+            <%= image_tag "users/#{meet.accointance.friend_of(user).picture}",
+                           class: "card-img rounded-circle img-fluid",
+                           alt: meet.accointance.friend_of(user).first_name %>
           </div>
 
           <!-- Text details column -->
