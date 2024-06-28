@@ -1,0 +1,32 @@
+<div class="container">
+  <div class=""><%= render "shared/face_sticker", face: @user %>
+  </div>
+  <div data-controller="profile-selection" class="text-center mt-2">
+
+    <div class="halfway-card" style="width: 45%; display: inline-block;">
+      <!-- Radio buttons -->
+      <input type="radio" name="profile_selection"
+        value="meets"
+        data-action="click->profile-selection#toggleProfile"
+        style="transform: scale(1.5);"
+        checked
+        class="m-1"> Rendez-vous
+    </div>
+    <div class="halfway-card" style="width: 45%; display: inline-block;">
+      <!-- Radio buttons -->
+      <input type="radio" name="profile_selection"
+                          value="preferences"
+                          data-action="click->profile-selection#toggleProfile"
+                          style="transform: scale(1.5);"
+                          class="m-1"> Préférences
+    </div>
+
+    <div data-profile-selection-target="meets">
+      <%= render "planned_meets", meets: @meets %>
+    </div>
+
+    <div data-profile-selection-target="preferences">
+      <%= render "user_preferences", preferences: @preferences, user: @user %>
+    </div>
+  </div>
+</div>
