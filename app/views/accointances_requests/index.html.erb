@@ -3,17 +3,30 @@
 
 <% @accointances.each do |accointance| %>
   <div class="card-accointance">
+<!--   <div class="profil-pic">-->
+        <%#= image_tag "users/#{accointance.image}", class: "image_round" %>
+<!--      </div>-->
+
      <div class="name">
+
+      <li>
+          <%= "accointance_id =" %>
+          <%= accointance.id %>
+      </li>
+      <li>
           <%= "follower_id" %>
           <%= accointance.follower_id %>
-
+      </li>
+      <li>
           <%= "recipient_id" %>
           <%= accointance.recipient_id %>
-        </div>
+      </li>
+
+    </div>
     <%#= render partial: "accointances/card_accointance", locals: { accointance: accointance } %>
     <% if accointance.status == 'pending' %>
-      <%= button_to 'Accepter', approve_accointances_request_path(id: accointance.id) %>
-      <%= button_to 'Rejeter', deny_accointances_request_path(id: accointance.id) %>
+      <%= button_to 'Accepter', approve_path(id: accointance.id) %>
+      <%= button_to 'Rejeter', deny_path(id: accointance.id) %>
     <% end %>
   </div>
 <% end %>
