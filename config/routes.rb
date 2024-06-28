@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   get '/friends' => "friends#index", :as => :user_root
 
-
   resources :friends, only: %i[index show] do
     resources :meets, only: %i[new create] do
       resources :selected_places, only: %i[index create show]
@@ -19,10 +18,11 @@ Rails.application.routes.draw do
     resources :meets, only: %i[index]
   end
   resources :accointances, only: %i[index]
-  get '/approve/:id' => "accointances_request#approve", :as => :approve
-  get '/deny/:id' => "accointances_request#deny", :as => :deny
 
   resources :accointances_requests, only: %i[index]
+  resources :accointances_requests, path: "accointances_requests/:status", only: %i[update]
+
+
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
