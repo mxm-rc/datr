@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, :set_preferences, only: %i[edit update show]
+  before_action :set_user, :set_preferences, only: %i[show edit update]
   before_action :set_selected_preferences, only: %i[update], if: -> { @user.present? }
   before_action :set_meets, only: %i[show]
 
@@ -7,16 +7,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    my_puts("Method user_controller.edit.@preferences (if empty, it will be filled with joker): #{@preferences.inspect}")
-
     # if @preferences is empty, fill preference by default
     @preferences = VenuePreference.set_default_preference if @preferences.empty?
     my_puts("Method user_controller.edit.@preferences: #{@preferences.inspect}")
   end
 
   def update
-    my_puts("Method user_controller.update.@selected_Preferences : #{@selected_preferences}")
-
     # Begin a transaction block to remove/create categories (rollback if any issue)
     ActiveRecord::Base.transaction do
       # Get current preference types
@@ -80,7 +76,7 @@ class UsersController < ApplicationController
 
   # Find the current user based on the user_id parameter
   def set_user
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
   end
 
   def set_preferences
@@ -104,10 +100,16 @@ class UsersController < ApplicationController
 
   def set_meets
     # Find all accointance_ids where the user is either follower or recipient
-    accointance_ids = Accointance.where("follower_id = ? OR recipient_id = ?", params[:user_id], params[:user_id]).pluck(:id)
+    accointance_ids = Accointance.where("follower_id = ? OR recipient_id = ?",
+                                        params[:id],
+                                        params[:id]).pluck(:id)
+    my_puts("Method user_controller.set_meets.accointance_ids: #{accointance_ids.inspect}")
 
-    # Find all meets related to these accointances
+    # Find all meets related to these accointances with a date greater than today
     @meets = Meet.where(accointance_id: accointance_ids)
+                 .where("date > ?", Date.today)
+                 .where("status IN (?)", ["pending", "accepted"])
+                 .order(date: :asc)
   end
 
   def user_params
