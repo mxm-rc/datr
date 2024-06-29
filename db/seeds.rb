@@ -20,7 +20,7 @@ users = User.create!(
   }, {
     birthdate: Date.new(1985, 7, 14),
     pseudo: "emma",
-    first_name: "Emannuelle",
+    first_name: "Emmanuelle",
     last_name: "Course",
     email: "huretantoine@gmail.com",
     password: "huretantoine@gmail.com",
