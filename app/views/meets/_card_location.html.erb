@@ -1,13 +1,12 @@
-<div class="container-sm container-checkboxes">
+<div class="container-sm container-checkboxes" data-controller="location-toggle" >
 
   <% if false %>
-  <% @location_types.each do |type, image_path| %>
-    <div class="location-type-display" style="background-image: url('<%= image_path image_path %>')" >
-      <%= f.check_box :location_ids, { multiple: true }, type, nil %>
-      <%= type.capitalize %>
-    </div>
-  <% end %>
-
+    <% @location_types.each do |type, image_path| %>
+      <div class="location-type-display" style="background-image: url('<%= image_path image_path %>')" >
+        <%= f.check_box :location_ids, { multiple: true }, type, nil %>
+        <%= type.capitalize %>
+      </div>
+    <% end %>
   <% end %>
 
   <%= f.association :venue_categories,
@@ -20,7 +19,7 @@
                     },
                     label_method: ->(type){
                       <<~HTML
-                        <div class="location-type-display" style="background-image: url('#{image_path Location.allowed_types[type.main_category.capitalize]}')" >
+                        <div class="location-type-display" data-location-toggle-target="checkbox" data-action="click->location-toggle#toggle" style="background-image: url('#{image_path Location.allowed_types[type.main_category.capitalize]}')" >
                           #{type.main_category.capitalize}
                         </div>
                       HTML
