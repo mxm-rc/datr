@@ -2,24 +2,23 @@
 <html>
   <head>
     <title> Halfway | A mi-chemin du bonheur </title>
-    <meta name="description" content="<%= "Trouvez des idées de dates dans l'entre-deux" %>">
+    <meta name="description" content="Trouvez des idées de dates dans l'entre-deux">
     <%= favicon_link_tag 'favicon.ico'%>
 
-    <!– Facebook Open Graph data –>
-    <meta property=”og:title” content=”<%= "Halfway | A mi-chemin du bonheur" %>” />
-    <meta property=”og:type” content=”website” />
-    <meta property=”og:url” content=”<%= request.original_url %>” />
-    <meta property=”og:image” content=”<%= image_tag("halfway_logo.png") %>” />
-    <meta property=”og:description” content=”<%= "Trouvez des idées de dates dans l'entre-deux" %>” />
-    <meta property=”og:site_name” content=”<%= "Halfway | A mi-chemin du bonheur" %>” />
+    <meta property="og:title" content="Halfway | A mi-chemin du bonheur" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content=<% image_tag("halfway_logo.png") %> />
+    <meta property="og:description" content="Trouvez des idées de dates dans l'entre-deux" />
+    <meta property="og:site_name" content="Halfway | A mi-chemin du bonheur" />
 
-    <!– Twitter Card data –>
-    <meta name=”twitter:card” content="logo for Halfway">
-    <meta name=”twitter:title” content=”<%= "Halfway | A mi-chemin du bonheur" %>”>
-    <meta name=”twitter:description” content=”<%= "Trouvez des idées de dates dans l'entre-deux" %>”>
-    <meta name=”twitter:image:src” content=”<%= image_tag("halfway_logo.png") %>”>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="twitter:card" content="logo for Halfway"/>
+    <meta name="twitter:title" content="Halfway | A mi-chemin du bonheur"/>
+    <meta name="twitter:description" content="Trouvez des idées de dates dans l'entre-deux"/>
+    <meta name="twitter:image:src" content=<% image_tag("halfway_logo.png")%> />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
