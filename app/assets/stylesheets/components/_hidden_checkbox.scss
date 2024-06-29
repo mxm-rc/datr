@@ -1,0 +1,13 @@
+.container-checkboxes {
+  .form-check {
+    padding-left: 0;
+    width: 100%;
+    .form-check-label {
+      width: 100%;
+    }
+  }
+}
+
+.selected-location {
+  border: 1px solid #7e73ff;
+}
