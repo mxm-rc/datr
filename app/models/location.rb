@@ -6,7 +6,7 @@ class Location < ApplicationRecord
 
   def self.allowed_types
     {
-      # "Surprise" => ActionController::Base.helpers.asset_path("location_types/surprise_me.jpg"),
+      "Surprise" => ActionController::Base.helpers.asset_path("location_types/surprise.jpg"),
       "Bar" => ActionController::Base.helpers.asset_path("location_types/bar.avif"),
       "Cafe" => ActionController::Base.helpers.asset_path("location_types/cafe.jpg"),
       "Chateau" => ActionController::Base.helpers.asset_path("location_types/castle.jpg"),
