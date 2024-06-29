@@ -8,13 +8,13 @@ export default class extends Controller {
 
   connect() {
     console.log('Connected preference_selection_controller');
-    this.toggleSecondRowVisibility();
+    this.updateJokerCheckboxes();
     this.updatePreferencesArray();
   }
 
   jokerClicked() {
     console.log('Surprise clicked');
-    this.toggleSecondRowVisibility();
+    this.updateJokerCheckboxes();
     this.updatePreferencesArray();
   }
 
@@ -23,21 +23,28 @@ export default class extends Controller {
     this.updatePreferencesArray();
   }
 
-  toggleSecondRowVisibility() {
-    this.secondRowContainerTarget.style.display = this.jokerCheckboxTarget.checked ? 'none' : 'block';
+  updateJokerCheckboxes() {
+    if (this.jokerCheckboxTarget.checked) {
+      // all other checkboxes disabled if joker
+      this.preferenceTargets.forEach((checkbox) => {
+        if (checkbox !== this.jokerCheckboxTarget) {
+          checkbox.disabled = true;
+        }
+      });
+    } else {
+      // all other checkboxes enabled if no joker
+      this.preferenceTargets.forEach((checkbox) => {
+        if (checkbox !== this.jokerCheckboxTarget) {
+          checkbox.disabled = false;
+        }
+      });
+    }
   }
 
-  updatePreferencesArray() {
+  updatePreferencesArray(type) {
     let selectedCategories = [];
 
     if (this.jokerCheckboxTarget.checked) {
-      // Clear all other checkboxes if joker
-      this.preferenceTargets.forEach((checkbox) => {
-        if (checkbox !== this.jokerCheckboxTarget) {
-          checkbox.checked = false;
-        }
-      });
-
       // Push 'Surprise' when joker box is checked and ignore other checkboxes
       selectedCategories.push(this.jokerCheckboxTarget.dataset.category);
      } else {
