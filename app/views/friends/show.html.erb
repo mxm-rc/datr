@@ -15,7 +15,7 @@
       <%= link_to new_friend_meet_path(@friend), class:"text-decoration-none", data: { friends_Target: "date" } do %>
       <button class="friends-button border border-dark-subtle">Date</button>
       <% end %>
-      <%= link_to friends_path, class:"text-decoration-none", data: { friends_Target: "more" } do %>
+      <%= link_to friends_path(friend_id: params[:id]), class:"text-decoration-none", data: { friends_Target: "more" } do %>
         <button class="friends-button border border-dark-subtle">Retour</button>
         <% end %>
     </div>
