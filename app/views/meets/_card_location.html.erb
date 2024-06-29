@@ -19,7 +19,8 @@
                     },
                     label_method: ->(type){
                       <<~HTML
-                      <div class="location-type-display" data-location-toggle-target="checkbox" data-action="click->location-toggle#toggle" style="background-image: url('#{image_path Location.allowed_types[type.main_category.capitalize]}')" >
+                       <div class="location-type-display" data-location-toggle-target="checkbox" data-action="click->location-toggle#toggle" style="background-image: url('#{image_path Location.allowed_types[type.main_category.capitalize]}')">
+                          #{type.main_category.capitalize}
                         </div>
                       HTML
                       .html_safe

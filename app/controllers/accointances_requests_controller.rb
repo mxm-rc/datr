@@ -1,12 +1,11 @@
 class AccointancesRequestsController < ApplicationController
 
   def index
-    @accointances = Accointance.where(status: 'pending', follower_id: current_user)
+    @accointances = Accointance.where(status: 'pending', follower_id: current_user.id)
   end
 
   def approve
     accointance = Accointance.find(params[:id])
-    p params[:id]
     accointance.update(status: 'accepted')
 
     redirect_to accointances_requests_path, notice: 'Success'
