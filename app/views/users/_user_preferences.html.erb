@@ -9,6 +9,7 @@
                           nil, data: { preference_selection_target: "preferencesSerialized" } %>
 
     <!-- Show Category 'Surprise' -->
+    <!--
     <div class="halfway-card"
           style="width: 80%;">
       <div class="row align-items-center text-center">
@@ -44,10 +45,10 @@
         </div>
       </div>
     </div>
+    -->
 
-    <div id="secondRowContainer"
-         class="halfway-card"
-         style="width: 70%;"
+    <div class="halfway-card"
+         style="width: 80%;"
          data-preference-selection-target="secondRowContainer">
       <!-- Exclude 'Surprise' as managed in joker part -->
       <% Location.allowed_types.each_with_index do |type, index| %>
