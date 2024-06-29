@@ -1,11 +1,10 @@
 <!-- Logo, main menu, search form, etc...) -->
 <!-- Add Stimulus listener to calculate dynamically its height for layout of following containers -->
-<header data-controller="calculate-header-height"
-        data-calculate-header-height-target="genericHeader"
-        class="m-2 d-flex align-items-center justify-content-center">
+<div id="sharedHeader" class="">
+  <header data-controller="calculate-header-height"
+          data-calculate-header-height-target="genericHeader"
+          class="m-2 d-flex align-items-center justify-content-center">
 
-  <div class="col 7 col-md-7">
-    <%= image_tag "halfway_logo.png", alt: "Halfway Logo" %>
-  </div>
-
-</header>
+    <div class="col 7 col-md-7">
+      <%= image_tag "halfway_logo.png", alt: "Halfway Logo" %>
+    </div>

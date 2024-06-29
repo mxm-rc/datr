@@ -1,29 +1,31 @@
-<nav>
-<ul class="footer d-flex justify-content-between list-unstyled p-3 m-0">
-    <li><%= link_to friends_path do %>
-        <%= image_tag "home.png", class: "icon"%>
-      <% end %>
-    </li>
-    <li><%= link_to accointances_path do %>
-        <%= image_tag "coeur.png", class: "icon"%>
-      <% end %>
-    </li>
-    <li><%= link_to accointances_requests_path do %>
-        <%= image_tag "user-plus-solid", class: "icon"%>
-      <% end %>
-    </li>
-    <% if current_user %>
-      <li>
-        <%= link_to edit_user_path(id:current_user) do %>
-          <%= image_tag "profile.png", class: "icon"%>
+<div id="sharedNavbar" class="sticky-bottom">
+  <nav>
+  <ul class="footer d-flex justify-content-between list-unstyled p-3 m-0">
+      <li><%= link_to friends_path do %>
+          <%= image_tag "home.png", class: "icon"%>
         <% end %>
       </li>
-    <% else %>
-      <li>
-        <%= link_to new_user_session_path do %>
-          <%= image_tag "profile.png", class: "icon"%>
+      <li><%= link_to accointances_path do %>
+          <%= image_tag "coeur.png", class: "icon"%>
         <% end %>
       </li>
-    <% end %>
-  </ul>
-</nav>
+      <li><%= link_to accointances_requests_path do %>
+          <%= image_tag "user-plus-solid", class: "icon"%>
+        <% end %>
+      </li>
+      <% if current_user %>
+        <li>
+          <%= link_to user_path(current_user) do %>
+            <%= image_tag "profile.png", class: "icon"%>
+          <% end %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <%= image_tag "profile.png", class: "icon"%>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</div>

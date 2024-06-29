@@ -16,24 +16,15 @@
 
   <body class="body position-relative">
     <%= render "shared/flashes" %>
-    <div id="sharedHeader" class="">
-      <%= render "shared/shared_header" %>
-    </div>
+    <%= render "shared/shared_header" unless action_name == "show" && controller_name == "friends"%>
 
     <%= yield %>
 
-    <div id="sharedNavbar" class="sticky-bottom">
-      <% if controller_name == 'pages' && action_name == 'landing_page' %>
-        <%= render "layouts/landing_navbar" %>
-      <% else %>
-        <%= render "shared/shared_navbar" %>
-      <% end %>
-    </div>
-
-    <div id="sharedFooter" class="sticky-bottom">
-      <% if controller_name == 'pages' && action_name == 'landing_page' %>
-        <%= render "layouts/landing_footer" %>
-      <% end %>
-    </div>
+    <% if controller_name == 'pages' && action_name == 'landing_page' %>
+      <%= render "layouts/landing_navbar" %>
+      <%= render "layouts/landing_footer" %>
+    <% elsif action_name != "show" || controller_name != "friends"%>
+      <%= render "shared/shared_navbar" %>
+    <% end %>
   </body>
 </html>

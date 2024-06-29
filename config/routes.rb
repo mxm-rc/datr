@@ -19,12 +19,9 @@ Rails.application.routes.draw do
   resources :accointances, only: %i[index]
   resources :meets, only: %i[index]
 
-  resources :accointances_requests, only: %i[index] do
-    member do
-      post 'approve'
-      post 'deny'
-    end
-  end
+  resources :accointances_requests, only: %i[index]
+  resources :accointances_requests, path: "accointances_requests/:status", only: %i[update]
+
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.

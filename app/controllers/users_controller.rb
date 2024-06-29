@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, :set_preferences, only: %i[edit update show]
   before_action :set_selected_preferences, only: %i[update], if: -> { @user.present? }
+  before_action :set_meets, only: %i[show]
 
   def show
   end
@@ -31,7 +32,7 @@ class UsersController < ApplicationController
     current_preferences = @user.venue_preferences.map { |vp| vp.venue_category.main_category }
     my_puts("Method user_controller.update current_preferences (after update): #{current_preferences}")
 
-    redirect_to friends_path, notice: 'Preferences updated successfully!'
+    redirect_to user_path, notice: 'Preferences updated successfully!'
 
   rescue ActiveRecord::RecordInvalid => e
     my_puts("Error: #{e.message}")
@@ -101,9 +102,17 @@ class UsersController < ApplicationController
     @selected_preferences = preferences.select { |preference| allowed_types.include?(preference) }
   end
 
+  def set_meets
+    # Find all accointance_ids where the user is either follower or recipient
+    accointance_ids = Accointance.where("follower_id = ? OR recipient_id = ?", params[:user_id], params[:user_id]).pluck(:id)
+
+    # Find all meets related to these accointances
+    @meets = Meet.where(accointance_id: accointance_ids)
+  end
+
   def user_params
     params.require(:user).permit(:other_attributes, preferences: []).tap do |permitted|
       permitted[:preferences] = params[:user][:preferences] if params[:user][:preferences].is_a?(Array)
     end
-    end
+  end
 end
