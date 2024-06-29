@@ -196,6 +196,14 @@ accointances = Accointance.create!(
   }, {
     follower: users[0], recipient: users[2], status: 'accepted'
   }, {
+    follower: users[0], recipient: users[3], status: 'accepted'
+  }, {
+    follower: users[0], recipient: users[4], status: 'accepted'
+  }, {
+    follower: users[0], recipient: users[5], status: 'pending'
+  }, {
+    follower: users[0], recipient: users[6], status: 'pending'
+  }, {
     follower: users[0], recipient: users[3], status: 'refused'
   }, {
     follower: users[0], recipient: users[3], status: 'refused'
@@ -227,8 +235,8 @@ accointances.each do |a|
     accointance: a,
     centered_address_long: -12_345_678,
     centered_address_lat: 12_345_678,
-    status: 'planned',
-    date: Date.today + 7.days
+    status: a.status,
+    date: Date.today + rand(1..30).days
   )
 end
 puts "Created : #{Meet.count} Meetings"
