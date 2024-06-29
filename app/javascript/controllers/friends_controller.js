@@ -3,7 +3,14 @@ import { Controller } from "@hotwired/stimulus";
 // Connects to data-controller="friends"
 export default class extends Controller {
   static targets = ["name", "age", "card", "more", "date"];
-  connect() {}
+  connect() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const friendId = urlParams.get("friend_id");
+
+    if (friendId) {
+      document.querySelector(`[data-id='${friendId}']`).click();
+    }
+  }
 
   card(event) {
     this.nameTarget.innerHTML = event.target.dataset.name;
