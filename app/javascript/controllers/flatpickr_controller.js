@@ -10,7 +10,7 @@ export default class extends Controller {
   // function in order to build the calendars
   connect() {
     flatpickr(this.dateInputTarget, {
-      inline: true,
+      dateFormat: "d/m/Y", // DD MM YY format
     });
   }
 }
