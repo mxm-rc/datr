@@ -1,6 +1,6 @@
 class AccointancesRequestsController < ApplicationController
   def index
-    @accointances = Accointance.where(status: 'pending', follower_id: current_user)
+    @accointances = Accointance.where(status: 'pending', follower_id: current_user.id)
   end
 
   def update

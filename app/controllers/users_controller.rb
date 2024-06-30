@@ -1,37 +1,37 @@
 class UsersController < ApplicationController
-  before_action :set_user, :set_preferences, only: %i[edit update show]
+  before_action :set_user, :set_preferences, only: %i[show edit update]
   before_action :set_selected_preferences, only: %i[update], if: -> { @user.present? }
+  before_action :set_meets, only: %i[show]
 
   def show
   end
 
   def edit
+    # if @preferences is empty, fill preference by default
+    @preferences = VenuePreference.set_default_preference if @preferences.empty?
+    my_puts("Method user_controller.edit.@preferences: #{@preferences.inspect}")
   end
 
   def update
-    puts "**** update method : #{@selected_preferences}****"
-    # Begin a transaction to ensure data integrity
+    # Begin a transaction block to remove/create categories (rollback if any issue)
     ActiveRecord::Base.transaction do
       # Get current preference types
       current_preferences = @user.venue_preferences.map { |vp| vp.venue_category.main_category }
+      my_puts("Method user_controller.update.current_preferences from DB (before update): #{current_preferences}")
 
-      # Determine preferences to remove (not in @selected_preferences)
-      preferences_to_remove = current_preferences - @selected_preferences
-      preferences_to_remove.each do |preference_type|
-        category = VenueCategory.find_by(main_category: preference_type)
-        @user.venue_preferences.where(venue_category: category).destroy_all if category
-      end
+      remove_preferences(current_preferences)
 
-      # Determine new preferences to add (in @selected_preferences but not in current_preferences)
-      preferences_to_add = @selected_preferences - current_preferences
-      preferences_to_add.each do |preference_type|
-        category = VenueCategory.find_by(main_category: preference_type)
-        @user.venue_preferences.create!(venue_category: category) if category
-      end
+      add_preferences(current_preferences)
     end
-    redirect_to root_path, notice: 'Preferences updated successfully!'
+
+    # Print all user's preferences from DB
+    current_preferences = @user.venue_preferences.map { |vp| vp.venue_category.main_category }
+    my_puts("Method user_controller.update current_preferences (after update): #{current_preferences}")
+
+    redirect_to user_path, notice: 'Preferences updated successfully!'
+
   rescue ActiveRecord::RecordInvalid => e
-    puts "Error: #{e.message}"
+    my_puts("Error: #{e.message}")
 
     # Handle any errors, e.g., rollback and show an error message
     flash[:alert] = 'Erreur dans la mise à jour des préférences.'
@@ -40,9 +40,43 @@ class UsersController < ApplicationController
 
   private
 
+  def remove_preferences(current_preferences)
+    # Add to preferences_to remove similar preferences in current_preferences and @selected_preferences
+    preferences_to_remove = current_preferences - @selected_preferences
+
+    if preferences_to_remove.empty?
+      my_puts("Method user_controller.update.preferences_to_remove (nothing to destroy): #{preferences_to_remove.inspect}")
+    else
+      my_puts("Method user_controller.update.preferences_to_remove (to be destroyed): #{preferences_to_remove.inspect}")
+
+      # Remove from DB preferences that are existing in current_preferences but not in @selected_preferences
+      preferences_to_remove.each do |preference|
+        category = VenueCategory.find_by(main_category: preference)
+        @user.venue_preferences.where(venue_category: category).destroy_all if category
+      end
+    end
+  end
+
+  def add_preferences(current_preferences)
+    # Determine new preferences to add (in @selected_preferences but not in current_preferences)
+    preferences_to_add = @selected_preferences - current_preferences
+
+    if preferences_to_add.empty?
+      my_puts("Method user_controller.update.preferences_to_add (nothing to create): #{preferences_to_add.inspect}")
+    else
+      my_puts("Method user_controller.update.preferences_to_add (to be created): #{preferences_to_add.inspect}")
+
+      # Create in DB preferences that are existing in @selected_preferences but not in current_preferences
+      preferences_to_add.each do |preference|
+        category = VenueCategory.find_by(main_category: preference)
+        @user.venue_preferences.create!(venue_category: category) if category
+      end
+    end
+  end
+
   # Find the current user based on the user_id parameter
   def set_user
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
   end
 
   def set_preferences
@@ -50,24 +84,37 @@ class UsersController < ApplicationController
                         .map { |vp| vp.venue_category.main_category }.uniq
   rescue ActiveRecord::RecordNotFound
     # Handle exceptions, e.g., redirect to a 404 page or show an error message
-    redirect_to(root_url, alert: "Preferences introuvables !")
+    redirect_to(friends_url, alert: "Preferences introuvables !")
   end
 
   def set_selected_preferences
     # Assuming `params[:preferences]` contains an array of selected preference types
-    preferences = user_params[:preferences]&.values || []
-    # Get the keys (location types) from Location.allowed_types as an array
-    allowed_types_keys = Location.allowed_types.keys
+    my_puts("Method user_controller.set_selected_preferences.@user_params: #{user_params[:preferences]}")
+    preferences = user_params[:preferences] || []
 
-    # Map "1" values to their corresponding location types
-    @selected_preferences = preferences.each_with_index.map do |preference, index|
-      allowed_types_keys[index] if preference == "1"
-    end.compact # Remove nil values
+    # Get the keys (location types) from Location.allowed_types as an array
+    allowed_types = Location.allowed_types.keys
+
+    @selected_preferences = preferences.select { |preference| allowed_types.include?(preference) }
+  end
+
+  def set_meets
+    # Find all accointance_ids where the user is either follower or recipient
+    accointance_ids = Accointance.where("follower_id = ? OR recipient_id = ?",
+                                        params[:id],
+                                        params[:id]).pluck(:id)
+    my_puts("Method user_controller.set_meets.accointance_ids: #{accointance_ids.inspect}")
+
+    # Find all meets related to these accointances with a date greater than today
+    @meets = Meet.where(accointance_id: accointance_ids)
+                 .where("date > ?", Date.today)
+                 .where("status IN (?)", ["pending", "accepted"])
+                 .order(date: :asc)
   end
 
   def user_params
-    params.require(:user).permit(:other_attributes, preferences: {}).tap do |permitted|
-      permitted[:preferences] = params[:user][:preferences].permit! if params[:user][:preferences]
+    params.require(:user).permit(:other_attributes, preferences: []).tap do |permitted|
+      permitted[:preferences] = params[:user][:preferences] if params[:user][:preferences].is_a?(Array)
     end
   end
 end

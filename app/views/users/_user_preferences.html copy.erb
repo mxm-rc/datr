@@ -1,0 +1,92 @@
+<div data-controller="preference-selection">
+  <!-- Debug preferences-->
+  <%#= "**** Preferences :" + preferences.inspect %>
+
+  <!-- Use Form instead Simple Form due to wrong outputs in html -->
+  <%= form_for user, url: user_path(user), method: :patch do |f| %>
+    <!-- Hidden input for serialized array of preferences -->
+    <%= hidden_field_tag "user[serialized_preferences]",
+                          nil, data: { preference_selection_target: "preferencesSerialized" } %>
+
+    <!-- Show Category 'Surprise' -->
+    <div class="halfway-card"
+          style="width: 80%;">
+      <div class="row align-items-center text-center">
+        <!-- check box column -->
+        <div class="col-3">
+          <!-- Allowed_types format: {[category, path], [category, path]...}
+          for [] first is key, last is value -->
+          <%= check_box_tag "user[preferences][]",
+                            Location.allowed_types.first.first,
+                            preferences.include?(Location.allowed_types.first.first),
+                            id: "preference_0",
+                            style: "transform: scale(1.5);",
+                            data: { preference_selection_target: "jokerCheckbox",
+                                    action: "click->preference-selection#jokerClicked",
+                                    category: Location.allowed_types.first.first} %>
+          <%= label_tag "preference_0", Location.allowed_types.first.first, class: "mb-0", style: "display: none;" %>
+        </div>
+
+        <!-- Image column -->
+        <div class="col-3">
+          <!-- Allowed_types format: {[category, path], [category, path]...}
+          for [] first is key, last is value -->
+          <%= image_tag Location.allowed_types.first.last,
+                        class: "halfway-card-image m-2 rounded-circle img-fluid",
+                        alt: Location.allowed_types.first.first %>
+        </div>
+
+        <!-- Text details column -->
+        <div class="col-6">
+          <div class="card-body">
+            <h5 class="card-title">J'aime les surprises</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="halfway-card"
+         style="width: 80%;"
+         data-preference-selection-target="secondRowContainer">
+      <!-- Exclude 'Surprise' as managed in joker part -->
+      <% Location.allowed_types.each_with_index do |type, index| %>
+        <!-- Allowed_types format: {[category, path], [category, path]...}
+             for [] first is key, last is value -->
+          <div class="row align-items-center text-center">
+            <div class="col-3">
+              <%= check_box_tag "user[preferences][]",
+                                type.first,
+                                preferences.include?(type.first),
+                                id: "preference_#{index + 1}",
+                                style: "transform: scale(1.5); margin-right: 5%;",
+                                data: { preference_selection_target: "preference",
+                                        action: "click->preference-selection#preferenceClicked",
+                                        category: type.first} %>
+              <%= label_tag "preference_#{index + 1}", type.first, class: "mb-0", style: "display: none;" %>
+            </div>
+
+            <!-- Image column -->
+            <div class="col-3">
+              <!-- Allowed_types format: {[category, path], [category, path]...}
+              for [] first is key, last is value -->
+              <%= image_tag type.last,
+                            class: "halfway-card-image m-2 rounded-circle img-fluid",
+                            alt: type.first %>
+            </div>
+
+            <!-- Text details column -->
+            <div class="col-6">
+              <div class="card-body">
+                <h5 class="card-title text-start"><%= type.first %></h5>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <%= f.submit "Sauvegarde", class: "btn btn-primary" %>
+    </div>
+    </div>
+  <% end %>
+</div>

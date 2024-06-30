@@ -1,7 +1,21 @@
 <h1> Create a new Meet </h1>
-<%# <%= simple_form_for new_friend_meet_path(@friend) do |f| %>
-  <%# <%= f.input :date %>
-  <%# <%= f.input :location_type, collection: [:restaurant, :cinema, :danse, :bar] %>
-  <%# <%= f.button :submit %>
-<%# <% end %>
-  <%= render "card_location" %>
+  <div class="form-wrapper">
+<%= simple_form_for [@friend, @meet], url: friend_meets_path(@friend),
+                    html: {
+                      data: {
+                        controller: 'flatpickr'
+                      }
+                    } do |f| %>
+    <%= f.input :date,
+							as: :string,
+              input_html: {
+                data: {
+                  flatpickr_target: 'dateInput',
+                },
+              } %>
+
+  <%= render partial: "card_location", locals: { f: f, location_types: @location_types } %>
+  <%= f.button :submit,
+   "It's a date", class: "btn btn-primary"%>
+<% end %>
+</div>

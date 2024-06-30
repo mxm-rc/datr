@@ -1,0 +1,26 @@
+<div class="row">
+  <!-- Debug preferences-->
+  <%#= "**** Meets :" + meets.inspect %>
+  <% meets.each do |meet| %>
+    <div class="halfway-card" style="width: 80%; display: inline-block;">
+      <div class="">
+        <div class="row align-items-center">
+          <!-- Image column -->
+          <div class="col-3 col-md-2" >
+            <%= image_tag "users/#{meet.accointance.friend_of(user).picture}",
+                          class: "halfway-card-image rounded-circle img-fluid",
+                          style: "transform: scale(1.5);",
+                          alt: meet.accointance.friend_of(user).first_name %>
+          </div>
+          <!-- Text details column -->
+          <div class="col-7 col-md-9 mt-2">
+            <div class="mb-0">
+                <h5>Status: <%= meet.status == "pending" ? "En attente" : "Validé" %></h5>
+                <p>Date: <%= meet.date.strftime("%d/%m/%Y") %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

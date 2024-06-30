@@ -12,7 +12,7 @@
             <div class="col-9 col-md-9">
               <div class="card-body">
                 <h5> Proposition de rendez-vous envoyée !</h5>
-                <p class="card-text">à <%= friend.first_name %> le <%= selected_places.first.meet.date %></p>
+                <p class="card-text">à <%= friend.first_name %> le <%= selected_places.first.meet.date.strftime("%d/%m/%Y") %></p>
                 <p class="card-text"> Avec <%= selected_places.count %> <%= selected_places.count == 1 ? 'lieu possible de rencontre' : 'lieux possibles de rencontre' %></p>              </div>
             </div>
 

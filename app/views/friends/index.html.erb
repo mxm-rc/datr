@@ -19,7 +19,9 @@
       <div class="friends-age" data-friends-target="age"> <%= Time.zone.now.year - @friends.first.birthdate.year %></div>
     </div>
     <div class="mb-5 d-flex flex-colum justify-content-evenly">
+      <%= link_to new_friend_meet_path(@friends.first), class:"text-decoration-none", data: { friends_Target: "date" } do %>
       <button class="friends-button">Date</button>
+      <% end %>
       <%= link_to friend_path(@friends.first), class:"text-decoration-none", data: { friends_Target: "more" } do %>
         <button class="friends-button">More</button>
       <% end %>
@@ -27,8 +29,9 @@
   </div>
 </div>
 
-
 <%# Lien de test pour atteindre selected_place_controller %>
+<!--
 <div style="margin: 10px 0;">
   <%= link_to "Trouve liste de restaurant [test]", friend_meet_selected_places_path(1, 1, limit: 3) %>
 </div>
+-->

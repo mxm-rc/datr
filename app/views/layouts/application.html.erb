@@ -1,37 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Datr</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Halfway | A mi-chemin du bonheur </title>
+    <meta name="description" content="Trouvez des idées de dates dans l'entre-deux">
+    <%= favicon_link_tag 'favicon.ico'%>
+
+    <meta property="og:title" content="Halfway | A mi-chemin du bonheur" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content=<% image_tag("halfway_logo.png") %> />
+    <meta property="og:description" content="Trouvez des idées de dates dans l'entre-deux" />
+    <meta property="og:site_name" content="Halfway | A mi-chemin du bonheur" />
+
+
+    <meta name="twitter:card" content="logo for Halfway"/>
+    <meta name="twitter:title" content="Halfway | A mi-chemin du bonheur"/>
+    <meta name="twitter:description" content="Trouvez des idées de dates dans l'entre-deux"/>
+    <meta name="twitter:image:src" content=<% image_tag("halfway_logo.png")%> />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
   </head>
 
   <body class="body position-relative">
     <%= render "shared/flashes" %>
-    <div id="sharedHeader" class="">
-      <%= render "shared/shared_header" %>
-    </div>
+    <%= render "shared/shared_header" unless action_name == "show" && controller_name == "friends"%>
 
     <%= yield %>
 
-    <div id="sharedNavbar" class="sticky-bottom">
-      <% if controller_name == 'pages' && action_name == 'landing_page' %>
-        <%= render "layouts/landing_navbar" %>
-      <% else %>
-        <%= render "shared/shared_navbar" %>
-      <% end %>
-    </div>
-
-    <div id="sharedFooter" class="">
-      <% if controller_name == 'pages' && action_name == 'landing_page' %>
-        <%= render "layouts/landing_footer" %>
-      <% end %>
-    </div>
+    <% if controller_name == 'pages' && action_name == 'landing_page' %>
+      <%= render "layouts/landing_navbar" %>
+      <%= render "layouts/landing_footer" %>
+    <% elsif action_name != "show" || controller_name != "friends"%>
+      <%= render "shared/shared_navbar" %>
+    <% end %>
   </body>
 </html>

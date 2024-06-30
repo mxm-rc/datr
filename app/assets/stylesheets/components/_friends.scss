@@ -1,12 +1,13 @@
 .scroll {
   overflow: scroll;
   white-space: nowrap;
+  scrollbar-width: none;
   width: 100vw;
 }
 
 .friends-card {
   overflow: hidden;
-  height: 500px;
+  height: 400px;
   background: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   border-radius: 24px;
@@ -46,16 +47,26 @@
 }
 
 .friends-show {
-  height: 96%;
-  width: 96%;
-  border-radius: 24px;
+  height: 100vh;
   margin: 2%;
+}
+
+.friends-show-image {
+  height: 60vh;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
   background-size: cover;
   background-position: center center;
 }
 
 .friends-show-infos {
-  height: 30%;
-  border-radius: 24px;
+  height: 40%;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
   background-color: white;
+}
+
+.friends-show-bio {
+  color: black;
+  font-family: "Poppins", sans-serif;
 }

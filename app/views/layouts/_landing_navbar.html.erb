@@ -1,7 +1,9 @@
 <!-- Updated Navigation links for Landing Page with links on separate lines -->
-<nav class="row mt-3 justify-content-center">
-  <div class="col-12 text-center">
-    <%= link_to "Voir mes Dates", friends_path, class: "d-block mb-2 btn btn-light btn-halfway-border rounded-pill btn-halfway-max-width" %>
-    <%= link_to "Connexion", new_user_session_path, class: "d-block btn-halfway-border btn btn-light rounded-pill btn-halfway-max-width" %>
-  </div>
-</nav>
+<div id="sharedNavbar" class="sticky-bottom">
+  <nav class="row mt-3 justify-content-center">
+    <div class="col-12 text-center">
+      <%= link_to "Voir mes Dates", friends_path, class: "d-block mb-2 btn btn-light btn-halfway-border rounded-pill btn-halfway-max-width" %>
+      <%= link_to "Connexion", new_user_session_path, class: "d-block btn-halfway-border btn btn-light rounded-pill btn-halfway-max-width" %>
+    </div>
+  </nav>
+</div>
