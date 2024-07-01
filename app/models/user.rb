@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :followers, class_name: 'Accointance', foreign_key: 'follower_id', dependent: :destroy
   has_many :recipients, class_name: 'Accointance', foreign_key: 'recipient_id', dependent: :destroy
 
-  has_many :accointances, ->(user) { unscope(where: :user_id).where('follower_id = :id OR recipient_id = :id', id: user.id) }, dependent: :destroy
+  # has_many :accointances, ->(user) { unscope(where: :user_id).where('follower_id = :id OR recipient_id = :id', id: user.id) }, dependent: :destroy
   has_many :venue_preferences
   has_many :venue_categories, through: :venue_preferences
 
@@ -17,6 +17,13 @@ class User < ApplicationRecord
   validates :birthdate, presence: true
   validate :validate_age
 
+  def accointances
+    Accointance.where('follower_id = ? OR recipient_id = ?', id, id)
+  end
+
+  def accointance_with(other_user)
+    accointances.find_by(recipient_id: other_user.id)
+  end
 
   def friends(status: nil)
     User.where(id: accointances_for(status: status).pluck(:follower_id, :recipient_id).flatten).distinct.where.not(id: id)
@@ -25,9 +32,7 @@ class User < ApplicationRecord
   private
 
   def accointances_for(status: nil)
-    return accointances if status.nil?
-
-    accointances.where(status: status)
+    status.nil? ? accointances : accointances.where(status: status)
   end
 
   def validate_age

@@ -204,17 +204,9 @@ accointances = Accointance.create!(
   }, {
     follower: users[0], recipient: users[6], status: 'pending'
   }, {
-    follower: users[0], recipient: users[3], status: 'refused'
-  }, {
-    follower: users[0], recipient: users[3], status: 'refused'
-  }, {
-    follower: users[2], recipient: users[0], status: 'accepted'
-  }, {
     follower: users[1], recipient: users[2], status: 'accepted'
   }, {
     follower: users[1], recipient: users[3], status: 'pending'
-  }, {
-    follower: users[2], recipient: users[3], status: 'refused'
   }, {
     follower: users[5], recipient: users[2], status: 'accepted'
   }, {
