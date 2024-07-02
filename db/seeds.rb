@@ -40,7 +40,7 @@ users = User.create!(
     address: "40 rue de Maubeuge, 75009, Paris",
     picture: "agathe.jpg",
     admin: "true",
-    bio: "J'ai 31 ans et je suis spécialiste en marketing digital. Passionnée de voyages et de photographie, j'ai aussi cofondé une association dédiée à l'autonomisation des femmes dans le secteur technologique."
+    bio: "J'ai 31 ans et je suis spécialiste en marketing digital. Passionnée de voyages et de photographie."
   }, {
     birthdate: Date.new(1998, 2, 20),
     pseudo: "Est3lle",
@@ -100,7 +100,7 @@ users = User.create!(
     address: "30 rue Mazarine, 75006, Paris",
     picture: "natacha.jpg",
     admin: "true",
-    bio: "Fraichement installé à Paris, je ne connais pas du tout mon quartier. J'aimerais rencontrer des gens pour m'aider à le découvrir."
+    bio: "Je ne connais pas du tout mon quartier. J'aimerais rencontrer des gens pour m'aider à le découvrir."
   }, {
     birthdate: Date.new(1989, 9, 26),
     pseudo: "Mymycou",
@@ -221,18 +221,6 @@ accointances = Accointance.create!(
 )
 puts "Created : #{accointances.count} Accointances"
 
-# Create meets in bulk
-accointances.each do |a|
-  Meet.create!(
-    accointance: a,
-    centered_address_long: -12_345_678,
-    centered_address_lat: 12_345_678,
-    status: a.status,
-    date: Date.today + rand(1..30).days
-  )
-end
-puts "Created : #{Meet.count} Meetings"
-
 # Parse locations coming from geojson files
 # parsed_locations = parse_location_data
 
@@ -247,6 +235,27 @@ end
 VenueCategory.find_or_create_by(main_category: 'Surprise', sub_category: "")
 
 puts "Created : #{VenueCategory.count} VenueCategories"
+
+# Find the 'Surprise' VenueCategory
+default_venue_category = VenueCategory.find_by(main_category: 'Surprise', sub_category: "")
+
+# Create meets in bulk
+Accointance.all.each do |a|
+  meet = Meet.create!(
+    accointance_id: a.id,
+    centered_address_long: -123.45678, # Assuming this is a placeholder value
+    centered_address_lat: 12.345678, # Assuming this is a placeholder value
+    status: a.status,
+    date: Date.today + rand(1..30).days
+  )
+
+  # Associate Meet with a VenueCategory !
+  MeetVenueCategory.create!(
+    meet_id: meet.id,
+    venue_category_id: default_venue_category.id
+  )
+end
+puts "Created : #{Meet.count} Meetings"
 
 puts 'Locations Bulk inserting in DB...'
 # Prepare data for bulk insertion to speed-up the seeding

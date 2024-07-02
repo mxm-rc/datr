@@ -7,8 +7,14 @@ class Accointance < ApplicationRecord
   validates :recipient_id, presence: true
   validates :status, inclusion: { in: %w[pending accepted refused] }
 
+  before_save :unique_accointance
+
   def friend_of(current_user)
     current_user == follower ? recipient : follower
+  end
+
+  def self.status_exist(user)
+    Accointance.find_by(follower: user) || Accointance.find_by(recipient: user)
   end
 
   private
@@ -21,9 +27,8 @@ class Accointance < ApplicationRecord
     error.add(:base, "The Follower and Recipient must be different") if follower_id == recipient_id
   end
 
-  def unique_acquaintance
-    existing_acquaintance = Accointance.find_by(follower_id: follower_id, recipient_id: recipient_id) ||
-                            Accointance.find_by(follower_id: recipient_id, recipient_id: follower_id)
-    errors.add(:base, "An acquaintance request already exists for this pair") if existing_acquaintance.present?
+  def unique_accointance
+    existing_accointance = Accointance.find_by(follower_id: follower_id, recipient_id: recipient_id) || Accointance.find_by(follower_id: recipient_id, recipient_id: follower_id)
+    errors.add(:base, "An acquaintance request already exists for this pair") if existing_accointance
   end
 end

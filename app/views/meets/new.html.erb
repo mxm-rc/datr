@@ -1,21 +1,38 @@
 <h1> Create a new Meet </h1>
-  <div class="form-wrapper">
-<%= simple_form_for [@friend, @meet], url: friend_meets_path(@friend),
-                    html: {
-                      data: {
-                        controller: 'flatpickr'
-                      }
-                    } do |f| %>
-    <%= f.input :date,
-							as: :string,
-              input_html: {
-                data: {
-                  flatpickr_target: 'dateInput',
-                },
-              } %>
+<div class="form-wrapper">
+  <%= simple_form_for [@friend, @meet], url: friend_meets_path(@friend),
+                      html: {
+                        data: {
+                          controller: 'flatpickr'
+                        }
+                      } do |f| %>
+      <%= f.input :date,
+                as: :string,
+                input_html: {
+                  data: {
+                    flatpickr_target: 'dateInput',
+                  },
+                } %>
 
-  <%= render partial: "card_location", locals: { f: f, location_types: @location_types } %>
-  <%= f.button :submit,
-   "It's a date", class: "btn btn-primary"%>
-<% end %>
+    <%= render partial: "card_location", locals: { f: f, location_types: @location_types } %>
+    <div class= "row align-items-center justify-content-center">
+      <div class="col-6">
+      <%= f.input :limit,
+                  label: 'Nombre de propositions',
+                  wrapper_html: { style: 'width: 80%; margin: 0 auto;'},
+                  input_html: {
+                    class: 'text-center', # center text inside the input
+                    type: :number,  # Set input type to number
+                    min: 1,  # Set minimum acceptable value
+                    max:6,  # Set maximum acceptable value
+                    value: params[:limit] || 3,  # Default value 3
+                    required: true  # Make the field required
+                  } %>
+      </div>
+      <div class="col-6">
+        <%= f.button :submit,
+                    "It's a date", class: "btn btn-primary"%>
+      </div>
+    </div>
+  <% end %>
 </div>
