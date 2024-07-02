@@ -13,7 +13,6 @@
 
 <div class="container">
   <h1>Ajoute ton date</h1>
-
   <% @users.each do |user| %>
     <% accointance = current_user.accointance_with(user) %>
     <% if accointance %>
