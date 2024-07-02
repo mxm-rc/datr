@@ -5,7 +5,7 @@
       <div class="map-selected-places-datr">
         <%= render "map_with_locations", markers: @markers %>
       </div>
-      <div class="list-locations-selected-places-datr">
+      <div class="list-locations-selected-places-datr m-3">
         <%# Drop MidPoint in 1st place list %>
         <%= render "locations_proposed", places: @places.drop(1), friend: @friend, meet: @meet %>
       </div>
@@ -14,6 +14,6 @@
         <h2>Aucun lieu de rencontre possible</h2>
       </div>
     <% end %>
-  </div>
+   </div>
 
 </div>
