@@ -1,11 +1,24 @@
-<div class="container">
+<!--<div class="container">
   <h1>Ajoute ton date</h1>
 
+  <%# @users.each do |user| %>-->
+    <%# if current_user.accointances[user.id] != nil %>
+      <%#= render partial: "status_exist", locals: { user: user} %>
+      <%# else %>
+      <%#= render  partial: "add_button",  locals: { user: user} %>
+    <%# end %>
+  <%# end %>
+<!--</div>-->
+
+
+<div class="container">
+  <h1>Ajoute ton date</h1>
   <% @users.each do |user| %>
-    <% if current_user.accointances.status_exist(user) %>
-      <%= render partial: "status_exist", locals: { user: user} %>
-      <% else %>
-      <%= render  partial: "add_button",  locals: { user: user} %>
+    <% accointance = current_user.accointance_with(user) %>
+    <% if accointance %>
+      <%= render partial: "status_exist", locals: { user: user, accointance: accointance } %>
+    <% else %>
+      <%= render partial: "add_button", locals: { user: user } %>
     <% end %>
   <% end %>
 </div>

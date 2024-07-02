@@ -204,17 +204,9 @@ accointances = Accointance.create!(
   }, {
     follower: users[0], recipient: users[6], status: 'pending'
   }, {
-    follower: users[0], recipient: users[3], status: 'refused'
-  }, {
-    follower: users[0], recipient: users[3], status: 'refused'
-  }, {
-    follower: users[2], recipient: users[0], status: 'accepted'
-  }, {
     follower: users[1], recipient: users[2], status: 'accepted'
   }, {
     follower: users[1], recipient: users[3], status: 'pending'
-  }, {
-    follower: users[2], recipient: users[3], status: 'refused'
   }, {
     follower: users[5], recipient: users[2], status: 'accepted'
   }, {
@@ -228,18 +220,6 @@ accointances = Accointance.create!(
   }]
 )
 puts "Created : #{accointances.count} Accointances"
-
-# Create meets in bulk
-accointances.each do |a|
-  Meet.create!(
-    accointance: a,
-    centered_address_long: -12_345_678,
-    centered_address_lat: 12_345_678,
-    status: a.status,
-    date: Date.today + rand(1..30).days
-  )
-end
-puts "Created : #{Meet.count} Meetings"
 
 # Parse locations coming from geojson files
 # parsed_locations = parse_location_data
@@ -255,6 +235,27 @@ end
 VenueCategory.find_or_create_by(main_category: 'Surprise', sub_category: "")
 
 puts "Created : #{VenueCategory.count} VenueCategories"
+
+# Find the 'Surprise' VenueCategory
+default_venue_category = VenueCategory.find_by(main_category: 'Surprise', sub_category: "")
+
+# Create meets in bulk
+Accointance.all.each do |a|
+  meet = Meet.create!(
+    accointance_id: a.id,
+    centered_address_long: -123.45678, # Assuming this is a placeholder value
+    centered_address_lat: 12.345678, # Assuming this is a placeholder value
+    status: a.status,
+    date: Date.today + rand(1..30).days
+  )
+
+  # Associate Meet with a VenueCategory !
+  MeetVenueCategory.create!(
+    meet_id: meet.id,
+    venue_category_id: default_venue_category.id
+  )
+end
+puts "Created : #{Meet.count} Meetings"
 
 puts 'Locations Bulk inserting in DB...'
 # Prepare data for bulk insertion to speed-up the seeding
