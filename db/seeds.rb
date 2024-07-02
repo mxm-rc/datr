@@ -40,7 +40,7 @@ users = User.create!(
     address: "40 rue de Maubeuge, 75009, Paris",
     picture: "agathe.jpg",
     admin: "true",
-    bio: "J'ai 31 ans et je suis spécialiste en marketing digital. Passionnée de voyages et de photographie, j'ai aussi cofondé une association dédiée à l'autonomisation des femmes dans le secteur technologique."
+    bio: "J'ai 31 ans et je suis spécialiste en marketing digital. Passionnée de voyages et de photographie."
   }, {
     birthdate: Date.new(1998, 2, 20),
     pseudo: "Est3lle",
@@ -100,7 +100,7 @@ users = User.create!(
     address: "30 rue Mazarine, 75006, Paris",
     picture: "natacha.jpg",
     admin: "true",
-    bio: "Fraichement installé à Paris, je ne connais pas du tout mon quartier. J'aimerais rencontrer des gens pour m'aider à le découvrir."
+    bio: "Je ne connais pas du tout mon quartier. J'aimerais rencontrer des gens pour m'aider à le découvrir."
   }, {
     birthdate: Date.new(1989, 9, 26),
     pseudo: "Mymycou",
