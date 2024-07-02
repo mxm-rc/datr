@@ -3,6 +3,10 @@ class MeetsController < ApplicationController
   before_action :set_user, :set_meets, only: %i[index]
   before_action :set_limit, only: %i[create]
 
+  def index
+    my_puts("MeetsControlle#index: @meets = #{@meets.inspect} // @user = #{@user.inspect}")
+  end
+
   def new
     @meet = Meet.new
     @location_types = Location.allowed_types{0}
@@ -19,10 +23,6 @@ class MeetsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
     # meet"=>{"date"=>"2024-06-04", "venue_category_ids"=>["", "9"]},
-  end
-
-  def index
-    my_puts("MeetsControlle#index: @meets = #{@meets.inspect} // @user = #{@user.inspect}")
   end
 
   private

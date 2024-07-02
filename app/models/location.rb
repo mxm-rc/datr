@@ -19,10 +19,6 @@ class Location < ApplicationRecord
     }
   end
 
-  def self.my_puts(message)
-    puts("\e[32m**** #{message} ****\e[0m")
-  end
-
   # Method to fetch recommended Locations based on common Categories between two users
   def self.recommended_locations(my_id, friend_id, mid_point, limit)
     # 1 Determine common preferences between me and friend
