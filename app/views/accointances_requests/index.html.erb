@@ -1,31 +1,28 @@
-<p>HELLO FROM Accointance_request INDEX</p>
 
 <% @accointances.each do |accointance| %>
-  <div class="card-accointance">
-<!--   <div class="profil-pic">-->
-        <%#= image_tag "users/#{accointance.image}", class: "image_round" %>
-<!--      </div>-->
+    <div class="card-accointance">
+      <!-- <div class="profil-pic"> -->
+      <%#= image_tag "users/#{accointance.image}", class: "image_round" %>
+      <!-- </div> -->
 
-     <div class="name">
-
-      <li>
+      <div class="name">
+        <li>
           <%= "accointance_id =" %>
           <%= accointance.id %>
-      </li>
-      <li>
+        </li>
+        <li>
           <%= "follower_id" %>
           <%= accointance.follower_id %>
-      </li>
-      <li>
+        </li>
+        <li>
           <%= "recipient_id" %>
           <%= accointance.recipient_id %>
-      </li>
-
+        </li>
+      </div>
+      <%#= render partial: "accointances/card_accointance", locals: { accointance: accointance } %>
+      <% if accointance.status == 'pending' %>
+        <%= button_to 'Accepter', approve_accointances_request_path(accointance), method: :post %>
+        <%= button_to 'Rejeter', deny_accointances_request_path(accointance), method: :post %>
+      <% end %>
     </div>
-    <%#= render partial: "accointances/card_accointance", locals: { accointance: accointance } %>
-    <% if accointance.status == 'pending' %>
-      <%= button_to 'Accepter', approve_accointances_request_path(accointance), method: :post %>
-      <%= button_to 'Rejeter', deny_accointances_request_path(accointance), method: :post %>
-    <% end %>
-  </div>
 <% end %>
