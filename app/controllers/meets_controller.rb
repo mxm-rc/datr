@@ -1,6 +1,7 @@
 class MeetsController < ApplicationController
   before_action :set_friend, only: %i[new create]
   before_action :set_user, :set_meets, only: %i[index]
+  before_action :set_limit, only: %i[create]
 
   def new
     @meet = Meet.new
@@ -12,7 +13,8 @@ class MeetsController < ApplicationController
     @accointance = Accointance.find_by(follower: [current_user.id, @friend.id], recipient: [current_user.id, @friend.id])
     @meet = @accointance.meets.new(meet_params)
     if @meet.save
-      redirect_to friend_meet_selected_places_path(@friend, @meet), notice: 'Meet was successfully created.'
+      # limit: @limit
+      redirect_to friend_meet_selected_places_path(@friend, @meet, limit: 3), notice: 'Meet was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -39,6 +41,12 @@ class MeetsController < ApplicationController
 
   def set_friend
     @friend = User.find(params[:friend_id])
+  end
+
+  def set_limit
+    my_puts("MeetsControlle#set_limit: params = #{params.inspect}")
+    @limit = params[:limit].to_i.clamp(1, 6)
+    my_puts("MeetsControlle#set_limit: @limit = #{@limit.inspect}")
   end
 
   def meet_params
