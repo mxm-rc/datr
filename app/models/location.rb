@@ -19,12 +19,16 @@ class Location < ApplicationRecord
     }
   end
 
+  def self.my_puts(message)
+    puts("\e[32m**** #{message} ****\e[0m")
+  end
+
   # Method to fetch recommended Locations based on common Categories between two users
   def self.recommended_locations(my_id, friend_id, mid_point, limit)
     # 1 Determine common preferences between me and friend
     common_categories = find_joker(my_id, friend_id).presence || find_common_categories(my_id, friend_id)
     # Print common categories
-    puts "***** Common Categories: #{common_categories.map(&:main_category)} *****"
+    my_puts("recommended_locations.common_categories: #{common_categories.map(&:main_category)}")
 
     # 2 Filter the locations based on the common preferences
     locations = find_location(common_categories)
@@ -35,18 +39,17 @@ class Location < ApplicationRecord
   end
 
   def self.find_common_categories(my_id, friend_id)
-    puts "***** Find_common_categories *****"
-
     # Print all my_id categories
-    puts "***** My_id Categories: #{VenuePreference.includes(:venue_category)
-                                                   .where(user_id: my_id)
-                                                   .map { |vp| vp.venue_category.main_category }
-                                                   .uniq} *****"
+    my_puts("Location.find_common_categories: My_id Categories: #{VenuePreference.includes(:venue_category)
+                                                                                 .where(user_id: my_id)
+                                                                                 .map { |vp| vp.venue_category.main_category }
+                                                                                 .uniq}")
+
     # Print all friend_id categories
-    puts "***** Friend_id Categories: #{VenuePreference.includes(:venue_category)
-                                                   .where(user_id: friend_id)
-                                                   .map { |vp| vp.venue_category.main_category }
-                                                   .uniq} *****"
+    my_puts("Location.find_common_categories: Friend_id Categories: #{VenuePreference.includes(:venue_category)
+                                                                                 .where(user_id: friend_id)
+                                                                                 .map { |vp| vp.venue_category.main_category }
+                                                                                 .uniq}")
 
     # Search common Categories for both users if no joker preferences found for both
     common_categories = VenuePreference.select(:venue_category_id)
@@ -89,11 +92,11 @@ class Location < ApplicationRecord
     # Search joker presence both users
     my_joker = user_has_joker?(my_id)
     # Print joker presence for my
-    puts "***** Me : #{my_joker} !*****"
+    my_puts("find_joker.Me : #{my_joker} !")
 
     friend_joker = user_has_joker?(friend_id)
     # Print joker presence for friend
-    puts "***** Friend : #{friend_joker} ! *****"
+    my_puts("find_joker.Friend : #{friend_joker} !")
 
     # If both users have joker preference then return full categories array
     return VenueCategory.all if my_joker && friend_joker
