@@ -236,27 +236,6 @@ VenueCategory.find_or_create_by(main_category: 'Surprise', sub_category: "")
 
 puts "Created : #{VenueCategory.count} VenueCategories"
 
-# Find the 'Surprise' VenueCategory
-default_venue_category = VenueCategory.find_by(main_category: 'Surprise', sub_category: "")
-
-# Create meets in bulk
-Accointance.all.each do |a|
-  meet = Meet.create!(
-    accointance_id: a.id,
-    centered_address_long: -123.45678, # Assuming this is a placeholder value
-    centered_address_lat: 12.345678, # Assuming this is a placeholder value
-    status: a.status,
-    date: Date.today + rand(1..30).days
-  )
-
-  # Associate Meet with a VenueCategory !
-  MeetVenueCategory.create!(
-    meet_id: meet.id,
-    venue_category_id: default_venue_category.id
-  )
-end
-puts "Created : #{Meet.count} Meetings"
-
 puts 'Locations Bulk inserting in DB...'
 # Prepare data for bulk insertion to speed-up the seeding
 location_data = parsed_locations.map do |location|
@@ -275,6 +254,7 @@ location_data = parsed_locations.map do |location|
     updated_at: Time.current
   }
 end
+
 # Bulk insert locations and retrieve them with IDs
 Location.insert_all(location_data)
 puts "Created : #{Location.count} Locations"
@@ -296,6 +276,37 @@ end
 # Bulk insert LocationCategory records if there are any to create
 LocationCategory.insert_all(location_categories_data) unless location_categories_data.empty?
 puts "Created : #{LocationCategory.count} Location Categories"
+
+# Find the 'Surprise' VenueCategory
+default_venue_category = VenueCategory.find_by(main_category: 'Surprise', sub_category: "")
+
+# Create meets in bulk
+Accointance.all.each do |a|
+  meet = Meet.create!(
+    accointance_id: a.id,
+    centered_address_long: -123.45678, # Assuming this is a placeholder value
+    centered_address_lat: 12.345678, # Assuming this is a placeholder value
+    status: a.status,
+    date: Date.today + rand(1..30).days
+  )
+
+  # Associate Meet with a VenueCategory !
+  MeetVenueCategory.create!(
+    meet_id: meet.id,
+    venue_category_id: default_venue_category.id
+  )
+  # Create a SelectedPlace for each Meet with status 'accepted'
+  if meet.status == 'accepted'
+    SelectedPlace.create!(
+      meet_id: meet.id,
+      location_id: Location.all.sample.id,
+      selected_by_follower: true,
+      selected_by_recipient: true
+    )
+  end
+end
+puts "Created : #{Meet.count} Meetings"
+puts "Created : #{SelectedPlace.count} SelectedPlaces for Meetings"
 
 # Create venue preferences for each user
 pref_levels = [1, 2, 3]

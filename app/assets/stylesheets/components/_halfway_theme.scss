@@ -56,3 +56,12 @@
   transform: translate(-50%, -50%); /* Offset the modal to truly center it on the screen */
   z-index: 1000; /* Ensure the modal is above other content */
 }
+
+.halfway-modal-content p {
+  color: black !important;
+  margin: 0;
+}
+
+.halfway-modal-image {
+  border-radius: 10px;
+}
