@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -22,7 +23,7 @@ class User < ApplicationRecord
   end
 
   def accointance_with(other_user)
-    accointances.find_by(recipient_id: other_user.id)
+    accointances.find_by(recipient_id: other_user.id) || accointances.find_by(follower_id: other_user.id)
   end
 
   def friends(status: nil)
