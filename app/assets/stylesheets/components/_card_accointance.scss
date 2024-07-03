@@ -118,7 +118,6 @@
   color: #000000;
   text-align: left;
 }
-
 .earth-button {
   display: flex;
   align-items: center;
@@ -126,28 +125,30 @@
   margin-right: 20px;
 }
 
-
-// .like-button {
-//   background-color: #ff4081;
-//   padding: 10px;
-//   border-radius: 50%;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   color: #fff;
-//   font-size: 20px;
-// }
-
-
 .icon-button {
   background: transparent;
   border: none;
   padding: 0;
   cursor: pointer;
+  position: relative; /* Ajouté pour positionner l'icône par rapport à son conteneur */
 }
 
 .icon-button .icon {
   display: inline-block;
-  width: 24px;  /* Ajustez la taille selon vos besoins */
+  width: 24px; /* Ajustez la taille selon vos besoins */
   height: 24px; /* Ajustez la taille selon vos besoins */
+}
+
+.icon-button::before {
+  content: '';
+  display: inline-block;
+  width: 35px; /* Taille du rond blanc */
+  height: 35px; /* Taille du rond blanc */
+  background-color: #fff; /* Couleur de fond blanche */
+  border-radius: 50%;
+  position: absolute; /* Positionné par rapport à .icon-button */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centré */
+  z-index: -1; /* Derrière l'icône */
 }
