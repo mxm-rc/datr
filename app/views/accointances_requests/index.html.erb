@@ -1,4 +1,3 @@
-
 <% @accointances.each do |accointance| %>
     <div class="card-accointance">
       <!-- <div class="profil-pic"> -->
@@ -19,10 +18,10 @@
           <%= accointance.recipient_id %>
         </li>
       </div>
-      <%#= render partial: "accointances/card_accointance", locals: { accointance: accointance } %>
+
       <% if accointance.status == 'pending' %>
-        <%= button_to 'Accepter', approve_accointances_request_path(accointance), method: :post %>
-        <%= button_to 'Rejeter', deny_accointances_request_path(accointance), method: :post %>
-      <% end %>
+      <%= button_to 'Accepter', accointances_request_path('accepted', accointance.id), method: :patch %>
+      <%= button_to 'Rejeter', accointances_request_path('refused', accointance.id), method: :patch %>
+    <% end %>
     </div>
 <% end %>
