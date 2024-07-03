@@ -17,7 +17,17 @@
   display: flex;
   margin: 8px;
   align-items: center;
-  justify-content: space-between;
+  font-family: Poppins, sans-serif;
+}
+
+.card-accointance-button {
+  width: auto; /* Ajustez la largeur selon vos besoins */
+  padding: 8px;
+  background-color: rgba(255, 255, 255, 0.5); /* Couleur de fond avec opacité */
+  border-radius: 80px;
+  display: flex;
+  margin: 8px;
+  align-items: center;
   font-family: Poppins, sans-serif;
 }
 
@@ -34,6 +44,8 @@
   height: 100%;
   object-fit: cover;
 }
+
+
 
 .status {
   background-color: #fff;
@@ -60,20 +72,42 @@
   font-size: 20px;
   font-weight: bold;
   color: #000;
+  flex-grow: 1; /* Assure que cet élément prend toute la largeur disponible */
+  text-align: left;
 }
 
 .description {
   font-size: 14px;
   color: #000000;
+  text-align: left;
 }
 
-.like-button {
-  background-color: #ff4081;
-  padding: 10px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 20px;
+.earth-button {
+  margin-right: 18px;
+}
+
+
+// .like-button {
+//   background-color: #ff4081;
+//   padding: 10px;
+//   border-radius: 50%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   color: #fff;
+//   font-size: 20px;
+// }
+
+
+.icon-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.icon-button .icon {
+  display: inline-block;
+  width: 24px;  /* Ajustez la taille selon vos besoins */
+  height: 24px; /* Ajustez la taille selon vos besoins */
 }

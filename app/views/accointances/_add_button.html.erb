@@ -1,15 +1,19 @@
-<div class="card-accointance d-flex">
-      <div class="profil-pic">
-        <%= image_tag "users/#{user.picture}", class: "image_round" %>
-      </div>
-      <div class="row">
-        <div class="name">
-          <%= user.first_name %>
-          <%= user.id %>
-        </div>
-        <div class="description">
-          <%= user.last_name %>
-        </div>
-      </div>
-        <%= button_to 'like', user_accointances_path(user), class: "like-button" %>
+<div class="card-accointance-button d-flex">
+  <div class="profil-pic">
+    <%= image_tag "users/#{user.picture}", class: "image_round" %>
+  </div>
+  <div class="row">
+    <div class="name">
+      <%= user.first_name %>
+      <%= user.id %>
     </div>
+    <div class="description">
+      <%= user.last_name %>
+    </div>
+  </div>
+  <div class="row earth-button">
+    <%= button_to user_accointances_path(user), method: :post, class: 'icon-button' do %>
+      <%= image_tag "heart-circle-plus-solid.svg", class: "icon" %>
+    <% end %>
+  </div>
+</div>

@@ -2,7 +2,7 @@
   <div class="profil-pic">
     <%= image_tag "users/#{user.picture}", class: "image_round" %>
   </div>
-  <div class="row">
+  <div class="row ">
     <% if current_user.friends(status: 'accepted').include?(user) %>
       <div class="status">Friends</div>
     <% elsif current_user.friends(status: 'pending').include?(user) %>
@@ -12,9 +12,6 @@
     <% end %>
     <div class="name">
       <%= user.first_name %>
-    </div>
-    <div class="name">
-      <%= user.id %>
     </div>
     <div class="description">
       <%= user.last_name %>
