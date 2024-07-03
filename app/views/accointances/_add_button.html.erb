@@ -1,5 +1,5 @@
-<div class="card-accointance d-flex">
-  <div class="avatar-large">
+<div class="card-accointance-button d-flex">
+  <div class="profil-pic">
     <%= image_tag "users/#{user.picture}", class: "image_round" %>
   </div>
   <div class="row">
@@ -11,7 +11,9 @@
       <%= user.last_name %>
     </div>
   </div>
-  <%= button_to user_accointances_path(user), method: :post, class: 'icon-button' do %>
-    <%= image_tag "heart-circle-plus-solid.svg", class: "icon" %>
-  <% end %>
+  <div class="row earth-button">
+    <%= button_to user_accointances_path(user), method: :post, class: 'icon-button' do %>
+      <%= image_tag "heart-circle-plus-solid.svg", class: "icon" %>
+    <% end %>
+  </div>
 </div>
