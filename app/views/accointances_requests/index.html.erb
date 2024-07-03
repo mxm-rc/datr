@@ -1,27 +1,23 @@
 <% @accointances.each do |accointance| %>
-    <div class="card-accointance">
-      <!-- <div class="profil-pic"> -->
-      <%#= image_tag "users/#{accointance.image}", class: "image_round" %>
-      <!-- </div> -->
-
-      <div class="name">
-        <li>
-          <%= "accointance_id =" %>
-          <%= accointance.id %>
-        </li>
-        <li>
-          <%= "follower_id" %>
-          <%= accointance.follower_id %>
-        </li>
-        <li>
-          <%= "recipient_id" %>
-          <%= accointance.recipient_id %>
-        </li>
-      </div>
-
-      <% if accointance.status == 'pending' %>
-      <%= button_to 'Accepter', accointances_request_path('accepted', accointance.id), method: :patch %>
-      <%= button_to 'Rejeter', accointances_request_path('refused', accointance.id), method: :patch %>
-    <% end %>
+  <div class="card-accointance d-flex">
+    <div class="profil-pic">
+      <%= image_tag "users/#{accointance.follower.picture}", class: "image_round m-4" %>
     </div>
+
+    <div class="row">
+      <div class="name">
+        <%= accointance.follower.first_name %>
+      </div>
+      <div class="description">
+        <%= accointance.follower.last_name %>
+      </div>
+    </div>
+
+    <div class="row earth-button">
+      <% if accointance.status == 'pending' %>
+        <%= button_to 'Accepter', accointances_request_path('accepted', accointance.id), method: :patch %>
+        <%= button_to 'Rejeter', accointances_request_path('refused', accointance.id), method: :patch %>
+      <% end %>
+    </div>
+  </div>
 <% end %>

@@ -1,14 +1,14 @@
 <div class="card-accointance d-flex">
   <div class="profil-pic">
-    <%= image_tag "users/#{user.picture}", class: "image_round" %>
+    <%= image_tag "users/#{user.picture}", class: "image_round m-4" %>
   </div>
-  <div class="row ">
+  <div class="row">
     <% if current_user.friends(status: 'accepted').include?(user) %>
-      <div class="status">Friends</div>
+      <div class="status status-accepted">Friends</div>
     <% elsif current_user.friends(status: 'pending').include?(user) %>
-      <div class="status">En attente</div>
+      <div class="status status-pending">En attente</div>
     <% elsif current_user.friends(status: 'refused').include?(user) %>
-      <div class="status">Refusé</div>
+      <div class="status status-refused">Refusé</div>
     <% end %>
     <div class="name">
       <%= user.first_name %>
