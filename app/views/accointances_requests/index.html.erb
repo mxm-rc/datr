@@ -8,7 +8,7 @@
         <%= image_tag "users/#{accointance.follower.picture}", class: "image_round m-4" %>
       </div>
 
-      <div class="row">
+      <div class="row row-test">
         <div class="name">
           <%= accointance.follower.first_name %>
         </div>
@@ -16,23 +16,23 @@
           <%= accointance.follower.last_name %>
         </div>
       </div>
-      <% if accointance.status == 'pending' %>
-        <div class="flex">
-          <div class="row earth-button">
+      <div class="flex">
+        <% if accointance.status == 'pending' %>
+          <div class="row earth-button py-2">
             <%= button_to accointances_request_path('accepted', accointance.id), method: :patch, class: 'icon-button' do %>
               <%= image_tag "circle-check-solid", class: "icon" %>
             <% end %>
           </div>
-          <div class="row earth-button">
+          <div class="row earth-button py-2">
             <%= button_to accointances_request_path('refused', accointance.id), method: :patch, class: 'icon-button' do %>
               <%= image_tag "circle-xmark-solid", class: "icon" %>
             <% end %>
           </div>
-      <% else %>
+        <% else %>
           <div class="row m-4">
             <h2>Vous n'avez aucune demande en cours</h1>
           </div>
-      <% end %>
+        <% end %>
       </div>
     </div>
   <% end %>
