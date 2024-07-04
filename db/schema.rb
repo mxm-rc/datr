@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_27_173200) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_04_165226) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,8 +59,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_27_173200) do
 
   create_table "meets", force: :cascade do |t|
     t.bigint "accointance_id", null: false
-    t.integer "centered_address_long"
-    t.integer "centered_address_lat"
+    t.float "centered_address_long"
+    t.float "centered_address_lat"
     t.string "status"
     t.date "date"
     t.datetime "created_at", null: false
@@ -102,6 +102,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_27_173200) do
     t.date "birthdate"
     t.boolean "admin"
     t.text "bio"
+    t.float "lon"
+    t.float "lat"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

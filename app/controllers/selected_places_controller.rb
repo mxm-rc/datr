@@ -6,11 +6,14 @@ class SelectedPlacesController < ApplicationController
   def index
     # Search recommended Locations according to the common Categories between the current user and the friend
     @places = Location.recommended_locations(current_user, @friend, @mid_point, @limit)
+    my_puts("SelectedPlacesController.index MidPoint: #{@mid_point.inspect}")
+    puts
+    my_puts("SelectedPlacesController.index @places: #{@places.inspect}")
 
     # Insert mid_point_location at first in places
     @places.unshift(@mid_point)
     # Debug places in rails server console
-    # puts "Places: #{@places.inspect}"
+    puts "Places avec MidPoint en 1er: #{@places.inspect}"
 
     # Prepare markers for the Map_Box api
     @markers = @places.present? ? generate_markers(@places) : []
@@ -60,12 +63,12 @@ class SelectedPlacesController < ApplicationController
   def set_midpoint
     @mid_point = Location.new(
       name: "Midpoint",
-      # lat: @meet.centered_address_lat,  Not calculated yet
-      # lon: @meet.centered_address_long  Not calculated yet
+      lat: @meet.centered_address_lat,
+      lon: @meet.centered_address_long
       #
       # Eiffel Tower latitude, longitude
-      lat: 48.8583,
-      lon: 2.2944
+      # lat: 48.8583,
+      # lon: 2.2944
     )
   end
 

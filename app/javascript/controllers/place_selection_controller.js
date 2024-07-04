@@ -36,7 +36,7 @@ export default class extends Controller {
   updateVisibility() {
     const anySelected = this.cardTargets.some(card => card.classList.contains("selected"));
     // Change text of the choiceText based on if any card is selected
-    this.choiceTextTarget.textContent = anySelected ? "Cliquez vos choix puis : " : "Cliquez un choix au moins";
+    this.choiceTextTarget.textContent = anySelected ? "Mes Choix : " : "Mes Choix";
     // Toggle visibility of the submit button based on if any card is selected
     this.submitButtonTarget.style.display = anySelected ? "block" : "none";
   }
