@@ -100,7 +100,7 @@ users = User.create!(
     address: "30 rue Mazarine, 75006, Paris",
     picture: "natacha.jpg",
     admin: "true",
-    bio: "Fraichement installé à Paris, je ne connais pas du tout mon quartier. J'aimerais rencontrer des gens pour m'aider à le découvrir."
+    bio: "Je ne connais pas du tout mon quartier. J'aimerais rencontrer des gens pour m'aider à le découvrir."
   }, {
     birthdate: Date.new(1989, 9, 26),
     pseudo: "Mymycou",
@@ -192,17 +192,15 @@ puts "Created : #{users.count} Users"
 # Create accointances in bulk
 accointances = Accointance.create!(
   [{
-    follower: users[0], recipient: users[1], status: 'pending'
-  }, {
-    follower: users[0], recipient: users[2], status: 'accepted'
+    follower: users[0], recipient: users[6], status: 'pending'
   }, {
     follower: users[0], recipient: users[3], status: 'accepted'
   }, {
-    follower: users[0], recipient: users[4], status: 'accepted'
+    follower: users[0], recipient: users[2], status: 'accepted'
   }, {
-    follower: users[0], recipient: users[5], status: 'pending'
+    follower: users[0], recipient: users[10], status: 'accepted'
   }, {
-    follower: users[0], recipient: users[6], status: 'pending'
+    follower: users[0], recipient: users[11], status: 'accepted'
   }, {
     follower: users[1], recipient: users[2], status: 'accepted'
   }, {
@@ -212,9 +210,13 @@ accointances = Accointance.create!(
   }, {
     follower: users[6], recipient: users[2], status: 'accepted'
   }, {
-    follower: users[7], recipient: users[2], status: 'accepted'
+    follower: users[7], recipient: users[0], status: 'pending'
   }, {
-    follower: users[8], recipient: users[2], status: 'accepted'
+    follower: users[8], recipient: users[0], status: 'pending'
+  }, {
+    follower: users[9], recipient: users[0], status: 'pending'
+  }, {
+    follower: users[13], recipient: users[0], status: 'pending'
   }, {
     follower: users[3], recipient: users[2], status: 'accepted'
   }]

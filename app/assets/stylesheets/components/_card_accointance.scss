@@ -1,38 +1,45 @@
-// .card-accointance {
-//   overflow: hidden;
-//   height: 120px;
-//   background: white;
-//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-//   border-radius: 82px;
-//   margin: 8px;
-//   display: flex;
-//   align-items: center;
-
-
 .card-accointance {
   width: auto; /* Ajustez la largeur selon vos besoins */
-  padding: 8px;
+  height: 135px;
+  padding: 2px;
   background-color: rgba(255, 255, 255, 0.5); /* Couleur de fond avec opacité */
   border-radius: 80px;
   display: flex;
-  margin: 8px;
+  margin: 6px;
   align-items: center;
-  justify-content: space-between;
   font-family: Poppins, sans-serif;
 }
 
-.profile-pic {
-  border-radius: 50%;
-  width: 60px; /* Ajustez la taille selon vos besoins */
-  height: 60px; /* Ajustez la taille selon vos besoins */
-  overflow: hidden;
-  padding-right: 12px;
+.card-accointance-button {
+  width: auto; /* Ajustez la largeur selon vos besoins */
+  height: 135px;
+  padding: 2px;
+  background-color: rgba(255, 255, 255, 0.5); /* Couleur de fond avec opacité */
+  border-radius: 80px;
+  display: flex;
+  margin: 6px;
+  align-items: center;
+  font-family: Poppins, sans-serif;
+  justify-content: space-between;
 }
 
-.profile-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+// .profile-pic {
+//   border-radius: 50%;
+//   width: 40px; /* Ajustez la taille selon vos besoins */
+//   height: 40px; /* Ajustez la taille selon vos besoins */
+//   overflow: hidden;
+//   padding-right: 12px;
+// }
+
+// .profile-pic img {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   margin-right: 4px;
+// }
+
+.row-card {
+  max-width: 133px;
 }
 
 .status {
@@ -46,34 +53,111 @@
   width: auto;
 }
 
-.status::before {
+.status {
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+.status::before,
+.status-accepted::before,
+.status-pending::before,
+.status-refused::before {
   content: '';
   display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: green;
   border-radius: 50%;
   margin-right: 5px;
 }
+
+.status-accepted::before {
+  background-color: green;
+}
+
+.status-pending::before {
+  background-color: orange;
+}
+
+.status-refused::before {
+  background-color: red;
+}
+
+
+// .status_attente {
+//   content: '';
+//   display: inline-block;
+//   width: 8px;
+//   height: 8px;
+//   background-color: orange;
+//   border-radius: 50%;
+//   margin-right: 5px;
+// }
+
+// .status_refused {
+//   content: '';
+//   display: inline-block;
+//   width: 8px;
+//   height: 8px;
+//   background-color: red;
+//   border-radius: 50%;
+//   margin-right: 5px;
+// }
 
 .name {
   font-size: 20px;
   font-weight: bold;
   color: #000;
+  flex-grow: 1; /* Assure que cet élément prend toute la largeur disponible */
+  text-align: left;
 }
 
 .description {
   font-size: 14px;
   color: #000000;
+  text-align: left;
 }
-
-.like-button {
-  background-color: #ff4081;
-  padding: 10px;
-  border-radius: 50%;
+.earth-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 20px;
+  margin-right: 20px;
+  width: 60px;
+}
+
+.row-test {
+  width: 177px;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative; /* Ajouté pour positionner l'icône par rapport à son conteneur */
+}
+
+.icon-button .icon {
+  display: inline-block;
+  width: 24px; /* Ajustez la taille selon vos besoins */
+  height: 24px; /* Ajustez la taille selon vos besoins */
+}
+
+.icon-button::before {
+  content: '';
+  display: inline-block;
+  width: 35px; /* Taille du rond blanc */
+  height: 35px; /* Taille du rond blanc */
+  background-color: #fff; /* Couleur de fond blanche */
+  border-radius: 50%;
+  position: absolute; /* Positionné par rapport à .icon-button */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centré */
+  z-index: -1; /* Derrière l'icône */
 }
