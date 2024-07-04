@@ -43,7 +43,7 @@ export default class extends Controller {
                                 <h1 class="mb-1">${friendDetails}</h1>
                                 <p class="mb-1 border-bottom border-dark">${friendPrefs}</p>
                                 <p class="mb-1" style="text-align: justify;">${friendBio}</p>
-                                <p class="m-4 text-danger">Prévue le ${meetDetails} à </p>
+                                <p class="m-4 text-danger">Prévue le ${meetDetails}, ici 👇</p>
                                 ${placeName ? `
                                   <div class="text-center">
                                     <p>${placeName}</p>

@@ -1,7 +1,15 @@
 require 'json'
+require 'faker'
+require 'geocoder'
 require_relative '../app/models/location'
 
-@data_file_path = "db/seed_geojson/parsed_locations.json"
+Faker::Config.locale = 'fr'
+@data_file_path = 'db/seed_geojson/parsed_locations.json'
+
+# Configure Geocoder with custom HTTP headers
+Geocoder.configure(
+  http_headers: { 'User-Agent' => 'School Project: Halfway/0.5 (cmacom1@efree.fr)' }
+)
 
 def read_our_json_file
   serialized_file = File.read(@data_file_path)
@@ -9,70 +17,145 @@ def read_our_json_file
 end
 
 def parse_location_data
-  allotment_filepath = "db/seed_geojson/allotments.geojson"
+  allotment_filepath = 'db/seed_geojson/allotments.geojson'
   serialized_allotments = File.read(allotment_filepath)
   allotments = JSON.parse(serialized_allotments)
 
-  cinemas_filepath = "db/seed_geojson/cinemas.geojson"
+  cinemas_filepath = 'db/seed_geojson/cinemas.geojson'
   serialized_cinemas = File.read(cinemas_filepath)
   cinemas = JSON.parse(serialized_cinemas)
 
-  historics_filepath = "db/seed_geojson/historics.geojson"
+  historics_filepath = 'db/seed_geojson/historics.geojson'
   serialized_historics = File.read(historics_filepath)
   historics = JSON.parse(serialized_historics)
 
-  restaurants_filepath = "db/seed_geojson/restaurants.geojson"
+  restaurants_filepath = 'db/seed_geojson/restaurants.geojson'
   serialized_restaurants = File.read(restaurants_filepath)
   restaurants = JSON.parse(serialized_restaurants)
-
-  parsed_restaurants = restaurants["features"].map do |restaurant|
+  zip_codes = ['75001', '75002', '75003', '75004', '75005', '75006', '75007', '75008', '75009', '75010',
+               '75011', '75012', '75013', '75014', '75015', '75016', '75017', '75018', '75019', '75020']
+  puts("Restaurants : #{restaurants['features'].count}")
+  i = 0
+  j = 1_000
+  max = 15_333
+  parsed_restaurants = restaurants['features'].drop(4_000).take(j).map do |restaurant|
+    sleep(3)
+    lat = restaurant['geometry']['coordinates'][1].round(7)
+    lon = restaurant['geometry']['coordinates'][0].round(7)
+    geocode_info = reverse_geocode(lat, lon)
+    puts("Geocode info: #{i + 1}/#{j} #{geocode_info.inspect}")
+    i += 1 if geocode_info
     {
-      type: restaurant["properties"]["type"],
-      name: restaurant["properties"]["name"],
-      phone: restaurant["properties"]["phone"],
-      website: restaurant["properties"]["website"],
-      coordinates:
-        {
-          long: restaurant["geometry"]["coordinates"][0],
-          lat: restaurant["geometry"]["coordinates"][1]
-        }
-    }
-  end
-
-  parsed_historics = historics["features"].map do |historic|
-    {
-      type: historic["properties"]["type"],
-      name: historic["properties"]["name"],
+      # OpenStreetMap key: amenaty value: bar, pub...
+      # https://wiki.openstreetmap.org/wiki/Key:amenity
+      osm_type: geocode_info['type'],
+      type: restaurant['properties']['type'],
+      name: geocode_info['name'] || restaurant['properties']['name'],
+      street_number: geocode_info['street_number'] || Faker::Address.building_number,
+      street_name: geocode_info[:street_name] || Faker::Address.street_name,
+      block: geocode_info['block'] || '',
+      suburb: geocode_info['suburb'] || '',
+      city: geocode_info['city'] || 'Paris',
+      zip_code: geocode_info['zip_code'] || zip_codes.sample,
+      region: geocode_info['region'] || 'Île-de-France',
       coordinates: {
-        long: historic["geometry"]["coordinates"][0],
-        lat: historic["geometry"]["coordinates"][1]
+        long: lon,
+        lat: lat
       }
     }
-  end
+  end.compact
+  puts("Number of restaurants: #{i}/#{j}")
 
-  parsed_allotments = allotments["features"].map do |allotment|
+  puts("Cinemas : #{cinemas['features'].count}")
+  i = 0
+  j = 0
+  max = 89
+  parsed_cinemas = cinemas["features"].drop(0).take(j).map do |cinema|
+    sleep(3)
+    lat = cinema['geometry']['coordinates'][1].round(7)
+    lon = cinema['geometry']['coordinates'][0].round(7)
+    geocode_info = reverse_geocode(lat, lon)
+    puts("Geocode info: #{i + 1}/#{j} #{geocode_info.inspect}")
+    i += 1 if geocode_info
     {
+      osm_type: geocode_info['type'],
+      type: 'movies',
+      name: geocode_info['name'] || cinema['properties']['name'],
+      street_number: geocode_info['street_number'] || Faker::Address.building_number,
+      street_name: geocode_info[:street_name] || Faker::Address.street_name,
+      block: geocode_info['block'] || '',
+      suburb: geocode_info['suburb'] || '',
+      city: geocode_info['city'] || 'Paris',
+      zip_code: geocode_info['zip_code'] || zip_codes.sample,
+      region: geocode_info['region'] || 'Île-de-France',
+      coordinates: {
+        long: lon,
+        lat: lat
+      }
+    }
+  end.compact
+  puts("Number of Cinema: #{i}/#{j}")
+
+  puts("Jardins : #{allotments['features'].count}")
+  i = 0
+  j = 0
+  max = 55
+  parsed_allotments = allotments['features'].drop(0).take(j).map do |allotment|
+    sleep(3)
+    lat = allotment['geometry']['coordinates'][1].round(7)
+    lon = allotment['geometry']['coordinates'][0].round(7)
+    geocode_info = reverse_geocode(lat, lon)
+    puts("Geocode info: #{i + 1}/#{j}  #{geocode_info.inspect}")
+    i += 1 if geocode_info
+    {
+      osm_type: geocode_info['type'],
       type: "garden",
-      name: allotment["properties"]["name"],
+      name: geocode_info['name'] || allotment['properties']['name'],
+      street_number: geocode_info['street_number'] || Faker::Address.building_number,
+      street_name: geocode_info[:street_name] || Faker::Address.street_name,
+      block: geocode_info['block'] || '',
+      suburb: geocode_info['suburb'] || '',
+      city: geocode_info['city'] || 'Paris',
+      zip_code: geocode_info['zip_code'] || zip_codes.sample,
+      region: geocode_info['region'] || 'Île-de-France',
       coordinates: {
-        long: allotment["geometry"]["coordinates"][0],
-        lat: allotment["geometry"]["coordinates"][1]
+        long: lon,
+        lat: lat
       }
     }
-  end
+  end.compact
+  puts("Number of Jardin: #{i}/#{j}")
 
-  parsed_cinemas = cinemas["features"].map do |cinema|
+  puts("Historic : #{historics['features'].count}")
+  i = 0
+  j = 0
+  max = 2_725
+  parsed_historics = historics['features'].drop(1_000).take(j).map do |historic|
+    sleep(3)
+    lat = historic['geometry']['coordinates'][1].round(7)
+    lon = historic['geometry']['coordinates'][0].round(7)
+    geocode_info = reverse_geocode(lat, lon)
+    puts("Geocode info: #{i + 1}/#{j} #{geocode_info.inspect}")
+    i += 1 if geocode_info
     {
-      type: "movies",
-      name: cinema["properties"]["name"],
-      website: cinema["properties"]["website"],
-      phone: cinema["properties"]["phone"],
+      osm_type: geocode_info['type'],
+      type: historic['properties']['type'],
+      name: geocode_info['name'] || historic['properties']['name'],
+      street_number: geocode_info['street_number'] || Faker::Address.building_number,
+      street_name: geocode_info[:street_name] || Faker::Address.street_name,
+      block: geocode_info['block'] || '',
+      suburb: geocode_info['suburb'] || '',
+      city: geocode_info['city'] || 'Paris',
+      zip_code: geocode_info['zip_code'] || zip_codes.sample,
+      region: geocode_info['region'] || 'Île-de-France',
       coordinates: {
-        long: cinema["geometry"]["coordinates"][0],
-        lat: cinema["geometry"]["coordinates"][1]
+        long: lon,
+        lat: lat
+
       }
     }
-  end
+  end.compact
+  puts("Number of historics: #{i}/#{j}")
 
   build_new_seed([parsed_allotments, parsed_cinemas, parsed_historics, parsed_restaurants].flatten)
 end
@@ -92,63 +175,63 @@ def build_new_seed(parsed_locations)
   # Define the mapping based on keys from parsed_locations
   type_mapping =
     {
-      "aircraft" => "Monument",
-      "archaeological_site" => "Monument",
-      "bar" => "Bar",
-      "battlefield" => "Monument",
-      "building" => "Monument",
-      "cafe" => "Cafe",
-      "castle" => "Chateau",
-      "chapel" => "Chateau",
-      "church" => "Chateau",
-      "cinema" => "Cinema",
-      "city_gate" => "Monument",
-      "citywalls" => "Monument",
-      "crime_scene" => "Monument",
-      "fast food" => "Restauration rapide",
-      "fountain" => "Monument",
-      "food court" => "Restauration rapide",
-      "garden" => "Jardin",
-      "highwater_mark" => "Monument",
-      "house" => "Restaurant",
-      "ice cream" => "Glacier",
-      "jardin" => "Jardin",
-      "manor" => "Chateau",
-      "mansion" => "Chateau",
-      "memorial" => "Monument",
-      "milestone" => "Monument",
-      "monastery" => "Chateau",
-      "monument" => "Monument",
-      "movies" => "Cinema",
-      "optical_telegraph" => "Monument",
-      "palace" => "Chateau",
-      "place_of_worship" => "Monument",
-      "pub" => "Bar",
-      "restaurant" => "Restaurant",
-      "river_mark" => "Monument",
-      "ruins" => "Chateau",
-      "shieling" => "Jardin",
-      "ship" => "Monument",
-      "statue" => "Monument",
-      "tower" => "Monument",
-      "tomb" => "Monument",
-      "tree" => "Jardin",
-      "wall" => "Monument",
-      "wayside_cross" => "Monument",
-      "wayside_shrine" => "Monument",
-      "yes" => "Restaurant"
+      'aircraft' => 'Monument',
+      'archaeological_site' => 'Monument',
+      'bar' => 'Bar',
+      'battlefield' => 'Monument',
+      'building' => 'Monument',
+      'cafe' => 'Cafe',
+      'castle' => 'Chateau',
+      'chapel' => 'Chateau',
+      'church' => 'Chateau',
+      'cinema' => 'Cinema',
+      'city_gate' => 'Monument',
+      'citywalls' => 'Monument',
+      'crime_scene' => 'Monument',
+      'fast food' => 'Restauration rapide',
+      'fountain' => 'Monument',
+      'food court' => 'Restauration rapide',
+      'garden' => 'Jardin',
+      'highwater_mark' => 'Monument',
+      'house' => 'Restaurant',
+      'ice cream' => 'Glacier',
+      'jardin' => 'Jardin',
+      'manor' => 'Chateau',
+      'mansion' => 'Chateau',
+      'memorial' => 'Monument',
+      'milestone' => 'Monument',
+      'monastery' => 'Chateau',
+      'monument' => 'Monument',
+      'movies' => 'Cinema',
+      'optical_telegraph' => 'Monument',
+      'palace' => 'Chateau',
+      'place_of_worship' => 'Monument',
+      'pub' => 'Bar',
+      'restaurant' => 'Restaurant',
+      'river_mark' => 'Monument',
+      'ruins' => 'Chateau',
+      'shieling' => 'Jardin',
+      'ship' => 'Monument',
+      'statue' => 'Monument',
+      'tower' => 'Monument',
+      'tomb' => 'Monument',
+      'tree' => 'Jardin',
+      'wall' => 'Monument',
+      'wayside_cross' => 'Monument',
+      'wayside_shrine' => 'Monument',
+      'yes' => 'Restaurant'
     }
   # Initialize a hash with default value '0' to count occurrences of each category
   category_counts = Hash.new(0)
 
-  # Remove locations with "name": null
+  # Remove locations with 'name': null
   parsed_locations.reject! { |location| location[:name].nil? }
 
   # Access allowed_types from the Location model
   allowed_types = Location.allowed_types
 
   parsed_locations.map! do |location|
-    mapped_type = type_mapping[location[:type]] || "Surprise" # Default to "surprise" if no mapping found
+    mapped_type = type_mapping[location[:type]] || 'Surprise' # Default to 'surprise' if no mapping found
     location[:type] = mapped_type
 
     # Assign the picture based on the mapped category
@@ -161,12 +244,65 @@ def build_new_seed(parsed_locations)
     location
   end
 
-  # "Jardin"=>44, "Cinema"=>89, "Monument"=>1630, "Chateau"=>76, "Restaurant"=>8351, "Cafe"=>2102,
-  # "Bar"=>2084, "Restauration rapide"=>2558, "Glacier"=>92
-  # puts "Category counts: #{category_counts}"
+  # 'Jardin'=>44, 'Cinema'=>89, 'Monument'=>1630, 'Chateau'=>76, 'Restaurant'=>8351, 'Cafe'=>2102,
+  # 'Bar'=>2084, 'Restauration rapide'=>2558, 'Glacier'=>92
+  # puts 'Category counts: #{category_counts}'
 
   # Store the final result in a JSON file
-  File.write(@data_file_path, JSON.pretty_generate(parsed_locations))
+  # File.write(@data_file_path, JSON.pretty_generate(parsed_locations))
 
-  parsed_locations
+  # Append the final result to a JSON file
+  # File.open(@data_file_path, 'a') do |file|
+  #   file.puts JSON.pretty_generate(parsed_locations)
+  # end
+
+  # Step 1: Read the existing data from the file
+  existing_locations = []
+  if File.exist?(@data_file_path)
+    file_content = File.read(@data_file_path)
+    existing_locations = JSON.parse(file_content) unless file_content.empty?
+  end
+
+  # Step 2: Append new parsed locations to the existing ones
+  updated_locations = existing_locations + parsed_locations
+
+  # Step 3: Write the updated locations back to the file
+  # File.open(@data_file_path, 'w') do |file|
+  #  file.puts JSON.pretty_generate(updated_locations)
+  # end
+  # Store the final result in a JSON file
+  File.write(@data_file_path, JSON.pretty_generate(updated_locations))
+
+  updated_locations
+end
+
+def reverse_geocode(lat, lon)
+  # Use gem geocoder for reverse geocoding
+  puts("Latitude : #{lat}, Longitude : #{lon}")
+  results = Geocoder.search([lat, lon])
+  if results
+    first_result = results.first
+    if first_result&.data&.dig('address')
+      type = first_result.data['type']
+      name = first_result.data['name']
+      number = first_result.data['address']['house_number']
+      street = first_result.data['address']['road']
+      block = first_result.data['address']['block']
+      suburb = first_result.data['address']['suburb']
+      zip_code = first_result.data['address']['postcode']
+      city = first_result.data['address']['city']
+      state = first_result.data['address']['state']
+      return { "type" => type,
+               "name" => name,
+               "street_number" => number,
+               "street_name" => street,
+               "block" => block,
+               "suburb" => suburb,
+               "city" => city,
+               "zip_code" => zip_code,
+               "region" => state
+             }
+    end
+  end
+  {}
 end

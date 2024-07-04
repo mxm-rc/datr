@@ -16,7 +16,7 @@ users = User.create!(
     address: "47 rue des rosiers, 93400, Saint-Ouen",
     picture: "maxime.jpg",
     admin: "true",
-    bio: "Je suis un jeune développeur web passionné par les nouvelles technologies et le développement web. J'aime les jeux vidéos, la musique et les sorties entre amis."
+    bio: "Je suis un développeur web sportif et super sexi. Passionné par les nouvelles technologies et les jeux vidéos mais aussi et surtout la musique et les sorties entre amis."
   }, {
     birthdate: Date.new(1985, 7, 14),
     pseudo: "emma",
@@ -28,7 +28,7 @@ users = User.create!(
     address: "10 boulevard de la villette, 75019, Paris",
     picture: "emmanuelle.jpg",
     admin: "true",
-    bio: "Je suis une jeune femme de 35 ans, passionnée par la mode et les sorties entre amis. J'aime les soirées entre filles et les bons restos."
+    bio: "Je suis jeune, belle et sportive ;) passionnée par la mode et les sorties entre amis. J'aime aussi les soirées entre filles et les bons restos."
   }, {
     birthdate: Date.new(1993, 5, 10),
     pseudo: "Agatha",
@@ -40,7 +40,7 @@ users = User.create!(
     address: "40 rue de Maubeuge, 75009, Paris",
     picture: "agathe.jpg",
     admin: "true",
-    bio: "J'ai 31 ans et je suis spécialiste en marketing digital. Passionnée de voyages et de photographie, j'ai aussi cofondé une association dédiée à l'autonomisation des femmes dans le secteur technologique."
+    bio: "Je suis spécialiste en marketing digital. Passionnée de voyages et de photographie, j'ai aussi cofondé une association dédiée à l'autonomisation des femmes dans le secteur technologique."
   }, {
     birthdate: Date.new(1998, 2, 20),
     pseudo: "Est3lle",
@@ -52,7 +52,7 @@ users = User.create!(
     address: "8 rue Pecquay, 75004, Paris",
     picture: "estelle.jpg",
     admin: "true",
-    bio: "Je suis une étudiante en droit de 22 ans qui aime faire la fête sans se prendre la tête."
+    bio: "Je suis étudiante en droit et j'aime faire la fête sans me prendre la tête."
   },{
     birthdate: Date.new(1990, 3, 8),
     pseudo: "LolitaBanana",
@@ -136,7 +136,7 @@ users = User.create!(
     address: "11 avenue Fremiet, 75016, Paris",
     picture: "isabelle.jpg",
     admin: "true",
-    bio: "Je suis une femme de 32 ans qui aime les sorties entre amis et les soirées à thème."
+    bio: "J'adore les sorties entre amis et les soirées à thème, alors...où va-t-on ?!"
   }, {
     birthdate: Date.new(2000, 7, 7),
     pseudo: "Zoella",
@@ -223,10 +223,22 @@ puts "Created : #{accointances.count} Accointances"
 
 # Parse locations coming from geojson files
 # parsed_locations = parse_location_data
+# puts 'Parsed locations are uploaded from JSON files !'
+# puts "Locations number: #{parsed_locations.count}"
 
 # Parse locations coming from our personal parsed json file
 parsed_locations = read_our_json_file
 puts 'Parsed locations are uploaded from our personal JSON file !'
+print "#{parsed_locations.count} Locations with "
+# Count locations by type
+location_counts_by_type = parsed_locations.each_with_object(Hash.new(0)) do |location, counts|
+  counts[location[:type]] += 1
+end
+# Print each count of locations by type
+location_counts_by_type.each do |type, count|
+  print "#{count} '#{type}', "
+end
+puts '.'
 
 parsed_locations.map { |location| location[:type] }.uniq.each do |type|
   VenueCategory.find_or_create_by(main_category: type, sub_category: "")
@@ -242,10 +254,10 @@ location_data = parsed_locations.map do |location|
   {
     location_type: location[:type],
     name: location[:name],
-    address: "1 rue xxxx",
-    zip_code: "75xxx",
-    city: "Paris",
-    price_range: "€€",
+    address: "#{location[:street_number]}, #{location[:street_name]}",
+    zip_code: location[:zip_code],
+    city: location[:city],
+    price_range: '€€',
     lon: location[:coordinates][:long],
     lat: location[:coordinates][:lat],
     picture: location[:picture],
@@ -284,8 +296,8 @@ default_venue_category = VenueCategory.find_by(main_category: 'Surprise', sub_ca
 Accointance.all.each do |a|
   meet = Meet.create!(
     accointance_id: a.id,
-    centered_address_long: -123.45678, # Assuming this is a placeholder value
-    centered_address_lat: 12.345678, # Assuming this is a placeholder value
+    centered_address_long: -123.45678,
+    centered_address_lat: 12.345678,
     status: a.status,
     date: Date.today + rand(1..30).days
   )
@@ -308,20 +320,16 @@ end
 puts "Created : #{Meet.count} Meetings"
 puts "Created : #{SelectedPlace.count} SelectedPlaces for Meetings"
 
-# Create venue preferences for each user
-pref_levels = [1, 2, 3]
 categories = VenueCategory.all
-
 users.each do |user|
   # Determine a random number of preferences for each user (between 1 and 3)
   num_preferences = rand(1..3)
 
-  num_preferences.times do
-    # Randomly select a venue category for each preference
-    category = categories.sample
-    # Assign a random preference level
-    level = pref_levels.sample
+  # Shuffle categories and take the first num_preferences to ensure category uniqueness
+  selected_categories = categories.shuffle.first(num_preferences)
 
+  selected_categories.each do |category|
+    level = 1
     # Create the venue preference
     VenuePreference.create!(
       user_id: user.id,
