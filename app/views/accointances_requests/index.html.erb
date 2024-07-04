@@ -1,25 +1,37 @@
 <div class="container">
-<% @accointances.each do |accointance| %>
-  <div class="card-accointance d-flex">
-    <div class="profil-pic">
-      <%= image_tag "users/#{accointance.follower.picture}", class: "image_round m-4" %>
-    </div>
-
-    <div class="row">
-      <div class="name">
-        <%= accointance.follower.first_name %>
+  <div class="row m-4">
+    <h1>Mes demandes</h1>
+  </div>
+  <% @accointances.each do |accointance| %>
+    <div class="card-accointance d-flex">
+      <div class="profil-pic">
+        <%= image_tag "users/#{accointance.follower.picture}", class: "image_round m-4" %>
       </div>
-      <div class="description">
-        <%= accointance.follower.last_name %>
-      </div>
-    </div>
 
-    <div class="row earth-button">
+      <div class="row">
+        <div class="name">
+          <%= accointance.follower.first_name %>
+        </div>
+        <div class="description">
+          <%= accointance.follower.last_name %>
+        </div>
+      </div>
       <% if accointance.status == 'pending' %>
-        <%= button_to 'Accepter', accointances_request_path('accepted', accointance.id), method: :patch %>
-        <%= button_to 'Rejeter', accointances_request_path('refused', accointance.id), method: :patch %>
+        <div class="row earth-button">
+          <%= button_to accointances_request_path('accepted', accointance.id), method: :patch, class: 'icon-button' do %>
+            <%= image_tag "circle-check-solid", class: "icon" %>
+          <% end %>
+        </div>
+        <div class="row earth-button">
+          <%= button_to accointances_request_path('refused', accointance.id), method: :patch, class: 'icon-button' do %>
+            <%= image_tag "circle-xmark-solid", class: "icon" %>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="row m-4">
+          <h2>Vous n'avez aucune demande en cours</h1>
+        </div>
       <% end %>
     </div>
-  </div>
-<% end %>
+  <% end %>
 </div>
