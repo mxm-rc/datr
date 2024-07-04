@@ -17,21 +17,23 @@
         </div>
       </div>
       <% if accointance.status == 'pending' %>
-        <div class="row earth-button">
-          <%= button_to accointances_request_path('accepted', accointance.id), method: :patch, class: 'icon-button' do %>
-            <%= image_tag "circle-check-solid", class: "icon" %>
-          <% end %>
-        </div>
-        <div class="row earth-button">
-          <%= button_to accointances_request_path('refused', accointance.id), method: :patch, class: 'icon-button' do %>
-            <%= image_tag "circle-xmark-solid", class: "icon" %>
-          <% end %>
-        </div>
+        <div class="flex">
+          <div class="row earth-button">
+            <%= button_to accointances_request_path('accepted', accointance.id), method: :patch, class: 'icon-button' do %>
+              <%= image_tag "circle-check-solid", class: "icon" %>
+            <% end %>
+          </div>
+          <div class="row earth-button">
+            <%= button_to accointances_request_path('refused', accointance.id), method: :patch, class: 'icon-button' do %>
+              <%= image_tag "circle-xmark-solid", class: "icon" %>
+            <% end %>
+          </div>
       <% else %>
-        <div class="row m-4">
-          <h2>Vous n'avez aucune demande en cours</h1>
-        </div>
+          <div class="row m-4">
+            <h2>Vous n'avez aucune demande en cours</h1>
+          </div>
       <% end %>
+      </div>
     </div>
   <% end %>
 </div>
