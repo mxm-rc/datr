@@ -2,6 +2,7 @@
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
-  background-image: linear-gradient(#CEA6FF, #FFA5A0);
+  background-image: radial-gradient(#CEA6FF, #FFA5A0);
+  background-size: 5100px 5500px;
   color: white
 }
