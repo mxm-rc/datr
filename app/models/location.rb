@@ -30,8 +30,27 @@ class Location < ApplicationRecord
     locations = find_location(common_categories)
 
     # 3 return closest places of mid point limited to the limit
-    sorted_locations = sort_by_proximity_to_midpoint(locations, mid_point)
-    sorted_locations.first(limit)
+    sorted_locations = sort_by_proximity_to_midpoint(locations, mid_point).first(limit)
+    my_puts("recommended_locations.sorted_locations: #{sorted_locations.inspect}")
+
+    # 4 Reverse geocode each location to get address, zip code, and city
+    sorted_locations.map do |location|
+      begin
+        results = Geocoder.search([location.lat, location.lon]).first
+        if results
+          location.address = "#{results.data['address']['house_number']}, #{results.data['address']['road']}"
+          location.zip_code = results.data['address']['postcode']
+          location.city = results.data['address']['city']
+          location.save # Save these details to the database
+        end
+      rescue => e
+        my_puts("Failed to parse JSON response: #{e.message}")
+        # Optionally, log the raw response if your geocoding library allows access to it
+      end
+      my_puts("recommended_locations.sorted_locations Result of geocoding: #{results.inspect}")
+      my_puts("recommended_locations.sorted_location Geocoded: #{location.inspect}")
+      location
+    end
   end
 
   def self.find_common_categories(my_id, friend_id)

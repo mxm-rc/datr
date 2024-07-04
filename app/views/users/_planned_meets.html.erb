@@ -18,7 +18,7 @@
           data-meet-details=<%= meet.date.strftime("%d/%m/%Y") %>
           data-place-image-url="<%= place ? "#{place.picture}" : "" %>"
           data-place-name="<%= place ? "' #{place.name} '" : "" %>"
-          data-place-address="<%= place ? place.address : "" %>"
+          data-place-address="<%= place ? "#{place.address} #{place.zip_code} #{place.city}" : "" %>"
           data-modal-target="card">
         <div class="">
           <div class="row align-items-center">

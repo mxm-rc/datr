@@ -59,6 +59,7 @@ gem 'ffi', '< 1.17.0'
 
 
 gem "geocoder"
+gem "faker"
 
 group :development, :test do
   gem "dotenv-rails"
