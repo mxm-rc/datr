@@ -1,7 +1,7 @@
 require_relative 'seeds_helpers'
 
 # Destroy all records in a single transaction
-[Meet, Accointance, Location, VenuePreference, VenueCategory, LocationCategory, User].each(&:destroy_all)
+[SelectedPlace, Meet, Accointance, Location, VenuePreference, VenueCategory, LocationCategory, User].each(&:destroy_all)
 
 # Create users in bulk
 users = User.create!(
