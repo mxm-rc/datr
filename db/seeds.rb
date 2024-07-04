@@ -194,15 +194,15 @@ accointances = Accointance.create!(
   [{
     follower: users[0], recipient: users[1], status: 'pending'
   }, {
-    follower: users[0], recipient: users[2], status: 'accepted'
-  }, {
     follower: users[0], recipient: users[3], status: 'accepted'
   }, {
     follower: users[0], recipient: users[4], status: 'accepted'
   }, {
-    follower: users[0], recipient: users[5], status: 'pending'
+    follower: users[0], recipient: users[2], status: 'accepted'
   }, {
-    follower: users[0], recipient: users[6], status: 'pending'
+    follower: users[0], recipient: users[10], status: 'accepted'
+  }, {
+    follower: users[0], recipient: users[11], status: 'accepted'
   }, {
     follower: users[1], recipient: users[2], status: 'accepted'
   }, {
@@ -215,6 +215,10 @@ accointances = Accointance.create!(
     follower: users[7], recipient: users[0], status: 'pending'
   }, {
     follower: users[8], recipient: users[0], status: 'pending'
+  }, {
+    follower: users[12], recipient: users[0], status: 'pending'
+  }, {
+    follower: users[13], recipient: users[0], status: 'pending'
   }, {
     follower: users[3], recipient: users[2], status: 'accepted'
   }]
