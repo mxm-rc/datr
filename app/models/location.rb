@@ -31,26 +31,6 @@ class Location < ApplicationRecord
 
     # 3 return closest places of mid point limited to the limit
     sorted_locations = sort_by_proximity_to_midpoint(locations, mid_point).first(limit)
-    my_puts("recommended_locations.sorted_locations: #{sorted_locations.inspect}")
-
-    # 4 Reverse geocode each location to get address, zip code, and city
-    sorted_locations.map do |location|
-      begin
-        results = Geocoder.search([location.lat, location.lon]).first
-        if results
-          location.address = "#{results.data['address']['house_number']}, #{results.data['address']['road']}"
-          location.zip_code = results.data['address']['postcode']
-          location.city = results.data['address']['city']
-          location.save # Save these details to the database
-        end
-      rescue => e
-        my_puts("Failed to parse JSON response: #{e.message}")
-        # Optionally, log the raw response if your geocoding library allows access to it
-      end
-      my_puts("recommended_locations.sorted_locations Result of geocoding: #{results.inspect}")
-      my_puts("recommended_locations.sorted_location Geocoded: #{location.inspect}")
-      location
-    end
   end
 
   def self.find_common_categories(my_id, friend_id)
@@ -88,7 +68,32 @@ class Location < ApplicationRecord
             .distinct
   end
 
+  def self.find_midpoint(me_id, friend_id)
+    me = User.find(user_id: me_id)
+    friend = User.find(user_id: friend_id)
+    # Get the location in longitude and latitude from the user
+    my_coordinates = {}
+    my_coordinates[:lon] = me.lon
+    my_coordinates[:lat] = me.lat
+
+    friend_coordinates = {}
+    friend_coordinates[:lon] = friend.lon
+    friend_coordinates[:lat] = friend.lat
+
+    # my_coordinates = { lat: 48.9046440, long: 2.3382141 } # Maxime
+    # friend_coordinates = { lat: 48.8454382, long: 2.2668038 }
+
+    midpoint_latitude = (my_coordinates[:lat] + friend_coordinates[:lat]) / 2.0
+    midpoint_longitude = (my_coordinates[:long] + friend_coordinates[:long]) / 2.0
+    # Midpoint
+    midpoint = { lat: midpoint_latitude, long: midpoint_longitude }
+    my_puts("find_midpoint: Midpoint: #{midpoint.inspect}")
+
+    return midpoint
+  end
+
   def self.sort_by_proximity_to_midpoint(locations, midpoint)
+    my_puts("sort_by_proximity_to_midpoint Midpoint: #{midpoint.inspect}")
     locations.sort_by do |location|
       ((location.lat - midpoint.lat)**2) + ((location.lon - midpoint.lon)**2)
     end
