@@ -1,50 +1,46 @@
-<div class="row">
-  <!-- Debug preferences-->
-  <%#= "**** Meets :" + meets.inspect %>
-  <div class="row" data-controller="modal">
-    <% meets.each do |meet| %>
-      <% selected_place = meet.selected_place %>
-      <% friend = meet.accointance.friend_of(user) %>
-      <% if selected_place.present? %>
-        <% place = selected_place.location %>
-      <% end %>
-      <div class="halfway-card" style="width: 80%; display: inline-block;"
-          data-action="click->modal#openModal"
-          data-meet-id="<%= meet.id %>"
-          data-friend-image-url="<%= asset_path("users/#{friend.picture}") %>"
-          data-friend-details="<%= friend.first_name %>,
-                                <%= ((Time.zone.now - friend.birthdate.to_time) / 1.year.seconds).floor %> ans"
-          data-friend-prefs="<%= '♥ ' + friend.venue_categories.map { |category| category.main_category }.join(' ♥ ') + ' ♥' %>"          data-friend-bio= "<%= friend.bio %>"
-          data-meet-details=<%= meet.date.strftime("%d/%m/%Y") %>
-          data-place-image-url="<%= place ? "#{place.picture}" : "" %>"
-          data-place-name="<%= place ? "' #{place.name} '" : "" %>"
-          data-place-address="<%= place ? "#{place.address} #{place.zip_code} #{place.city}" : "" %>"
-          data-modal-target="card">
-        <div class="">
-          <div class="row align-items-center">
-            <!-- Image column -->
-            <div class="col-3 col-md-2" >
-              <%= image_tag "users/#{friend.picture}",
-                            class: "halfway-card-image rounded-circle img-fluid",
-                            style: "transform: scale(1.5);",
-                            alt: friend.first_name %>
-            </div>
-            <!-- Text details column -->
-            <div class="col-7 col-md-9 mt-2">
-              <div class="mb-0">
-                  <h5>Status: <%= meet.status == "pending" ? "En attente" : "Validé" %></h5>
-                  <p>Date: <%= meet.date.strftime("%d/%m/%Y") %></p>
-              </div>
+<div class="row" data-controller="modal">
+  <% meets.each do |meet| %>
+    <% selected_place = meet.selected_place %>
+    <% friend = meet.accointance.friend_of(user) %>
+    <% if selected_place.present? %>
+      <% place = selected_place.location %>
+    <% end %>
+    <div class="halfway-card" style="width: 80%; display: inline-block;"
+        data-action="click->modal#openModal"
+        data-meet-id="<%= meet.id %>"
+        data-friend-image-url="<%= asset_path("users/#{friend.picture}") %>"
+        data-friend-details="<%= friend.first_name %>,
+                              <%= ((Time.zone.now - friend.birthdate.to_time) / 1.year.seconds).floor %> ans"
+        data-friend-prefs="<%= '♥ ' + friend.venue_categories.map { |category| category.main_category }.join(' ♥ ') + ' ♥' %>"          data-friend-bio= "<%= friend.bio %>"
+        data-meet-details=<%= meet.date.strftime("%d/%m/%Y") %>
+        data-place-image-url="<%= place ? "#{place.picture}" : "" %>"
+        data-place-name="<%= place ? "' #{place.name} '" : "" %>"
+        data-place-address="<%= place ? "#{place.address} #{place.zip_code} #{place.city}" : "" %>"
+        data-modal-target="card">
+      <div class="">
+        <div class="row align-items-center">
+          <!-- Image column -->
+          <div class="col-3 col-md-2" >
+            <%= image_tag "users/#{friend.picture}",
+                          class: "halfway-card-image rounded-circle img-fluid",
+                          style: "transform: scale(1.5);",
+                          alt: friend.first_name %>
+          </div>
+          <!-- Text details column -->
+          <div class="col-7 col-md-9 mt-2">
+            <div class="mb-0">
+                <h5>Status: <%= meet.status == "pending" ? "En attente" : "Validé" %></h5>
+                <p>Date: <%= meet.date.strftime("%d/%m/%Y") %></p>
             </div>
           </div>
         </div>
       </div>
-    <% end %>
-    <div id="customModal" class="custom-modal" style="display:none;">
-      <div class="halfway-modal-content">
-        <div id="modalContent"></div> <!-- Content will be dynamically inserted here -->
-        <span class="btn-close" data-action="click->modal#closeModal">&times;</span>
-      </div>
+    </div>
+  <% end %>
+  <div id="customModal" class="custom-modal" style="display:none;">
+    <div class="halfway-modal-content">
+      <div id="modalContent"></div> <!-- Content will be dynamically inserted here -->
+      <span class="btn-close" data-action="click->modal#closeModal">&times;</span>
     </div>
   </div>
 </div>
