@@ -1,6 +1,6 @@
-<div class="page-container">
-  <div class="friend-selected-places-datr"><%= render "shared/friend_sticker", friend: @friend %></div>
-  <div class="locations-selected-places-datr">
+<div class="page-container d-flex flex-column align-items-center text-center">
+  <div class="friend-selected-places-datr"><%= render "shared/face_sticker", face: @friend %></div>
+  <div class="locations-selected-places-datr" style="width: 95%;">
     <% if @places.any? %>
       <div class="map-selected-places-datr">
         <%= render "map_with_locations", markers: @markers %>

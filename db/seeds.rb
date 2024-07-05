@@ -357,6 +357,11 @@ users.each do |user|
   if user.first_name == 'Isabelle'
     # Manually set categories for Isabelle
     selected_categories = VenueCategory.where(main_category: ['Glacier', 'Jardin'])
+
+  elsif user.first_name == 'Maxime'
+    # Manually set categories for Isabelle
+    selected_categories = VenueCategory.where(main_category: ['Glacier', 'Jardin', 'bar'])
+
   else
     # Determine a random number of preferences for other users (between 1 and 3)
     num_preferences = rand(1..3)

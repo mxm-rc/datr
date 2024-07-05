@@ -20,11 +20,16 @@ class Location < ApplicationRecord
   end
 
   # Method to fetch recommended Locations based on common Categories between two users
-  def self.recommended_locations(my_id, friend_id, mid_point, limit)
-    # 1 Determine common preferences between me and friend
-    common_categories = find_joker(my_id, friend_id).presence || find_common_categories(my_id, friend_id)
-    # Print common categories
+  def self.recommended_locations(my_id, friend_id, mid_point, limit, categories)
+    if categories.present?
+      # Use categories selected by the user
+      common_categories = categories
+    else
+      # Find common categories between users
+      common_categories = find_common_categories(my_id, friend_id)
+    end
     my_puts("recommended_locations.common_categories: #{common_categories.map(&:main_category)}")
+
 
     # 2 Filter the locations based on the common preferences
     locations = find_location(common_categories)
@@ -34,6 +39,11 @@ class Location < ApplicationRecord
   end
 
   def self.find_common_categories(my_id, friend_id)
+    # Determine common preferences between me and friend
+    common_categories = find_joker(my_id, friend_id).presence || common_categories(my_id, friend_id)
+  end
+
+  def self.common_categories(my_id, friend_id)
     # Print all my_id categories
     my_puts("Location.find_common_categories: My_id Categories: #{VenuePreference.includes(:venue_category)
                                                                                  .where(user_id: my_id)

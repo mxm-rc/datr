@@ -4,8 +4,12 @@ class SelectedPlacesController < ApplicationController
   before_action :set_limit, :set_midpoint, only: %i[index]
 
   def index
+    # Get if exist the categories selected by the user
+    prefs = VenueCategory.where(id: @meet.venue_category_ids)
+    my_puts("SelectedControlle#Index: Prefs = #{prefs.inspect}")
+
     # Search recommended Locations according to the common Categories between the current user and the friend
-    @places = Location.recommended_locations(current_user, @friend, @mid_point, @limit)
+    @places = Location.recommended_locations(current_user, @friend, @mid_point, @limit, prefs)
     my_puts("SelectedPlacesController.index MidPoint: #{@mid_point.inspect}")
     puts
     my_puts("SelectedPlacesController.index @places: #{@places.inspect}")
@@ -83,11 +87,11 @@ class SelectedPlacesController < ApplicationController
 
   # Prepare markers for the Map_Box api
   def generate_markers(places)
-    places.map do |place|
+    places.each_with_index.map do |place, index|
       {
         lat: place.lat,
         lng: place.lon,
-        info_window_html: render_to_string(partial: "info_window", locals: { place: place })
+        info_window_html: render_to_string(partial: "info_window", locals: { place: place, index: index })
       }
     end
   end

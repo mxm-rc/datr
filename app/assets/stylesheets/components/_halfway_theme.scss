@@ -51,7 +51,7 @@
   font-family: Poppins, sans-serif;
   color:black;
   position: fixed; /* Use fixed positioning to make it stay in place even when scrolling */
-  top: 40%; /* Position the top edge of the modal at the middle of the screen */
+  top: 50%; /* Position the top edge of the modal at the middle of the screen */
   left: 50%; /* Position the left edge of the modal at the middle of the screen */
   transform: translate(-50%, -50%); /* Offset the modal to truly center it on the screen */
   z-index: 1000; /* Ensure the modal is above other content */
@@ -64,4 +64,22 @@
 
 .halfway-modal-image {
   border-radius: 10px;
+}
+.halfway-red-badge {
+  display: d-flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 15px;
+  border: 2px solid white;
+}
+.halfway-green-badge {
+  display: d-flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  border-radius: 15px;
+  border: 2px solid white;
 }
