@@ -50,7 +50,7 @@ def parse_location_data
       # https://wiki.openstreetmap.org/wiki/Key:amenity
       osm_type: geocode_info['type'],
       type: restaurant['properties']['type'],
-      name: geocode_info['name'] || restaurant['properties']['name'],
+      name: geocode_info['name'] || restaurant['properties']['name'] || restaurant['properties']['type'],
       street_number: geocode_info['street_number'] || Faker::Address.building_number,
       street_name: geocode_info[:street_name] || Faker::Address.street_name,
       block: geocode_info['block'] || '',
@@ -80,7 +80,7 @@ def parse_location_data
     {
       osm_type: geocode_info['type'],
       type: 'movies',
-      name: geocode_info['name'] || cinema['properties']['name'],
+      name: geocode_info['name'] || cinema['properties']['name'] || 'movies',
       street_number: geocode_info['street_number'] || Faker::Address.building_number,
       street_name: geocode_info[:street_name] || Faker::Address.street_name,
       block: geocode_info['block'] || '',
@@ -110,7 +110,7 @@ def parse_location_data
     {
       osm_type: geocode_info['type'],
       type: "garden",
-      name: geocode_info['name'] || allotment['properties']['name'],
+      name: geocode_info['name'] || allotment['properties']['name'] || 'garden',
       street_number: geocode_info['street_number'] || Faker::Address.building_number,
       street_name: geocode_info[:street_name] || Faker::Address.street_name,
       block: geocode_info['block'] || '',
@@ -140,7 +140,7 @@ def parse_location_data
     {
       osm_type: geocode_info['type'],
       type: historic['properties']['type'],
-      name: geocode_info['name'] || historic['properties']['name'],
+      name: geocode_info['name'] || historic['properties']['name'] || historic['properties']['type'],
       street_number: geocode_info['street_number'] || Faker::Address.building_number,
       street_name: geocode_info[:street_name] || Faker::Address.street_name,
       block: geocode_info['block'] || '',

@@ -478,7 +478,7 @@
   {
     "osm_type": "fast_food",
     "type": "Restauration rapide",
-    "name": "",
+    "name": "fast_food",
     "street_number": "187",
     "street_name": "Rue de Grenelle",
     "block": "",
@@ -699,7 +699,7 @@
   {
     "osm_type": "bar",
     "type": "Bar",
-    "name": "",
+    "name": "Bar",
     "street_number": "2336",
     "street_name": "Quai de la Corse",
     "block": "",
@@ -2790,7 +2790,7 @@
   {
     "osm_type": "pedestrian",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "462",
     "street_name": "Promenade de la Pompe",
     "block": "",
@@ -4065,7 +4065,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "6519",
     "street_name": "Liaison Olivier",
     "block": "",
@@ -5102,7 +5102,7 @@
   {
     "osm_type": "cafe",
     "type": "Cafe",
-    "name": "",
+    "name": "Cafe",
     "street_number": "806",
     "street_name": "Rang Paul Herbe",
     "block": "",
@@ -6513,7 +6513,7 @@
   {
     "osm_type": "cafe",
     "type": "Cafe",
-    "name": "",
+    "name": "Cafe",
     "street_number": "1",
     "street_name": "Pont Helene",
     "block": "",
@@ -7907,7 +7907,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "153",
     "street_name": "Mail De Zilina",
     "block": "",
@@ -8417,7 +8417,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "78",
     "street_name": "Côte Des Souffrettes",
     "block": "",
@@ -9777,7 +9777,7 @@
   {
     "osm_type": "house",
     "type": "Cinema",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "7",
     "street_name": "Drève Carpeaux",
     "block": "",
@@ -9862,7 +9862,7 @@
   {
     "osm_type": "surveillance",
     "type": "Cinema",
-    "name": "",
+    "name": "Cinema",
     "street_number": "7",
     "street_name": "Square Maurice",
     "block": "",
@@ -9998,7 +9998,7 @@
   {
     "osm_type": "house",
     "type": "Cinema",
-    "name": "",
+    "name": "Cinema",
     "street_number": "24",
     "street_name": "Boulevard Albert Jacquard",
     "block": "",
@@ -10032,7 +10032,7 @@
   {
     "osm_type": "playground",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "7837",
     "street_name": "Boulevard Dellieux",
     "block": "",
@@ -10049,7 +10049,7 @@
   {
     "osm_type": "garden",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "41",
     "street_name": "Mail d'Argenteuil",
     "block": "",
@@ -10066,7 +10066,7 @@
   {
     "osm_type": "garden",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "6781",
     "street_name": "Chaussée de Caumartin",
     "block": "",
@@ -10083,7 +10083,7 @@
   {
     "osm_type": "garden",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "58",
     "street_name": "Sentier De la Passerelle",
     "block": "",
@@ -10100,7 +10100,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "78",
     "street_name": "Avenue St Thomas en Argonne",
     "block": "",
@@ -10117,7 +10117,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "12",
     "street_name": "Cité Marcel Pourtout",
     "block": "",
@@ -10151,7 +10151,7 @@
   {
     "osm_type": "insect_hotel",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "794",
     "street_name": "Montée Des Corolles",
     "block": "",
@@ -10168,7 +10168,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "1",
     "street_name": "Grand-route Des Poiriers",
     "block": "",
@@ -10185,7 +10185,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "27",
     "street_name": "Cité De Bezons",
     "block": "",
@@ -10219,7 +10219,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "10",
     "street_name": "Square La Marne",
     "block": "",
@@ -10236,7 +10236,7 @@
   {
     "osm_type": "artwork",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "6890",
     "street_name": "Mail des Francs-Bourgeois",
     "block": "",
@@ -10253,7 +10253,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "56",
     "street_name": "Rond-point Jean Baptiste Baudoin",
     "block": "",
@@ -10270,7 +10270,7 @@
   {
     "osm_type": "bicycle_parking",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "6",
     "street_name": "Cours Montorgueil",
     "block": "",
@@ -10287,7 +10287,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "136",
     "street_name": "Ruelle de l'Abbaye",
     "block": "",
@@ -10304,7 +10304,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "9",
     "street_name": "Rond-point Jean Jacques Rousseau",
     "block": "",
@@ -10338,7 +10338,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "6",
     "street_name": "Villa Marie Levasseur",
     "block": "",
@@ -10372,7 +10372,7 @@
   {
     "osm_type": "public_bookcase",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "12",
     "street_name": "Quai Charles Lecocq",
     "block": "",
@@ -10389,7 +10389,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "17",
     "street_name": "Degré De la Reine Henriette",
     "block": "",
@@ -10406,7 +10406,7 @@
   {
     "osm_type": "parking",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "41",
     "street_name": "Degré Louis Willaume",
     "block": "",
@@ -10423,7 +10423,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "7",
     "street_name": "Voie Courte",
     "block": "",
@@ -10440,7 +10440,7 @@
   {
     "osm_type": "picnic_table",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "71",
     "street_name": "Square Du pdt Wilson",
     "block": "",
@@ -10525,7 +10525,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "238",
     "street_name": "Rond-point Trasbot",
     "block": "",
@@ -10542,7 +10542,7 @@
   {
     "osm_type": "pitch",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "50",
     "street_name": "Rue Alfred Couillard",
     "block": "",
@@ -10576,7 +10576,7 @@
   {
     "osm_type": "surveillance",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "4333",
     "street_name": "Montée Joubert",
     "block": "",
@@ -10627,7 +10627,7 @@
   {
     "osm_type": "bench",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "516",
     "street_name": "Anse Des Dames",
     "block": "",
@@ -10644,7 +10644,7 @@
   {
     "osm_type": "garden",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "9",
     "street_name": "Grand-route Adolphe Mille",
     "block": "",
@@ -10661,7 +10661,7 @@
   {
     "osm_type": "pitch",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "3140",
     "street_name": "Descente de la Pompe",
     "block": "",
@@ -10678,7 +10678,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "25",
     "street_name": "Carrefour Du 8 Mai 1945",
     "block": "",
@@ -10695,7 +10695,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "14",
     "street_name": "Liaison De Bezons",
     "block": "",
@@ -10712,7 +10712,7 @@
   {
     "osm_type": "parking_space",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "738",
     "street_name": "Descente des Coudrais",
     "block": "",
@@ -10729,7 +10729,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "9",
     "street_name": "Mail Pierre Charron",
     "block": "",
@@ -10763,7 +10763,7 @@
   {
     "osm_type": "recycling",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "163",
     "street_name": "Rampe Auguste Renoir",
     "block": "",
@@ -10780,7 +10780,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "46",
     "street_name": "Quai De l'Abreuvoir",
     "block": "",
@@ -10882,7 +10882,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "9",
     "street_name": "Sente Mozart",
     "block": "",
@@ -10916,7 +10916,7 @@
   {
     "osm_type": "house",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "51",
     "street_name": "Impasse Des Deux Soeurs",
     "block": "",
@@ -10933,7 +10933,7 @@
   {
     "osm_type": "water_tap",
     "type": "Jardin",
-    "name": "",
+    "name": "Jardin",
     "street_number": "1",
     "street_name": "Drève Du Colonel de Ponchalon",
     "block": "",
@@ -10967,7 +10967,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1268",
     "street_name": "Sente Dauphine",
     "block": "",
@@ -11001,7 +11001,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "2891",
     "street_name": "Côte Du Sommerard",
     "block": "",
@@ -11103,7 +11103,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "322",
     "street_name": "Descente Genouville",
     "block": "",
@@ -11273,7 +11273,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "474",
     "street_name": "Clos Ambroise Pare",
     "block": "",
@@ -11307,7 +11307,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4",
     "street_name": "Mail Mary",
     "block": "",
@@ -11324,7 +11324,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5909",
     "street_name": "Drève Des Erables",
     "block": "",
@@ -11341,7 +11341,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "52",
     "street_name": "Escoussière Molière",
     "block": "",
@@ -11358,7 +11358,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "28",
     "street_name": "Liaison Vergniaud",
     "block": "",
@@ -11409,7 +11409,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3442",
     "street_name": "Allée Louis Chevrolet",
     "block": "",
@@ -11426,7 +11426,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8794",
     "street_name": "Chaussée Alfred Dequeant",
     "block": "",
@@ -11443,7 +11443,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8007",
     "street_name": "Gaffe Robert Dupont",
     "block": "",
@@ -11460,7 +11460,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3237",
     "street_name": "Placette Baudin",
     "block": "",
@@ -11477,7 +11477,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6524",
     "street_name": "Liaison De Bezons",
     "block": "",
@@ -11494,7 +11494,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7410",
     "street_name": "Sente Du Moulin",
     "block": "",
@@ -11511,7 +11511,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "260",
     "street_name": "Montée La Cote des Amandiers",
     "block": "",
@@ -11528,7 +11528,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5",
     "street_name": "Gaffe Des Pierres Mayettes",
     "block": "",
@@ -11562,7 +11562,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "883",
     "street_name": "Degré Du Bac",
     "block": "",
@@ -11800,7 +11800,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6",
     "street_name": "Descente Des Corolles",
     "block": "",
@@ -11817,7 +11817,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1",
     "street_name": "Gaffe Marquis de Coriolis",
     "block": "",
@@ -11868,7 +11868,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6",
     "street_name": "Rue Pasteur",
     "block": "",
@@ -11885,7 +11885,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7583",
     "street_name": "Sente Blaise Pascal",
     "block": "",
@@ -11919,7 +11919,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "2225",
     "street_name": "Traboule Madeleine Michelis",
     "block": "",
@@ -11953,7 +11953,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3803",
     "street_name": "Boulevard Du Colonel de Ponchalon",
     "block": "",
@@ -12038,7 +12038,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "41",
     "street_name": "Degré Boutard",
     "block": "",
@@ -12123,7 +12123,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "71",
     "street_name": "Boulevard Immeuble le Zodiaque",
     "block": "",
@@ -12293,7 +12293,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4",
     "street_name": "Cour Pierre Curie",
     "block": "",
@@ -12378,7 +12378,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6",
     "street_name": "Placette Delesseux",
     "block": "",
@@ -12395,7 +12395,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Drève Emile Duclaux",
     "block": "",
@@ -12412,7 +12412,7 @@
   {
     "osm_type": "pedestrian",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4",
     "street_name": "Résidence De la Cerisaie",
     "block": "",
@@ -12429,7 +12429,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "25",
     "street_name": "Carrefour De Chartres",
     "block": "",
@@ -12446,7 +12446,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8994",
     "street_name": "Cité De la Reine Henriette",
     "block": "",
@@ -12463,7 +12463,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7",
     "street_name": "Avenue Passoir",
     "block": "",
@@ -12514,7 +12514,7 @@
   {
     "osm_type": "house",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "16",
     "street_name": "Rang Des Champs Pierreux",
     "block": "",
@@ -12565,7 +12565,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5996",
     "street_name": "Passage Pasquier",
     "block": "",
@@ -12650,7 +12650,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "973",
     "street_name": "Mail Fernando",
     "block": "",
@@ -12684,7 +12684,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "867",
     "street_name": "Sente Mary",
     "block": "",
@@ -12718,7 +12718,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "71",
     "street_name": "Cité George Sand",
     "block": "",
@@ -12735,7 +12735,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7151",
     "street_name": "Impasse Felix Pyat",
     "block": "",
@@ -12769,7 +12769,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "516",
     "street_name": "Square Rollet Salvan",
     "block": "",
@@ -12786,7 +12786,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "274",
     "street_name": "Square De la Passerelle",
     "block": "",
@@ -12803,7 +12803,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3468",
     "street_name": "Degré Des Quais",
     "block": "",
@@ -12905,7 +12905,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3174",
     "street_name": "Rond-point Robert Dupont",
     "block": "",
@@ -12939,7 +12939,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6",
     "street_name": "Traboule Alfred Dequeant",
     "block": "",
@@ -12956,7 +12956,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "65",
     "street_name": "Esplanade Des Panoramas",
     "block": "",
@@ -12973,7 +12973,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4",
     "street_name": "Chaussée Joliot Curie",
     "block": "",
@@ -12990,7 +12990,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7",
     "street_name": "Carrefour Jacques Dulud",
     "block": "",
@@ -13007,7 +13007,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "349",
     "street_name": "Villa Bournaire",
     "block": "",
@@ -13041,7 +13041,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "2",
     "street_name": "Mail Lepic",
     "block": "",
@@ -13058,7 +13058,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "121",
     "street_name": "Venelle Verdun",
     "block": "",
@@ -13075,7 +13075,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9",
     "street_name": "Square L'Abbaye",
     "block": "",
@@ -13143,7 +13143,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "2845",
     "street_name": "Sentier De l'Abreuvoir",
     "block": "",
@@ -13160,7 +13160,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9635",
     "street_name": "Boulevard Du Contrat Social",
     "block": "",
@@ -13211,7 +13211,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5317",
     "street_name": "Mail Des Erables",
     "block": "",
@@ -13228,7 +13228,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1435",
     "street_name": "Promenade Charlemagne",
     "block": "",
@@ -13296,7 +13296,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "34",
     "street_name": "Descente Paul Rollet",
     "block": "",
@@ -13313,7 +13313,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4",
     "street_name": "Descente Leo  Hamon",
     "block": "",
@@ -13330,7 +13330,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8",
     "street_name": "Quai Louis Castel",
     "block": "",
@@ -13347,7 +13347,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7",
     "street_name": "Côte Du General Audran",
     "block": "",
@@ -13364,7 +13364,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "796",
     "street_name": "Boulevard De Brienne",
     "block": "",
@@ -13381,7 +13381,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Clos Louis Castel",
     "block": "",
@@ -13398,7 +13398,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5690",
     "street_name": "Côte Du Huit Mai 1945",
     "block": "",
@@ -13449,7 +13449,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7",
     "street_name": "Villa de Nesle",
     "block": "",
@@ -13466,7 +13466,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5403",
     "street_name": "Esplanade Jacques Dulud",
     "block": "",
@@ -13483,7 +13483,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7713",
     "street_name": "Avenue Alexis Bouvier",
     "block": "",
@@ -13500,7 +13500,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7887",
     "street_name": "Gaffe Ledru Rollin",
     "block": "",
@@ -13517,7 +13517,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "132",
     "street_name": "Villa Jean Baptiste Lully",
     "block": "",
@@ -13534,7 +13534,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "11",
     "street_name": "Impasse Du Contrat Social",
     "block": "",
@@ -13551,7 +13551,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "88",
     "street_name": "Carrefour Gutenberg",
     "block": "",
@@ -13568,7 +13568,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4250",
     "street_name": "Esplanade Alexis Bouvier",
     "block": "",
@@ -13585,7 +13585,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "45",
     "street_name": "Chemin Chps Pierreux",
     "block": "",
@@ -13602,7 +13602,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "187",
     "street_name": "Cité de l'Abbaye",
     "block": "",
@@ -13619,7 +13619,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7",
     "street_name": "Allée Des Marronniers",
     "block": "",
@@ -13636,7 +13636,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "50",
     "street_name": "Impasse Marie Louise",
     "block": "",
@@ -13653,7 +13653,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "50",
     "street_name": "Traverse Etienne Cabet",
     "block": "",
@@ -13670,7 +13670,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "50",
     "street_name": "Rang Chem Ile",
     "block": "",
@@ -13687,7 +13687,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "50",
     "street_name": "Promenade Dupuis",
     "block": "",
@@ -13704,7 +13704,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "50",
     "street_name": "Côte Gay Lussac",
     "block": "",
@@ -13721,7 +13721,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "993",
     "street_name": "Chaussée Lamartine",
     "block": "",
@@ -13738,7 +13738,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7060",
     "street_name": "Venelle Des Champs Pierreux",
     "block": "",
@@ -13891,7 +13891,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "2",
     "street_name": "Clos Heloise",
     "block": "",
@@ -13908,7 +13908,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5799",
     "street_name": "Sente Mal de Lattre de Tassigny",
     "block": "",
@@ -13976,7 +13976,7 @@
   {
     "osm_type": "pedestrian",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8",
     "street_name": "Voie de la Bûcherie",
     "block": "",
@@ -14044,7 +14044,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "93",
     "street_name": "Passage Jean Baptiste Lully",
     "block": "",
@@ -14163,7 +14163,7 @@
   {
     "osm_type": "place_of_worship",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Sente du Havre",
     "block": "",
@@ -14214,7 +14214,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "93",
     "street_name": "Descente Bonaparte",
     "block": "",
@@ -14231,7 +14231,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "52",
     "street_name": "Liaison Dellieux",
     "block": "",
@@ -14248,7 +14248,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8673",
     "street_name": "Sentier Boutard",
     "block": "",
@@ -14265,7 +14265,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "539",
     "street_name": "Clos Du Tertre",
     "block": "",
@@ -14316,7 +14316,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "15",
     "street_name": "Cité Louis Joseph Maes",
     "block": "",
@@ -14333,7 +14333,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3850",
     "street_name": "Villa des Coudrais",
     "block": "",
@@ -14350,7 +14350,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "94",
     "street_name": "Descente des Lombards",
     "block": "",
@@ -14367,7 +14367,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "28",
     "street_name": "Clos Des Marguerites",
     "block": "",
@@ -14401,7 +14401,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8",
     "street_name": "Sente Des Belles Vues",
     "block": "",
@@ -14418,7 +14418,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "415",
     "street_name": "Mail Felix Pyat",
     "block": "",
@@ -14435,7 +14435,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Sente Fabre d Eglantine",
     "block": "",
@@ -14452,7 +14452,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6",
     "street_name": "Pont Fabre d Eglantine",
     "block": "",
@@ -14486,7 +14486,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "62",
     "street_name": "Chemin Des Muettes",
     "block": "",
@@ -14520,7 +14520,7 @@
   {
     "osm_type": "wayside_shrine",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4260",
     "street_name": "Quai Vergniaud",
     "block": "",
@@ -14537,7 +14537,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "18",
     "street_name": "Traboule Monsieur-le-Prince",
     "block": "",
@@ -14605,7 +14605,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5919",
     "street_name": "Anse Jean Gabin",
     "block": "",
@@ -14622,7 +14622,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "61",
     "street_name": "Pont Dupuis",
     "block": "",
@@ -14639,7 +14639,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "363",
     "street_name": "Rang Trasbot",
     "block": "",
@@ -14707,7 +14707,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "930",
     "street_name": "Chaussée Neuilly Defense",
     "block": "",
@@ -14724,7 +14724,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3867",
     "street_name": "Allée Breville",
     "block": "",
@@ -15676,7 +15676,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Villa Auguste Renoir",
     "block": "",
@@ -15693,7 +15693,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1912",
     "street_name": "Pont de Montmorency",
     "block": "",
@@ -15727,7 +15727,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "145",
     "street_name": "Square Georges Clemenceau",
     "block": "",
@@ -16016,7 +16016,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "785",
     "street_name": "Quai du Havre",
     "block": "",
@@ -16067,7 +16067,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5198",
     "street_name": "Escoussière Du Sommerard",
     "block": "",
@@ -16101,7 +16101,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7",
     "street_name": "Mail Jacques Prevert",
     "block": "",
@@ -16118,7 +16118,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "301",
     "street_name": "Sentier Hanriot",
     "block": "",
@@ -16135,7 +16135,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1993",
     "street_name": "Voie De Bergkamen",
     "block": "",
@@ -16169,7 +16169,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "541",
     "street_name": "Grand-route De la Republique",
     "block": "",
@@ -16186,7 +16186,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6",
     "street_name": "Escoussière De la Republique",
     "block": "",
@@ -16203,7 +16203,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "221",
     "street_name": "Cour Ambroise Pare",
     "block": "",
@@ -16220,7 +16220,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "21",
     "street_name": "Côte Groupe Lorilleux",
     "block": "",
@@ -16237,7 +16237,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "48",
     "street_name": "Pont Albert de Mun",
     "block": "",
@@ -16271,7 +16271,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "2",
     "street_name": "Passage Des Petits Clos",
     "block": "",
@@ -16288,7 +16288,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "57",
     "street_name": "Cours de Rivoli",
     "block": "",
@@ -16305,7 +16305,7 @@
   {
     "osm_type": "clock",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6",
     "street_name": "Venelle Joliot Curie",
     "block": "",
@@ -16322,7 +16322,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Anse Du Colonel de Ponchalon",
     "block": "",
@@ -16373,7 +16373,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7012",
     "street_name": "Mail Saint-Honoré",
     "block": "",
@@ -16560,7 +16560,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6698",
     "street_name": "Cour L'Abbaye",
     "block": "",
@@ -16781,7 +16781,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "40",
     "street_name": "Montée Jacqueline Auriol",
     "block": "",
@@ -16798,7 +16798,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "491",
     "street_name": "Mail De Bezons",
     "block": "",
@@ -16849,7 +16849,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "39",
     "street_name": "Placette Garnier",
     "block": "",
@@ -16917,7 +16917,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "638",
     "street_name": "Place Des Bouleaux Blancs",
     "block": "",
@@ -16968,7 +16968,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "705",
     "street_name": "Mail Paul Rollet",
     "block": "",
@@ -16985,7 +16985,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "29",
     "street_name": "Esplanade des Coudrais",
     "block": "",
@@ -17053,7 +17053,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8",
     "street_name": "Cours Jean Baptiste Baudoin",
     "block": "",
@@ -17070,7 +17070,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "14",
     "street_name": "Montée Des Carrieres",
     "block": "",
@@ -17087,7 +17087,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4462",
     "street_name": "Grand-route Zadkine",
     "block": "",
@@ -17104,7 +17104,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "969",
     "street_name": "Traboule Du Gue",
     "block": "",
@@ -17223,7 +17223,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "2754",
     "street_name": "Route Casteres",
     "block": "",
@@ -17274,7 +17274,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "2",
     "street_name": "Anse Des Marguerites",
     "block": "",
@@ -17291,7 +17291,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "65",
     "street_name": "Drève des Panoramas",
     "block": "",
@@ -17342,7 +17342,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6220",
     "street_name": "Mail Jacques Offenbach",
     "block": "",
@@ -17359,7 +17359,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Square Saint-Honoré",
     "block": "",
@@ -17376,7 +17376,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "98",
     "street_name": "Placette De Chateaudun",
     "block": "",
@@ -17393,7 +17393,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "2",
     "street_name": "Ruelle Du General Audran",
     "block": "",
@@ -17410,7 +17410,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1",
     "street_name": "Route Des Carrieres",
     "block": "",
@@ -17427,7 +17427,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6032",
     "street_name": "Côte Emile Bernard",
     "block": "",
@@ -17444,7 +17444,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "28",
     "street_name": "Allée De Chateaudun",
     "block": "",
@@ -17461,7 +17461,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9133",
     "street_name": "Allée du Bac",
     "block": "",
@@ -17478,7 +17478,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7615",
     "street_name": "Sentier Hanriot",
     "block": "",
@@ -17495,7 +17495,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6",
     "street_name": "Impasse Helene",
     "block": "",
@@ -17546,7 +17546,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "17",
     "street_name": "Placette Des Hortensias",
     "block": "",
@@ -17614,7 +17614,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "77",
     "street_name": "Sentier Charras le Verseau",
     "block": "",
@@ -17716,7 +17716,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3330",
     "street_name": "Pont de la Ferronnerie",
     "block": "",
@@ -17733,7 +17733,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7096",
     "street_name": "Résidence de l'Abbaye",
     "block": "",
@@ -17767,7 +17767,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5",
     "street_name": "Sente Des Hauts Tilliers",
     "block": "",
@@ -17784,7 +17784,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "70",
     "street_name": "Sentier De Saverne",
     "block": "",
@@ -17801,7 +17801,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Liaison Saint-Bernard",
     "block": "",
@@ -17835,7 +17835,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "2075",
     "street_name": "Traboule Felix Pyat",
     "block": "",
@@ -17852,7 +17852,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "81",
     "street_name": "Cour Rollet Salvan",
     "block": "",
@@ -17869,7 +17869,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "870",
     "street_name": "Pont du Dahomey",
     "block": "",
@@ -17886,7 +17886,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "10",
     "street_name": "Chaussée De la Defense",
     "block": "",
@@ -17903,7 +17903,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "280",
     "street_name": "Villa Station Defense Rer",
     "block": "",
@@ -17920,7 +17920,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "501",
     "street_name": "Rampe Des Erables",
     "block": "",
@@ -17937,7 +17937,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "603",
     "street_name": "Cour Robert Schumann",
     "block": "",
@@ -17954,7 +17954,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "45",
     "street_name": "Cours du Havre",
     "block": "",
@@ -17971,7 +17971,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8",
     "street_name": "Anse Pierre Charron",
     "block": "",
@@ -17988,7 +17988,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "649",
     "street_name": "Gaffe Eugene Barbier",
     "block": "",
@@ -18039,7 +18039,7 @@
   {
     "osm_type": "crime_scene",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9",
     "street_name": "Promenade Charlemagne",
     "block": "",
@@ -18056,7 +18056,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "573",
     "street_name": "Chemin Alfred Dequeant",
     "block": "",
@@ -18090,7 +18090,7 @@
   {
     "osm_type": "crime_scene",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5",
     "street_name": "Cour De Bois Preau",
     "block": "",
@@ -18107,7 +18107,7 @@
   {
     "osm_type": "crime_scene",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8990",
     "street_name": "Côte Danton",
     "block": "",
@@ -18124,7 +18124,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "58",
     "street_name": "Chemin Roger",
     "block": "",
@@ -18141,7 +18141,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1843",
     "street_name": "Traboule Zadkine",
     "block": "",
@@ -18158,7 +18158,7 @@
   {
     "osm_type": "house",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "11",
     "street_name": "Montée Augustine Guignedoux",
     "block": "",
@@ -18175,7 +18175,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1",
     "street_name": "Anse St Thomas en Argonne",
     "block": "",
@@ -18209,7 +18209,7 @@
   {
     "osm_type": "crime_scene",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3811",
     "street_name": "Anse De Zilina",
     "block": "",
@@ -18226,7 +18226,7 @@
   {
     "osm_type": "highwater_mark",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "344",
     "street_name": "Gaffe De la Cote des Amandiers",
     "block": "",
@@ -18243,7 +18243,7 @@
   {
     "osm_type": "attraction",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8764",
     "street_name": "Venelle Heloise",
     "block": "",
@@ -18260,7 +18260,7 @@
   {
     "osm_type": "highwater_mark",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "2",
     "street_name": "Pont Saint-Honoré",
     "block": "",
@@ -18277,7 +18277,7 @@
   {
     "osm_type": "highwater_mark",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5",
     "street_name": "Degré Gaston Bonnier",
     "block": "",
@@ -18294,7 +18294,7 @@
   {
     "osm_type": "highwater_mark",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "34",
     "street_name": "Chaussée Des Corolles",
     "block": "",
@@ -18311,7 +18311,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "89",
     "street_name": "Venelle Fernando",
     "block": "",
@@ -18328,7 +18328,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4283",
     "street_name": "Cité Saint-Bernard",
     "block": "",
@@ -18345,7 +18345,7 @@
   {
     "osm_type": "highwater_mark",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "99",
     "street_name": "Square Residence de la Mairie",
     "block": "",
@@ -18362,7 +18362,7 @@
   {
     "osm_type": "highwater_mark",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6303",
     "street_name": "Chemin Pastourelle",
     "block": "",
@@ -18413,7 +18413,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1493",
     "street_name": "Chemin Nouvelle",
     "block": "",
@@ -18447,7 +18447,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4778",
     "street_name": "Anse De la Republique",
     "block": "",
@@ -18498,7 +18498,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1048",
     "street_name": "Traverse d'Orsel",
     "block": "",
@@ -18532,7 +18532,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8108",
     "street_name": "Avenue Saint-Séverin",
     "block": "",
@@ -18549,7 +18549,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4",
     "street_name": "Boulevard Emile Bernard",
     "block": "",
@@ -18600,7 +18600,7 @@
   {
     "osm_type": "pedestrian",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "80",
     "street_name": "Anse Frederic Passy",
     "block": "",
@@ -18617,7 +18617,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "94",
     "street_name": "Traverse Fabre d Eglantine",
     "block": "",
@@ -18685,7 +18685,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "837",
     "street_name": "Degré Les Luaps",
     "block": "",
@@ -18702,7 +18702,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "92",
     "street_name": "Pont Levallois",
     "block": "",
@@ -18719,7 +18719,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1",
     "street_name": "Carrefour Madeleine Michelis",
     "block": "",
@@ -18736,7 +18736,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "38",
     "street_name": "Traverse Marie Levasseur",
     "block": "",
@@ -18753,7 +18753,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5",
     "street_name": "Rue Desiree",
     "block": "",
@@ -18821,7 +18821,7 @@
   {
     "osm_type": "place_of_worship",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "66",
     "street_name": "Voie Lefevre",
     "block": "",
@@ -18838,7 +18838,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "523",
     "street_name": "Impasse Saint-Bernard",
     "block": "",
@@ -18855,7 +18855,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Chemin Lamartine",
     "block": "",
@@ -18872,7 +18872,7 @@
   {
     "osm_type": "wayside_cross",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1169",
     "street_name": "Cour Mal de Lattre de Tassigny",
     "block": "",
@@ -18974,7 +18974,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "40",
     "street_name": "Square Mouffetard",
     "block": "",
@@ -18991,7 +18991,7 @@
   {
     "osm_type": "fountain",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "2942",
     "street_name": "Allée Louis",
     "block": "",
@@ -19008,7 +19008,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3178",
     "street_name": "Placette De Bezons",
     "block": "",
@@ -19042,7 +19042,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "86",
     "street_name": "Passage Adolphe Mille",
     "block": "",
@@ -19161,7 +19161,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "81",
     "street_name": "Clos Grotius",
     "block": "",
@@ -19586,7 +19586,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "58",
     "street_name": "Drève Mary",
     "block": "",
@@ -19620,7 +19620,7 @@
   {
     "osm_type": "pedestrian",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "222",
     "street_name": "Square Emile Bernard",
     "block": "",
@@ -19722,7 +19722,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4",
     "street_name": "Chaussée Desiree",
     "block": "",
@@ -19739,7 +19739,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "14",
     "street_name": "Rond-point Felix Faure",
     "block": "",
@@ -19773,7 +19773,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9667",
     "street_name": "Allée Vaneau",
     "block": "",
@@ -19858,7 +19858,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5",
     "street_name": "Promenade Des Tres Bourgeois",
     "block": "",
@@ -19875,7 +19875,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6281",
     "street_name": "Grand-route Des Ermites",
     "block": "",
@@ -20062,7 +20062,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9",
     "street_name": "Descente Groupe Lorilleux",
     "block": "",
@@ -20113,7 +20113,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1",
     "street_name": "Liaison Des Marguerites",
     "block": "",
@@ -20147,7 +20147,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7",
     "street_name": "Route Des Hortensias",
     "block": "",
@@ -20317,7 +20317,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "54",
     "street_name": "Cours Du Sommerard",
     "block": "",
@@ -20334,7 +20334,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5",
     "street_name": "Descente Groupe Lorilleux",
     "block": "",
@@ -20368,7 +20368,7 @@
   {
     "osm_type": "place_of_worship",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "222",
     "street_name": "Rang Marcel Pourtout",
     "block": "",
@@ -20385,7 +20385,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "38",
     "street_name": "Cours Des Hauts Tilliers",
     "block": "",
@@ -20436,7 +20436,7 @@
   {
     "osm_type": "place_of_worship",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4047",
     "street_name": "Rang Girouix",
     "block": "",
@@ -20776,7 +20776,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "23",
     "street_name": "Impasse Du Colonel de Ponchalon",
     "block": "",
@@ -22765,7 +22765,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Venelle Chem Ile",
     "block": "",
@@ -22782,7 +22782,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "213",
     "street_name": "Cours Andre Messager",
     "block": "",
@@ -22799,7 +22799,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9",
     "street_name": "Descente Marcadet",
     "block": "",
@@ -22816,7 +22816,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "62",
     "street_name": "Boulevard d'Abbeville",
     "block": "",
@@ -22833,7 +22833,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Sentier Paul Rollet",
     "block": "",
@@ -22850,7 +22850,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "875",
     "street_name": "Descente De Neuilly",
     "block": "",
@@ -22867,7 +22867,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "614",
     "street_name": "Descente Du Colonel de Ponchalon",
     "block": "",
@@ -22884,7 +22884,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Sentier Danton",
     "block": "",
@@ -22901,7 +22901,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "38",
     "street_name": "Allée Blaise Pascal",
     "block": "",
@@ -22918,7 +22918,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "146",
     "street_name": "Boulevard Guerlain",
     "block": "",
@@ -23292,7 +23292,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9260",
     "street_name": "Escoussière de Vaugirard",
     "block": "",
@@ -23309,7 +23309,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4",
     "street_name": "Chemin de Rivoli",
     "block": "",
@@ -23326,7 +23326,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "52",
     "street_name": "Descente Mequillet",
     "block": "",
@@ -23343,7 +23343,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "78",
     "street_name": "Escoussière Casteres",
     "block": "",
@@ -23360,7 +23360,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7258",
     "street_name": "Sentier Virginie",
     "block": "",
@@ -23377,7 +23377,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "596",
     "street_name": "Anse De l'Abreuvoir",
     "block": "",
@@ -23394,7 +23394,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "28",
     "street_name": "Chaussée Boutard",
     "block": "",
@@ -23411,7 +23411,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "89",
     "street_name": "Ruelle De l'Eglise",
     "block": "",
@@ -23428,7 +23428,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "44",
     "street_name": "Drève Emile",
     "block": "",
@@ -23445,7 +23445,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "491",
     "street_name": "Place De la Victoire",
     "block": "",
@@ -23462,7 +23462,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6482",
     "street_name": "Esplanade D'Estienne d'Orves",
     "block": "",
@@ -23479,7 +23479,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5890",
     "street_name": "Traboule Des Peupliers",
     "block": "",
@@ -23496,7 +23496,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5046",
     "street_name": "Route Du General Audran",
     "block": "",
@@ -23513,7 +23513,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "75",
     "street_name": "Anse de Montmorency",
     "block": "",
@@ -23530,7 +23530,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9",
     "street_name": "Villa de Presbourg",
     "block": "",
@@ -23547,7 +23547,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6820",
     "street_name": "Carrefour Rollet Salvan",
     "block": "",
@@ -23564,7 +23564,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9",
     "street_name": "Chaussée Madeleine Michelis",
     "block": "",
@@ -23581,7 +23581,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "712",
     "street_name": "Pont De l'Eglise",
     "block": "",
@@ -23598,7 +23598,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "98",
     "street_name": "Liaison Nouvelle",
     "block": "",
@@ -23615,7 +23615,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "18",
     "street_name": "Montée Pins",
     "block": "",
@@ -23632,7 +23632,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "916",
     "street_name": "Chaussée Marcel Cachin",
     "block": "",
@@ -23649,7 +23649,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "407",
     "street_name": "Résidence Du Capitaine Guynemer",
     "block": "",
@@ -23666,7 +23666,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "548",
     "street_name": "Venelle Jules Quentin",
     "block": "",
@@ -23683,7 +23683,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7",
     "street_name": "Impasse Station Defense Rer",
     "block": "",
@@ -23700,7 +23700,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "411",
     "street_name": "Pont Des Bouleaux Blancs",
     "block": "",
@@ -23717,7 +23717,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "39",
     "street_name": "Traverse Fleury",
     "block": "",
@@ -23734,7 +23734,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5056",
     "street_name": "Degré Michel Raoult",
     "block": "",
@@ -23751,7 +23751,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "872",
     "street_name": "Clos Doudart de Lagree",
     "block": "",
@@ -23768,7 +23768,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "48",
     "street_name": "Montée Lepic",
     "block": "",
@@ -23785,7 +23785,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "16",
     "street_name": "Escoussière De Madrid",
     "block": "",
@@ -23802,7 +23802,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4973",
     "street_name": "Traboule Pauline",
     "block": "",
@@ -23819,7 +23819,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "38",
     "street_name": "Gaffe Chps Pierreux",
     "block": "",
@@ -23836,7 +23836,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "901",
     "street_name": "Venelle Rolland",
     "block": "",
@@ -23853,7 +23853,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "94",
     "street_name": "Grand-route Ferdinand Buisson",
     "block": "",
@@ -23870,7 +23870,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "685",
     "street_name": "Degré Emile Bernard",
     "block": "",
@@ -23887,7 +23887,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3922",
     "street_name": "Rond-point De Stepney",
     "block": "",
@@ -23904,7 +23904,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "94",
     "street_name": "Côte Vaneau",
     "block": "",
@@ -23921,7 +23921,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4510",
     "street_name": "Traverse Du Guichet",
     "block": "",
@@ -23938,7 +23938,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9",
     "street_name": "Sente Du Parc de l'Ile",
     "block": "",
@@ -23955,7 +23955,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "82",
     "street_name": "Ruelle du Bac",
     "block": "",
@@ -23972,7 +23972,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9",
     "street_name": "Pont Du pdt Wilson",
     "block": "",
@@ -23989,7 +23989,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "79",
     "street_name": "Voie Maryse Hilsz",
     "block": "",
@@ -24006,7 +24006,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5423",
     "street_name": "Esplanade de Solférino",
     "block": "",
@@ -24023,7 +24023,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "58",
     "street_name": "Villa Jules Quentin",
     "block": "",
@@ -24040,7 +24040,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8144",
     "street_name": "Esplanade Du pdt Wilson",
     "block": "",
@@ -24057,7 +24057,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "748",
     "street_name": "Avenue Sarah Bernhardt",
     "block": "",
@@ -24074,7 +24074,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "679",
     "street_name": "Rond-point De Berlin Spandau",
     "block": "",
@@ -24091,7 +24091,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "100",
     "street_name": "Rampe Gutenberg",
     "block": "",
@@ -24108,7 +24108,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8",
     "street_name": "Rang Du 18 Juin 1940",
     "block": "",
@@ -24125,7 +24125,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "767",
     "street_name": "Placette Des Trois Fontanot",
     "block": "",
@@ -24142,7 +24142,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6",
     "street_name": "Passage Marcel Pourtout",
     "block": "",
@@ -24159,7 +24159,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "16",
     "street_name": "Venelle Berthelot",
     "block": "",
@@ -24176,7 +24176,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "54",
     "street_name": "Impasse Les Courtilles",
     "block": "",
@@ -24193,7 +24193,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "750",
     "street_name": "Ruelle Casteres",
     "block": "",
@@ -24210,7 +24210,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8161",
     "street_name": "Sentier des Rosiers",
     "block": "",
@@ -24227,7 +24227,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1",
     "street_name": "Villa Du Colonel de Ponchalon",
     "block": "",
@@ -24244,7 +24244,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "517",
     "street_name": "Sentier Andre Cayron",
     "block": "",
@@ -24941,7 +24941,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "65",
     "street_name": "Cour Desire Ramelet",
     "block": "",
@@ -25587,7 +25587,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "942",
     "street_name": "Venelle Jean Baptiste Lully",
     "block": "",
@@ -25621,7 +25621,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4177",
     "street_name": "Traverse Des Mazurieres",
     "block": "",
@@ -25689,7 +25689,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Liaison Guerlain",
     "block": "",
@@ -25706,7 +25706,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7755",
     "street_name": "Degré De Neuilly",
     "block": "",
@@ -25791,7 +25791,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "56",
     "street_name": "Rue Des Lots Communaux",
     "block": "",
@@ -25842,7 +25842,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "81",
     "street_name": "Sente d'Assas",
     "block": "",
@@ -26505,7 +26505,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "9297",
     "street_name": "Sente De la Paix",
     "block": "",
@@ -26522,7 +26522,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "955",
     "street_name": "Degré de Nesle",
     "block": "",
@@ -26539,7 +26539,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3634",
     "street_name": "Liaison De Brienne",
     "block": "",
@@ -26556,7 +26556,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "86",
     "street_name": "Gaffe Des Dames",
     "block": "",
@@ -26590,7 +26590,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4149",
     "street_name": "Sente Marie Levasseur",
     "block": "",
@@ -26743,7 +26743,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "50",
     "street_name": "Anse Jacques",
     "block": "",
@@ -26777,7 +26777,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8",
     "street_name": "Rue Des Poiriers",
     "block": "",
@@ -26794,7 +26794,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "25",
     "street_name": "Montée Compagnie des Eaux",
     "block": "",
@@ -26811,7 +26811,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "52",
     "street_name": "Place D'Estienne d'Orves",
     "block": "",
@@ -26913,7 +26913,7 @@
   {
     "osm_type": "tomb",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "478",
     "street_name": "Rond-point Felix Pyat",
     "block": "",
@@ -26930,7 +26930,7 @@
   {
     "osm_type": "tomb",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4581",
     "street_name": "Square Jacques Dulud",
     "block": "",
@@ -26947,7 +26947,7 @@
   {
     "osm_type": "tomb",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4919",
     "street_name": "Sentier Marcel Pourtout",
     "block": "",
@@ -26964,7 +26964,7 @@
   {
     "osm_type": "tomb",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "6860",
     "street_name": "Quai Les Orties",
     "block": "",
@@ -26998,7 +26998,7 @@
   {
     "osm_type": "tomb",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "142",
     "street_name": "Ruelle Oberkampf",
     "block": "",
@@ -27049,7 +27049,7 @@
   {
     "osm_type": "tomb",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5",
     "street_name": "Rampe Des Carrieres",
     "block": "",
@@ -27083,7 +27083,7 @@
   {
     "osm_type": "tomb",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1",
     "street_name": "Pont Ferron",
     "block": "",
@@ -27389,7 +27389,7 @@
   {
     "osm_type": "tomb",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "399",
     "street_name": "Anse Des Panoramas",
     "block": "",
@@ -27423,7 +27423,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "10",
     "street_name": "Drève Joliot Curie",
     "block": "",
@@ -27440,7 +27440,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "5062",
     "street_name": "Résidence De Berlin Spandau",
     "block": "",
@@ -27525,7 +27525,7 @@
   {
     "osm_type": "building",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "4007",
     "street_name": "Square Residence de la Mairie",
     "block": "",
@@ -27542,7 +27542,7 @@
   {
     "osm_type": "house",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1",
     "street_name": "Rue Eugene Pottier",
     "block": "",
@@ -27559,7 +27559,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "7",
     "street_name": "Traverse Seine Bras de Gennevillier",
     "block": "",
@@ -27644,7 +27644,7 @@
   {
     "osm_type": "fountain",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "3",
     "street_name": "Placette Alfred Couillard",
     "block": "",
@@ -27729,7 +27729,7 @@
   {
     "osm_type": "memorial",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "8",
     "street_name": "Escoussière Zadkine",
     "block": "",
@@ -27916,7 +27916,7 @@
   {
     "osm_type": "artwork",
     "type": "Monument",
-    "name": "",
+    "name": "Monument",
     "street_number": "1148",
     "street_name": "Sente d'Alésia",
     "block": "",
@@ -28511,7 +28511,7 @@
   {
     "osm_type": "fast_food",
     "type": "Restauration rapide",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "1986",
     "street_name": "Place De la Station",
     "block": "",
@@ -28647,7 +28647,7 @@
   {
     "osm_type": "fast_food",
     "type": "Restauration rapide",
-    "name": "",
+    "name": "Restauration",
     "street_number": "9109",
     "street_name": "Montée Joliot Curie",
     "block": "",
@@ -29242,7 +29242,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "561",
     "street_name": "Boulevard Albert Jacquard",
     "block": "",
@@ -29310,7 +29310,7 @@
   {
     "osm_type": "bar",
     "type": "Bar",
-    "name": "",
+    "name": "Bar",
     "street_number": "16",
     "street_name": "Rue Des Aubepines",
     "block": "",
@@ -30024,7 +30024,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "5",
     "street_name": "Chemin Des Champs Pierreux",
     "block": "",
@@ -32438,7 +32438,7 @@
   {
     "osm_type": "house",
     "type": "Bar",
-    "name": "",
+    "name": "Bar",
     "street_number": "1",
     "street_name": "Quai Des Belles Vues",
     "block": "",
@@ -33577,7 +33577,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "45",
     "street_name": "Avenue Du Onze Novembre 1918",
     "block": "",
@@ -39765,7 +39765,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "5027",
     "street_name": "Rond-point Doudart de Lagree",
     "block": "",
@@ -39884,7 +39884,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "9",
     "street_name": "Rang Amal de Joinville",
     "block": "",
@@ -40071,7 +40071,7 @@
   {
     "osm_type": "pub",
     "type": "Bar",
-    "name": "",
+    "name": "Bar",
     "street_number": "5301",
     "street_name": "Gaffe Anatole France",
     "block": "",
@@ -40411,7 +40411,7 @@
   {
     "osm_type": "bar",
     "type": "Bar",
-    "name": "",
+    "name": "Bar",
     "street_number": "29",
     "street_name": "Boulevard Mary",
     "block": "",
@@ -40513,7 +40513,7 @@
   {
     "osm_type": "house",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "16",
     "street_name": "Grand-route De l'Eglise",
     "block": "",
@@ -43267,7 +43267,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "3",
     "street_name": "Traverse Genevieve",
     "block": "",
@@ -50645,7 +50645,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "904",
     "street_name": "Côte Lucien Lanternier",
     "block": "",
@@ -52175,7 +52175,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "505",
     "street_name": "Anse Louis Joseph Maes",
     "block": "",
@@ -53144,7 +53144,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "54",
     "street_name": "Côte Du Bac",
     "block": "",
@@ -53501,7 +53501,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "925",
     "street_name": "Route Marcel Pourtout",
     "block": "",
@@ -53637,7 +53637,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "7",
     "street_name": "Chemin Des Dames de st Louis",
     "block": "",
@@ -53858,7 +53858,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "739",
     "street_name": "Avenue Du Onze Novembre 1918",
     "block": "",
@@ -53875,7 +53875,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "1676",
     "street_name": "Impasse De Verdun",
     "block": "",
@@ -54640,7 +54640,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "6289",
     "street_name": "Chemin Genouville",
     "block": "",
@@ -54827,7 +54827,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "5",
     "street_name": "Placette Adolphe Mille",
     "block": "",
@@ -54895,7 +54895,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "20",
     "street_name": "Pont Robert Dupont",
     "block": "",
@@ -57224,7 +57224,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "96",
     "street_name": "Grand-route Les Trianons",
     "block": "",
@@ -57955,7 +57955,7 @@
   {
     "osm_type": "house",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "12",
     "street_name": "Rampe Bonaparte",
     "block": "",
@@ -60182,7 +60182,7 @@
   {
     "osm_type": "house",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "43",
     "street_name": "Rang Jacques Dulud",
     "block": "",
@@ -62936,7 +62936,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "7",
     "street_name": "Venelle de Paris",
     "block": "",
@@ -64262,7 +64262,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "84",
     "street_name": "Sente Carpeaux",
     "block": "",
@@ -64279,7 +64279,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "9",
     "street_name": "Grand-route de l'Abbaye",
     "block": "",
@@ -70348,7 +70348,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "9997",
     "street_name": "Rampe Jacques Prevert",
     "block": "",
@@ -71555,7 +71555,7 @@
   {
     "osm_type": "planter",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "406",
     "street_name": "Traboule De la Station",
     "block": "",
@@ -73153,7 +73153,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "997",
     "street_name": "Rue Vergniaud",
     "block": "",
@@ -74003,7 +74003,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "2",
     "street_name": "Rang Groupe Lorilleux",
     "block": "",
@@ -74241,7 +74241,7 @@
   {
     "osm_type": "pedestrian",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "216",
     "street_name": "Cité Des Trois Fontanot",
     "block": "",
@@ -75091,7 +75091,7 @@
   {
     "osm_type": "bar",
     "type": "Bar",
-    "name": "",
+    "name": "Bar",
     "street_number": "5",
     "street_name": "Cité Verdun",
     "block": "",
@@ -75108,7 +75108,7 @@
   {
     "osm_type": "bar",
     "type": "Bar",
-    "name": "",
+    "name": "Bar",
     "street_number": "559",
     "street_name": "Voie Rolland",
     "block": "",
@@ -76111,7 +76111,7 @@
   {
     "osm_type": "pedestrian",
     "type": "Bar",
-    "name": "",
+    "name": "Bar",
     "street_number": "747",
     "street_name": "Descente Des Tres Bourgeois",
     "block": "",
@@ -76842,7 +76842,7 @@
   {
     "osm_type": "pedestrian",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "899",
     "street_name": "Esplanade De Madrid",
     "block": "",
@@ -77369,7 +77369,7 @@
   {
     "osm_type": "restaurant",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "282",
     "street_name": "Grand-route des Rosiers",
     "block": "",
@@ -79443,7 +79443,7 @@
   {
     "osm_type": "house",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "63",
     "street_name": "Côte Pastourelle",
     "block": "",
@@ -81160,7 +81160,7 @@
   {
     "osm_type": "bar",
     "type": "Bar",
-    "name": "",
+    "name": "Bar",
     "street_number": "9838",
     "street_name": "Drève Marcel Cachin",
     "block": "",
@@ -83846,7 +83846,7 @@
   {
     "osm_type": "house",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "104",
     "street_name": "Mail De Rochegude",
     "block": "",
@@ -84458,7 +84458,7 @@
   {
     "osm_type": "bar",
     "type": "Bar",
-    "name": "",
+    "name": "Bar",
     "street_number": "109",
     "street_name": "Sentier Desiree",
     "block": "",
@@ -86770,7 +86770,7 @@
   {
     "osm_type": "defibrillator",
     "type": "Restaurant",
-    "name": "",
+    "name": "Restaurant",
     "street_number": "7490",
     "street_name": "Rond-point De Bois Preau",
     "block": "",
