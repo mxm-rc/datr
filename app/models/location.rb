@@ -28,6 +28,10 @@ class Location < ApplicationRecord
       # Find common categories between users
       common_categories = find_common_categories(my_id, friend_id)
     end
+    if common_categories.include?(VenueCategory.find_by(main_category: 'Surprise'))
+      # If 'Surprise' category is present in common_categories then common_categories is all categories randomly aranged
+      common_categories = VenueCategory.all.sample(4)
+    end
     my_puts("recommended_locations.common_categories: #{common_categories.map(&:main_category)}")
 
 
@@ -35,7 +39,53 @@ class Location < ApplicationRecord
     locations = find_location(common_categories)
 
     # 3 return closest places of mid point limited to the limit
-    sorted_locations = sort_by_proximity_to_midpoint(locations, mid_point).first(limit)
+    # sorted_locations = sort_by_proximity_to_midpoint(locations, mid_point).first(limit)
+    sorted_locations = sort_by_proximity_to_midpoint(locations, mid_point)
+
+    final_locations = []
+    if sorted_locations.present?
+      final_locations = pick_locations(sorted_locations, limit, common_categories.map(&:main_category))
+    end
+    final_locations
+  end
+
+  def self.pick_locations(sorted_locations, limit, common_categories)
+    selected_locations = []
+    locations_by_category = sorted_locations.group_by(&:location_type)
+
+    # Initialize categories_picked array
+    categories_picked = []
+
+    # Try to pick at least one location from each preferred category
+    common_categories.each do |category|
+      if locations_by_category[category].present?
+        # Get first element from array, remove it in array and send it to selected_location
+        selected_location = locations_by_category[category].shift
+        selected_locations << selected_location unless selected_locations.include?(selected_location)
+        categories_picked << category # Add category to categories_picked
+        break if selected_locations.size >= limit
+        end
+    end
+
+    # Fill selected_locations with locations from categories alternatively, if we haven't reached the limit
+    while selected_locations.size < limit
+      any_location_added = false
+
+      common_categories.each do |category|
+        next if locations_by_category[category].blank? || !categories_picked.include?(category)
+
+        selected_location = locations_by_category[category].shift
+        if selected_location
+          selected_locations << selected_location unless selected_locations.include?(selected_location)
+          any_location_added = true
+          break if selected_locations.size >= limit
+        end
+      end
+
+      # Break the loop if no new location was added in the last iteration to prevent infinite loop
+      break unless any_location_added
+    end
+    selected_locations
   end
 
   def self.find_common_categories(my_id, friend_id)

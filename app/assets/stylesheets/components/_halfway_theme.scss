@@ -24,7 +24,7 @@
 .halfway-card {
   width: auto;
   background-color: rgba(255, 255, 255, 0.5); /* Couleur de fond avec opacité */
-  border-radius: 10px;
+  border-radius: 40px;
   margin: 1% auto;
   font-family: Poppins, sans-serif;
   color:black;
@@ -68,18 +68,18 @@
 .halfway-red-badge {
   display: d-flex;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-color: red;
   border-radius: 15px;
-  border: 2px solid white;
+  border: 3px solid white;
 }
 .halfway-green-badge {
   display: d-flex;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-color: green;
   border-radius: 15px;
-  border: 2px solid white;
+  border: 3px solid white;
 }
