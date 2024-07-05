@@ -1,4 +1,4 @@
-<div class="row" data-controller="modal">
+<div data-controller="modal">
   <% meets.each do |meet| %>
     <% selected_place = meet.selected_place %>
     <% friend = meet.accointance.friend_of(user) %>
@@ -17,24 +17,28 @@
         data-place-name="<%= place ? "' #{place.name} '" : "" %>"
         data-place-address="<%= place ? "#{place.address} #{place.zip_code} #{place.city}" : "" %>"
         data-modal-target="card">
-      <div class="">
-        <div class="row align-items-center">
+
+        <div class="row align-items-center m-3">
+          <div class="col-3 d-flex align-items-center" >
+            <% if meet.status == 'accepted' %>
+              <p class="badge badge-success halfway-green-badge m-0"> </p>
+            <% else %>
+              <p class="badge badge-danger halfway-red-badge m-0"> </p>
+            <% end %>
+          </div>
           <!-- Image column -->
-          <div class="col-3 col-md-2" >
+          <div class="col-3 d-flex align-items-center" >
             <%= image_tag "users/#{friend.picture}",
                           class: "halfway-card-image rounded-circle img-fluid",
                           style: "transform: scale(1.5);",
                           alt: friend.first_name %>
           </div>
           <!-- Text details column -->
-          <div class="col-7 col-md-9 mt-2">
-            <div class="mb-0">
-                <h5>Status: <%= meet.status == "pending" ? "En attente" : "Validé" %></h5>
-                <p>Date: <%= meet.date.strftime("%d/%m/%Y") %></p>
-            </div>
+          <div class="col-6 d-flex flex-column align-items-center">
+            <p class="m-0"><%= meet.date.strftime("%d/%m/%Y") %></p>
+            <p class="m-0"><%= friend.first_name %></p>
           </div>
         </div>
-      </div>
     </div>
   <% end %>
   <div id="customModal" class="custom-modal" style="display:none;">

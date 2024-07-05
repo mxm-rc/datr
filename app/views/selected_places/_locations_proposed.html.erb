@@ -1,43 +1,35 @@
 <%= form_tag friend_meet_selected_places_path(friend, meet), method: :post do %>
-  <div class="list-locations-selected-places-datr" data-controller="place-selection">
-    <div class="text-center d-flex justify-content-center align-items-center" id="choicePrompt">
-      <div>
-        <h2 id="choiceText" data-place-selection-target="choiceText"></h2>
-      </div>
-      <div>
-        <%= submit_tag 'Envoi', class: 'btn btn-primary', id: 'submit-choices', data: { place_selection_target: "submitButton" } %>
-      </div>
-    </div>
+  <div class="list-locations-selected-places-datr text-center" data-controller="place-selection">
+    <h1 >Lieux Possibles</h1>
 
-    <div class="row">
-      <% places.each do |place| %>
-        <div class="col-12">
-          <div class="halfway-card text-center" data-place-selection-target="card" data-place-selection-card-id-value="selected_place_<%= place.id %>">
-            <div class="row align-items-center h-100">
-
-              <!-- Image column -->
-              <div class="col-3 col-md-2 d-flex justify-content-center align-items-center">
-                <%= image_tag place.picture, class: "halfway-card-image rounded-circle img-fluid", alt: place.name %>
-              </div>
-
-              <!-- Checkbox column -->
-              <div class="col-2 col-md-1 d-flex justify-content-center align-items-center">
-                <%= check_box_tag "selected_places[]", place.id, false, id: "selected_place_#{place.id}", style: "transform: scale(1.5);", data: { action: "change->place-selection#toggleCheckbox" } %>
-              </div>
-
-              <!-- Text details column -->
-              <div class="col-7 col-md-9 d-flex justify-content-center align-items-center">
-                <div class="card-body">
-                  <h5 class="card-title"><%= place.name %></h5>
-                </div>
-              </div>
-
-            </div>
-            <label for="selected_place_<%= place.id %>" class="visually-hidden">Select</label>
+    <% places.each_with_index do |place, index| %>
+        <div class="row align-items-center halfway-card" data-place-selection-target="card" data-place-selection-card-id-value="selected_place_<%= place.id %>">
+          <div class="col-1 p-0">
+            <p class="m-0"><%= index + 1 %></p>
           </div>
-        </div>
-      <% end %>
+
+          <!-- Image column -->
+          <div class="col-2 p-0">
+            <%= image_tag place.picture, class: "halfway-card-image rounded-circle img-fluid", alt: place.name %>
+          </div>
+          <!-- Checkbox column -->
+            <div class="col-1 p-0">
+              <%= check_box_tag "selected_places[]", place.id, false, id: "selected_place_#{place.id}", style: "transform: scale(1.5);", data: { action: "change->place-selection#toggleCheckbox" } %>
+            </div>
+
+          <!-- Text details column -->
+          <div class="col-8 p-0">
+            <p class="m-0"><%= "'#{place.name}'" %></p>
+            <p class="m-0"><%= "#{place.address}, #{place.city}" %></p>
+          </div>
+
+          </div>
+          <label for="selected_place_<%= place.id %>" class="visually-hidden">Select</label>
+    <% end %>
+
+    <div class="text-center d-flex justify-content-center align-items-center" id="choicePrompt">
+      <%= submit_tag "Parfait !", class: 'btn btn-primary location-button-color mb-2', id: 'submit-choices', data: { place_selection_target: "submitButton" } %>
     </div>
-    </div>
+
   </div>
 <% end %>

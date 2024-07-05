@@ -17,7 +17,7 @@ class MeetsController < ApplicationController
     @accointance = Accointance.find_by(follower: [current_user.id, @friend.id], recipient: [current_user.id, @friend.id])
     @meet = @accointance.meets.new(meet_params)
 
-    #midpoint = Location.find_midpoint(@user.id, @friend.id)
+    # midpoint = Location.find_midpoint(@user.id, @friend.id)
     midpoint = {}
     midpoint[:lat] = 48.8437718
     midpoint[:long] = 2.3460622
@@ -27,11 +27,10 @@ class MeetsController < ApplicationController
 
     if @meet.save
       # limit: @limit
-      redirect_to friend_meet_selected_places_path(@friend, @meet, limit: 3), notice: 'Meet was successfully created.'
+      redirect_to friend_meet_selected_places_path(@friend, @meet, limit: 4), notice: 'Meet was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
-    # meet"=>{"date"=>"2024-06-04", "venue_category_ids"=>["", "9"]},
   end
 
   private

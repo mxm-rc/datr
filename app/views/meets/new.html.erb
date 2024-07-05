@@ -14,24 +14,8 @@
                 } %>
 
     <%= render partial: "card_location", locals: { f: f, location_types: @location_types } %>
-    <div class= "row align-items-center justify-content-center">
-      <div class="col-6">
-      <%= f.input :limit,
-                  label: 'Nombre de propositions',
-                  wrapper_html: { style: 'width: 80%; margin: 0 auto;'},
-                  input_html: {
-                    class: 'text-center', # center text inside the input
-                    type: :number,  # Set input type to number
-                    min: 1,  # Set minimum acceptable value
-                    max:6,  # Set maximum acceptable value
-                    value: params[:limit] || 3,  # Default value 3
-                    required: true  # Make the field required
-                  } %>
-      </div>
-      <div class="col-6">
-        <%= f.button :submit,
-                    "It's a date", class: "btn btn-primary"%>
-      </div>
+    <div class= "d-flex justify-content-center">
+        <%= f.button :submit, "C'est parti !", class: "btn btn-primary location-button-color mb-2" %>
     </div>
   <% end %>
 </div>
