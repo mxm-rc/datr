@@ -222,15 +222,17 @@ puts "Created : #{users.count} Users"
 # Create accointances in bulk
 accointances = Accointance.create!(
   [{
-    follower: users[0], recipient: users[10], status: 'pending'
-  }, {
     follower: users[0], recipient: users[3], status: 'pending'
   }, {
     follower: users[0], recipient: users[2], status: 'accepted'
   }, {
-    follower: users[0], recipient: users[10], status: 'accepted'
-  }, {
     follower: users[0], recipient: users[11], status: 'accepted'
+  }, {
+    follower: users[0], recipient: users[1], status: 'accepted'
+  }, {
+    follower: users[0], recipient: users[14], status: 'accepted'
+  }, {
+    follower: users[0], recipient: users[4], status: 'accepted'
   }, {
     follower: users[1], recipient: users[2], status: 'accepted'
   }, {
@@ -246,7 +248,7 @@ accointances = Accointance.create!(
   }, {
     follower: users[9], recipient: users[0], status: 'pending'
   }, {
-    follower: users[13], recipient: users[0], status: 'pending'
+    follower: users[10], recipient: users[0], status: 'pending'
   }, {
     follower: users[3], recipient: users[2], status: 'accepted'
   }]
@@ -362,7 +364,7 @@ users.each do |user|
     # Manually set categories for Isabelle
     selected_categories = VenueCategory.where(main_category: ['Glacier', 'Jardin', 'bar'])
 
-  else
+ƒ  else
     # Determine a random number of preferences for other users (between 1 and 3)
     num_preferences = rand(1..3)
     # Shuffle categories and take the first num_preferences to ensure category uniqueness

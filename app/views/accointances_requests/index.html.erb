@@ -1,4 +1,21 @@
 <div class="container">
+
+<!-- la barre de recherche -->
+  <div class="search-barre row justify-content-center m-2 my-4">
+    <div class="">
+      <%= form_with url: accointances_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "search-barre",
+              placeholder: "ajoute ton date !"
+          %>
+        <%= submit_tag "Search", name: "", class: "button_ajout_accointance" %>
+      <% end %>
+    </div>
+  </div>
+
+
+
   <div class="row m-4 title"> Mes demandes </div>
   <% @accointances.each do |accointance| %>
     <div class="card-accointance d-flex">
