@@ -3,7 +3,7 @@
     <h1 >Lieux Possibles</h1>
 
     <% places.each_with_index do |place, index| %>
-        <div class="row align-items-center halfway-card" data-place-selection-target="card" data-place-selection-card-id-value="selected_place_<%= place.id %>">
+        <div class="row align-items-center halfway-card" style="height: 80px;" data-place-selection-target="card" data-place-selection-card-id-value="selected_place_<%= place.id %>">
           <div class="col-1 p-0">
             <p class="m-0"><%= index + 1 %></p>
           </div>
@@ -19,7 +19,7 @@
 
           <!-- Text details column -->
           <div class="col-8 p-0">
-            <p class="m-0"><%= "'#{place.name}'" %></p>
+            <p class="m-0"><%= "#{place.name}" %></p>
             <p class="m-0"><%= "#{place.address}, #{place.city}" %></p>
           </div>
 
