@@ -240,14 +240,6 @@ accointances = Accointance.create!(
   }, {
     follower: users[6], recipient: users[2], status: 'accepted'
   }, {
-    follower: users[7], recipient: users[0], status: 'pending'
-  }, {
-    follower: users[8], recipient: users[0], status: 'pending'
-  }, {
-    follower: users[9], recipient: users[0], status: 'pending'
-  }, {
-    follower: users[13], recipient: users[0], status: 'pending'
-  }, {
     follower: users[3], recipient: users[2], status: 'accepted'
   }]
 )
