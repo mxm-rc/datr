@@ -1,9 +1,12 @@
 
 {
   "background_color": "white",
-    "description": "Halfway is the Meeting app | Meet your future lover in the middle.",
+  "description": "Halfway is the Meeting app | Meet your future lover in the middle.",
   "display": "fullscreen",
+  "orientation": "portrait",
   "name": "Halfway",
+  "short_name": "Halfway",
+  "theme_color": "white",
   "icons": [
     <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
     <% files.each_with_index do |file, index| %>
