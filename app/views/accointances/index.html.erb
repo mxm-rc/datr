@@ -1,7 +1,23 @@
 <div class="container">
-  <div class="row m-4">
-    <h1>Ajoute ton futur date !</h1>
+
+<!-- la barre de recherche -->
+  <div class="row justify-content-center">
+    <div class="">
+      <%= form_with url: accointances_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "search-barre",
+              placeholder: "Trouve ton date"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
+
+<!--Mon titre-->
+  <div class="row m-4 title">Ajoute ton futur date !</div>
+
+<!--la liste des users ordonnées par type de status d'accoitnance-->
   <% @users.each do |user| %>
     <% accointance = current_user.accointance_with(user) %>
     <% if accointance %>
@@ -10,4 +26,5 @@
       <%= render partial: "add_button", locals: { user: user } %>
     <% end %>
   <% end %>
+
 </div>
