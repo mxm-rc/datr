@@ -11,12 +11,12 @@
 
   <%= f.association :venue_categories,
                     as: :check_boxes,
-                    label: false,  # No automatic label !
                     wrapper_html: {
-                      class: "form-check position-relative ps-0"
+                      class: "form-check position-relative ps-0",
                     },
+                    legend_tag: false,
                     input_html: {
-                      class: "d-none"
+                      class: "d-none",
                     },
                     label_method: ->(type){
                       <<~HTML
