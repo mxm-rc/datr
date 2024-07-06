@@ -327,13 +327,26 @@ default_venue_category = VenueCategory.find_by(main_category: 'Surprise', sub_ca
 # Create meets in bulk
 Accointance.all.each do |a|
   if a.status == "accepted" || a.status == "pending"
-  meet = Meet.create!(
-    accointance_id: a.id,
-    centered_address_long: -123.45678,
-    centered_address_lat: 12.345678,
-    status: a.status,
-    date: Date.today + rand(1..30).days
-  )
+    if a.follower.first_name == 'Isabelle'
+      meet = Meet.create!(
+        # If it's Isabelle force date to JUly 20th else random date
+        accointance_id: a.id,
+        centered_address_long: -123.45678,
+        centered_address_lat: 12.345678,
+        status: a.status,
+        date: '20/07/2024'
+      )
+    else
+      meet = Meet.create!(
+        # If it's Isabelle force date to JUly 20th else random date
+        accointance_id: a.id,
+        centered_address_long: -123.45678,
+        centered_address_lat: 12.345678,
+        status: a.status,
+        date: Date.today + rand(1..30).days
+      )
+    end
+
     # Associate Meet with a VenueCategory !
     MeetVenueCategory.create!(
       meet_id: meet.id,
