@@ -2,11 +2,11 @@
 
 <!-- la barre de recherche -->
   <div class="row justify-content-center">
-    <div class="col-sm-8 my-3">
+    <div class="">
       <%= form_with url: accointances_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
               params[:query],
-              class: "form-control",
+              class: "search-barre",
               placeholder: "Trouve ton date"
           %>
         <%= submit_tag "Search", name: "", class: "btn btn-primary" %>

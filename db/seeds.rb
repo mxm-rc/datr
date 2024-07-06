@@ -222,9 +222,9 @@ puts "Created : #{users.count} Users"
 # Create accointances in bulk
 accointances = Accointance.create!(
   [{
-    follower: users[0], recipient: users[6], status: 'pending'
+    follower: users[0], recipient: users[10], status: 'pending'
   }, {
-    follower: users[0], recipient: users[3], status: 'accepted'
+    follower: users[0], recipient: users[3], status: 'pending'
   }, {
     follower: users[0], recipient: users[2], status: 'accepted'
   }, {
