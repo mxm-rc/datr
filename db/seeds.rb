@@ -243,6 +243,12 @@ accointances = Accointance.create!(
     follower: users[6], recipient: users[2], status: 'accepted'
   }, {
     follower: users[3], recipient: users[2], status: 'accepted'
+  }, {
+    follower: users[10], recipient: users[0], status: 'pending'
+  }, {
+    follower: users[9], recipient: users[0], status: 'pending'
+  }, {
+    follower: users[8], recipient: users[0], status: 'pending'
   }]
 )
 puts "Created : #{accointances.count} Accointances"
@@ -320,6 +326,7 @@ default_venue_category = VenueCategory.find_by(main_category: 'Surprise', sub_ca
 
 # Create meets in bulk
 Accointance.all.each do |a|
+  if a.status == "accepted" || a.status == "pending"
   meet = Meet.create!(
     accointance_id: a.id,
     centered_address_long: -123.45678,
@@ -327,20 +334,20 @@ Accointance.all.each do |a|
     status: a.status,
     date: Date.today + rand(1..30).days
   )
-
-  # Associate Meet with a VenueCategory !
-  MeetVenueCategory.create!(
-    meet_id: meet.id,
-    venue_category_id: default_venue_category.id
-  )
-  # Create a SelectedPlace for each Meet with status 'accepted'
-  if meet.status == 'accepted'
-    SelectedPlace.create!(
+    # Associate Meet with a VenueCategory !
+    MeetVenueCategory.create!(
       meet_id: meet.id,
-      location_id: Location.all.sample.id,
-      selected_by_follower: true,
-      selected_by_recipient: true
+      venue_category_id: default_venue_category.id
     )
+    # Create a SelectedPlace for each Meet with status 'accepted'
+    if meet.status == 'accepted'
+      SelectedPlace.create!(
+        meet_id: meet.id,
+        location_id: Location.all.sample.id,
+        selected_by_follower: true,
+        selected_by_recipient: true
+      )
+    end
   end
 end
 puts "Created : #{Meet.count} Meetings"
